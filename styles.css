@@ -100,3 +100,4 @@ footer .disc{margin-top:14px;opacity:.7;font-size:13px}
  .feature .txt{padding:36px 24px}
  footer .cols{grid-template-columns:1fr 1fr}
 }
+.intro{background:#f6efdd;border-top:4px solid var(--accent);border-bottom:1px solid #e6dbbd}
