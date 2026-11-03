@@ -14,7 +14,7 @@ img{max-width:100%;display:block}
 .topbar a:hover{opacity:1;text-decoration:underline}
 header.site{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:24px}
-.logo img{height:44px;width:auto}
+.logo img{height:60px;width:auto}
 .logo-text{font:700 22px Georgia,serif;color:var(--navy);text-decoration:none;letter-spacing:.3px}
 nav.main ul{list-style:none;display:flex;gap:4px;margin:0;padding:0}
 nav.main li{position:relative}
@@ -60,7 +60,7 @@ h2{font:700 36px/1.2 Georgia,serif;color:var(--navy);margin:6px 0 28px}
 .ctrl button:hover{background:var(--navy);color:#fff}
 .brands{background:var(--sky)}
 .brand{flex:0 0 calc(25% - 15px);scroll-snap-align:start;background:#fff;text-align:center;padding:30px 20px;text-decoration:none;border:1px solid var(--line)}
-.brand img{height:90px;margin:0 auto 14px;object-fit:contain}
+.brand img{height:130px;max-width:100%;margin:0 auto 14px;object-fit:contain}
 .brand span{font-weight:700;color:var(--navy)}
 .brand small{display:block;color:var(--gray);margin-top:4px}
 .feature{display:grid;grid-template-columns:1fr 1fr;min-height:420px;padding:0}
