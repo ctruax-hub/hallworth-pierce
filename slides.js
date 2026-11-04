@@ -22,17 +22,48 @@ window.DECK = [
     <div class="s-card"><div class="avatar"><img src="assets/team-derek.jpg" alt="Derek Jackson"></div><h4>Derek Jackson</h4><p>Senior Manager, Forward Deployed Engineering</p></div>
   </div>`},
 
-{ chapter:'Challenge', title:'Our Challenge', html:`
-  <h2>Our Challenge</h2>
-  <p class="s-lead">Shoppers can't quickly find the right laundry product or the right fix for a stain, and our support team answers the same questions all day.</p>
-  <h3 class="s-h3">Why This Matters</h3>
-  <div class="s-grid g3">
-    <div class="s-card"><span class="num">1</span><h4>Confusing choice</h4><p>Pods, liquid, powder and boosters across several brands. Shoppers don't know which one fits their load.</p></div>
-    <div class="s-card"><span class="num">2</span><h4>Repetitive support</h4><p>Most contacts are routine: "which product?", "how do I remove this stain?", "where is my order?"</p></div>
-    <div class="s-card"><span class="num">3</span><h4>Lost loyalty</h4><p>An unanswered question at the moment of purchase sends shoppers to a competitor.</p></div>
-  </div>`},
+{ chapter:'Purpose', title:'Purpose', cls:'story', steps:4, html:`
+  <p class="st-kicker">Purpose <span>Why does this agent need to exist?</span></p>
+  <div class="st-rail"><button data-step="0">The moment</button><button data-step="1">The gap</button><button data-step="2">The fix</button><button data-step="3">The payoff</button></div>
 
-{ chapter:'Challenge', title:'Your Industry: What We Know', html:`
+  <div class="st-text">
+    <div class="act a0"><p class="st-act">Act 1 &middot; The moment</p><h2>A stained blouse, a care label she can't read, and a question that needs a photo.</h2><p>Customers often need help that depends on a photo, such as a stain or a care label. Email and basic chat handle that poorly.</p></div>
+    <div class="act a1"><p class="st-act">Act 2 &middot; The gap</p><h2>Support that forgets, can't see, and can't learn.</h2><p>Brightcurrent's customers are being failed by fragmented, brand-siloed support. Backlogs grow with no visibility into performance.</p></div>
+    <div class="act a2"><p class="st-act">Act 3 &middot; The fix</p><h2>One agent fixes all three at once.</h2><p>It remembers the customer across brands, looks at the photo and the label, and measures its own results so it keeps getting better.</p></div>
+    <div class="act a3"><p class="st-act">Act 4 &middot; The payoff</p><h2>And it pays for itself.</h2><p>Savings from containment, plus revenue from cross-brand activation. Targets are for the first three months.</p></div>
+  </div>
+
+  <div class="st-visual">
+    <div class="vis v0">
+      <div class="chat">
+        <span class="stamp">Tuesday, 9:41 PM</span>
+        <div class="bub me"><div class="photo"><i class="blot"></i><i class="lbl"><b></b><b></b><b></b></i></div><p>I spilled red wine on my blouse. Can I wash it? I can't read the care label.</p></div>
+        <div class="bub them"><p>Thanks for contacting us. A representative will reply in 3 to 5 business days.</p></div>
+        <span class="stamp late">3 days later: still no answer</span>
+      </div>
+    </div>
+    <div class="vis v1 v2">
+      <div class="pillars"><div class="pillar"><div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div><div class="when-off"><h4>No memory</h4><p>Every brand starts from zero.</p><span class="tag bad">&#10005; Missing</span></div><div class="when-on"><h4>Memory</h4><p>Knows the customer across every brand.</p><span class="tag good">&#10003; Fixed</span></div></div><div class="pillar"><div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="when-off"><h4>No vision</h4><p>It cannot see the stain or the label.</p><span class="tag bad">&#10005; Missing</span></div><div class="when-on"><h4>Vision</h4><p>Reads the photo and the care label.</p><span class="tag good">&#10003; Fixed</span></div></div><div class="pillar"><div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V11M10 20V4M16 20v-7M22 20V8"/></svg></div><div class="when-off"><h4>No intelligence</h4><p>No visibility into how support performs.</p><span class="tag bad">&#10005; Missing</span></div><div class="when-on"><h4>Intelligence</h4><p>Tracks accuracy, resolution and CSAT.</p><span class="tag good">&#10003; Fixed</span></div></div></div>
+      <div class="foot-chip f1"><b class="cnt" data-to="462">462</b> open cases <span>demo baseline</span></div>
+      <div class="foot-chip f2">One agent. All three fixed.</div>
+    </div>
+    <div class="vis v3">
+      <div class="val-row">
+        <div class="val big"><b><span class="cnt" data-to="30">30</span>%+</b><p>of tier-1 inquiries resolved without escalation, in 3 months</p></div>
+        <div class="val big"><b>&frac12;</b><p>email backlog time, in 3 months</p></div>
+      </div>
+      <div class="val-also"><span>Also tracked</span><i>First-contact resolution</i><i>Image-ID accuracy</i><i>Safety escalations</i><i>CSAT</i></div>
+      <div class="val-row two">
+        <div class="val"><h4>Containment savings</h4><p>Fewer tier-1 cases reach a person.</p></div>
+        <div class="val"><h4>Cross-brand revenue activation</h4><p>Help becomes the right next product.</p></div>
+      </div>
+      <p class="roi">ROI projected from UAT testing.</p>
+    </div>
+  </div>
+
+  <div class="st-job"><span>Job story</span><p>Brightcurrent's customers are being failed by fragmented, brand-siloed support that has no memory, no vision, and no intelligence &ndash; this agent fixes all three simultaneously while paying for itself through containment savings and cross-brand revenue activation.</p></div>`},
+
+{ chapter:'Purpose', title:'Your Industry: What We Know', html:`
   <h2>Your Industry: What We Know</h2>
   <div class="s-grid g2 wide-l">
     <div class="s-card dark"><h4 class="gold">At a glance</h4>
