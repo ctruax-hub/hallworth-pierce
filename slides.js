@@ -1,11 +1,26 @@
 /* Capstone deck content. Edit the text here; layout is handled in deck.js / deck.css.
    Slide order follows the Agent 007 capstone template. `chapter` groups slides under the top-bar chips. */
 window.DECK = [
-{ chapter:'Intro', title:'Title', cls:'cover', html:`
+{ chapter:'Intro', title:'Title', cls:'cover title', html:`
+  <div class="t-art" aria-hidden="true">
+    <img src="assets/title/sparkle.png" style="left:91.88cqw;top:16.74cqw;width:2.85cqw">
+    <img src="assets/title/sparkle.png" style="left:90.51cqw;top:13.78cqw;width:0.90cqw">
+    <img src="assets/title/sparkle.png" style="left:88.15cqw;top:19.41cqw;width:1.83cqw">
+    <img src="assets/title/sparkle.png" style="left:69.18cqw;top:38.66cqw;width:1.51cqw">
+    <img src="assets/title/sparkle.png" style="left:67.13cqw;top:37.45cqw;width:0.90cqw">
+    <img src="assets/title/cloud.png" style="left:64.19cqw;top:25.26cqw;width:15.73cqw">
+    <img src="assets/title/shadow.png" style="left:77.98cqw;top:46.24cqw;width:23.94cqw;height:2.70cqw">
+    <img src="assets/title/robot.png" style="left:76.69cqw;top:22.08cqw;width:18.33cqw">
+  </div>
   <p class="s-kicker i">Capstone Presentation</p>
   <h1 class="s-cover">Hallworth &amp; Pierce<br><span>Brightcurrent Agent</span></h1>
   <p class="s-sub">Agent 007</p>
-  <div class="s-people"><div><b>Name</b><span>Title</span></div><div><b>Name</b><span>Title</span></div></div>`},
+  <div class="s-people">
+    <div><b>Anastasiya Combs</b><span>Distinguished Deployment Strategist</span></div>
+    <div><b>Caleb Truax</b><span>Lead Deployment Strategist</span></div>
+    <div><b>Matthew Haines</b><span>Principal Forward Deployed Engineer</span></div>
+    <div><b>Derek Jackson</b><span>Senior Manager, Forward Deployed Engineering</span></div>
+  </div>`},
 
 { chapter:'Intro', title:'Forward-looking statements', html:`
   <h2>Forward-looking statements</h2>
