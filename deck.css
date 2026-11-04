@@ -108,7 +108,6 @@ body.deck-open{overflow:hidden}
 /* full-bleed image slides */
 .slide.image{padding:0;background:#0034c6}
 .slide.image .s-fill{width:100%;height:100%;object-fit:cover;display:block}
-<<<<<<< HEAD
 /* ---- Purpose story slide ---- */
 .slide.story{background:radial-gradient(110% 90% at 80% 110%,#1f6fff 0%,#0a3bd0 38%,#041a73 100%);color:#fff;padding:0;overflow:hidden}
 .slide.story::before{content:"";position:absolute;width:60cqw;height:60cqw;right:-20cqw;top:-30cqw;border-radius:50%;background:radial-gradient(circle,rgba(125,190,255,.35),transparent 65%);pointer-events:none}
@@ -185,7 +184,6 @@ body.deck-open{overflow:hidden}
 .story .pillar .pi{width:4.6cqw;height:4.6cqw;margin-bottom:1.8cqw}
 .story .pillar h4{font-size:2.1cqw}.story .pillar p{font-size:1.5cqw}
 .story .foot-chip{font-size:1.7cqw}
-=======
 
 /* title slide: template background + artwork (positions from the capstone template's "Title Blue 3" layout) */
 .slide.cover.title{background:#0034c6 url(assets/title/bg.jpg) center/cover no-repeat}
@@ -195,4 +193,7 @@ body.deck-open{overflow:hidden}
 .slide.title .s-kicker.i{position:absolute}
 .slide.title .s-people{position:absolute;display:grid;grid-template-columns:repeat(2,minmax(0,32cqw));gap:1.6cqw 3cqw}
 .slide.title .s-people span{display:block}
->>>>>>> 97418e192f9b4018efd894c7ee176b25115da193
+
+/* slides that show only the Salesforce logo in the top-right lockup */
+.slide.sf-only .logo-lockup img[alt="Brightcurrent"]{display:none}
+.team .s-card .contrib{margin-top:auto;padding-top:1.2cqw;border-top:1px solid #dbe4f3;width:100%;font-size:1.3cqw;line-height:1.4;color:#0b2a6b;font-weight:600;min-height:calc(1.3cqw*1.4*3 + 1.2cqw);box-sizing:border-box}
