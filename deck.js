@@ -12,19 +12,12 @@
   var d=document.createElement('div');d.className='deck';d.setAttribute('role','dialog');d.setAttribute('aria-label','Presentation');
   d.innerHTML='<div class="frame"><div class="stage"></div><div class="nav"><button data-prev aria-label="Previous">&#8592;</button><button data-next aria-label="Next">&#8594;</button><div class="bar"><div></div></div><span class="ttl"></span><button class="close" data-close aria-label="Close">&#10005;</button></div></div>';
   document.body.appendChild(d);
-  var a=document.createElement('div');
-  a.innerHTML='<button class="agent-launch" data-agent>Chat with us</button><div class="agent-panel" id="agent-panel"><header><span>Hallworth &amp; Pierce Assistant</span><button data-agent aria-label="Close">&#10005;</button></header><div id="agentforce-container"><div>Agentforce agent loads here.<br><small>Add the embedded SDK snippet to this page and target <code>#agentforce-container</code>.</small></div></div></div>';
-  while(a.firstChild)document.body.appendChild(a.firstChild);
   var stage=d.querySelector('.stage');
   function render(){
     var s=S[cur];
     if(s.frame){stage.innerHTML='<section class="slide frame"><iframe src="'+s.frame+'" title="'+s.title+'" allow="fullscreen"></iframe></section>';var fr=stage.querySelector('iframe');fr.addEventListener('load',function(){try{fr.contentWindow.focus();}catch(e){}});}else
-<<<<<<< HEAD
-    stage.innerHTML='<section class="slide '+(s.cls||'')+'">'+s.html+((/cover|section|story/.test(s.cls||''))?'':'<img class="logo-corner" src="assets/brand-brightcurrent.png" alt="Brightcurrent">')+'</section>';
+    stage.innerHTML='<section class="slide '+(s.cls||'')+'">'+s.html+((/cover|section|story/.test(s.cls||''))?'':'<div class="logo-lockup"><img src="assets/brand-brightcurrent.png" alt="Brightcurrent"><img src="assets/logo-salesforce.png" alt="Salesforce"></div>')+'</section>';
     if(s.steps)applyStep();
-=======
-    stage.innerHTML='<section class="slide '+(s.cls||'')+'">'+s.html+((/cover|section/.test(s.cls||''))?'':'<div class="logo-lockup"><img src="assets/brand-brightcurrent.png" alt="Brightcurrent"><img src="assets/logo-salesforce.png" alt="Salesforce"></div>')+'</section>';
->>>>>>> 97418e192f9b4018efd894c7ee176b25115da193
     d.querySelector('.bar div').style.width=((cur+1)/S.length*100)+'%';
     d.querySelector('.ttl').textContent=(cur+1)+' / '+S.length+'  ·  '+s.title+(s.steps?' ('+(step+1)+'/'+s.steps+')':'');
     var ci=0;chapters.forEach(function(c,i){if(c.start<=cur)ci=i;});
@@ -42,7 +35,10 @@
   }
   function next(){var s=S[cur];if(s.steps&&step<s.steps-1){step++;applyStep();}else open(cur+1);}
   function prev(){var s=S[cur];if(s.steps&&step>0){step--;applyStep();}else open(cur-1,true);}
-  function agent(force){var p=document.getElementById('agent-panel');p.classList.toggle('open',force===undefined?!p.classList.contains('open'):force);}
+  function agent(){
+    try{embeddedservice_bootstrap.utilAPI.launchChat();}
+    catch(err){console.error('Agentforce chat is not ready yet',err);}
+  }
   document.addEventListener('click',function(e){
     var t=e.target.closest('[data-go],[data-prev],[data-next],[data-close],[data-agent],[data-act],.slide [data-step]');if(!t)return;
     if(t.hasAttribute('data-go'))open(+t.dataset.go);
@@ -52,7 +48,7 @@
     else if(t.hasAttribute('data-close'))close();
     else if(t.hasAttribute('data-agent')){if(d.classList.contains('open'))close();agent();}
     else if(t.dataset.act==='site')close();
-    else if(t.dataset.act==='agent'){close();agent(true);}
+    else if(t.dataset.act==='agent'){close();agent();}
   });
   document.addEventListener('keydown',function(e){
     if(/input|textarea/i.test(e.target.tagName))return;
