@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+"""Assemble decks/capstone.html: the Knowledge deck's engine/fonts/styles + our slides.
+Usage: python3 tools/build_capstone.py   (run from the repo root)"""
+import re, pathlib
+root = pathlib.Path(__file__).resolve().parent.parent
+k = (root / 'decks/knowledge.html').read_text(encoding='utf-8')
+src = (root / 'decks/src/slides.html').read_text(encoding='utf-8')
+extra = (root / 'decks/src/extra.css').read_text(encoding='utf-8')
+
+head, rest = k.split('<body>', 1)
+head = head.replace('<title>Brightcurrent · Knowledge grounding</title>', '<title>Hallworth &amp; Pierce · Brightcurrent Agent capstone</title>')
+head = head.replace('</head>', '<style id="hp-css">' + extra + '</style>\n</head>')
+
+# everything up to the first slide: world + sprite
+first = rest.index('<section class="slide"')
+pre = rest[:first]
+# the three knowledge slides
+slides_k = re.findall(r'<section class="slide".*?</section>', rest, re.S)
+assert len(slides_k) == 3, len(slides_k)
+slides_k = [s.replace('<section class="slide" ', '<section class="slide" data-chapter="demo1" ', 1) for s in slides_k]
+body_slides = src.replace('<!--KNOWLEDGE-->', '\n'.join(slides_k))
+
+# tail: closing stage div + engine + deck-specific scripts
+after = rest[rest.rindex('</section>') + len('</section>'):]
+
+bridge = """<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('section.slide')),last=-1;
+  function cur(){for(var i=0;i<slides.length;i++)if(slides[i].classList.contains('is-active'))return i;return 0;}
+  function report(){var i=cur();if(i===last)return;last=i;var s=slides[i];
+    parent.postMessage({sfds:'slide',n:i+1,total:slides.length,chapter:s.getAttribute('data-chapter'),title:s.getAttribute('data-title')},'*');}
+  new MutationObserver(report).observe(document.getElementById('sfds-stage'),{subtree:true,attributes:true,attributeFilter:['class']});
+  setTimeout(report,60);
+  function goChapter(id){for(var i=0;i<slides.length;i++)if(slides[i].getAttribute('data-chapter')===id){location.hash='#'+(i+1);return;}}
+  window.addEventListener('message',function(e){var d=e.data;if(!d||d.sfds!=='go')return;
+    if(d.chapter)goChapter(d.chapter);else if(d.n)location.hash='#'+d.n;});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-act]');if(a){parent.postMessage({sfds:'act',act:a.getAttribute('data-act')},'*');return;}
+    var g=e.target.closest('[data-goto]');if(g)goChapter(g.getAttribute('data-goto'));});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')parent.postMessage({sfds:'close'},'*');});
+})();
+</script>
+"""
+out = head + '<body>' + pre + body_slides + after.replace('</body>', bridge + '</body>')
+(root / 'decks/capstone.html').write_text(out, encoding='utf-8')
+print('wrote decks/capstone.html', len(out)//1024, 'KB;', out.count('<section class="slide"')+out.count('<section class="slide '), 'slides')

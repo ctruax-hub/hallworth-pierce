@@ -1,0 +1,72 @@
+/* Capstone additions on top of the sf-deck-studio engine (components for the new slides) */
+.slide .icon-s{width:72px;height:72px;display:block;color:var(--accent-fill);flex:0 0 72px}
+.slide .sub{font-size:var(--t-small);color:var(--fg-2);line-height:1.35}
+.slide .tbtn{font-family:var(--font-body);font-size:24px;line-height:1.2;font-weight:600;padding:14px 28px;border-radius:8px;border:2px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .2s}
+.slide .tbtn:hover{border-color:var(--accent-fill)}.slide .tbtn:active{transform:scale(.97)}
+.slide .tbtn.solid{background:var(--white);color:var(--eb30);border-color:var(--white)}
+/* title */
+.slide.s-title .art{position:absolute;inset:0;z-index:1;pointer-events:none}
+.slide.s-title .art img{position:absolute;display:block;height:auto}
+.slide.s-title .content{z-index:2}
+.team4{display:grid;grid-template-columns:1fr 1fr;gap:20px 56px;margin-top:auto}
+.team4 b{display:block;font-size:var(--t-min);font-weight:700}.team4 span{font-size:var(--t-foot);color:var(--cb90)}
+/* team */
+.team-card{text-align:center;display:flex;flex-direction:column;align-items:center}
+.team-card .avatar{width:260px;height:260px;border-radius:50%;overflow:hidden;background:var(--cb90);margin-bottom:28px;box-shadow:0 0 0 8px var(--cb95)}
+.team-card .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.team-card .card-title{font-size:40px;margin-bottom:8px}
+.team-card .role{font-size:var(--t-min);line-height:1.3;color:var(--eb30);min-height:64px}
+.team-card .contrib{margin-top:24px;padding-top:22px;border-top:2px solid var(--line);font-size:var(--t-min);line-height:1.35;font-weight:600;width:100%}
+/* agenda rows are clickable */
+.agenda .item{cursor:pointer;transition:background .3s,padding .3s;border-radius:0}
+.agenda .item:hover .num{color:var(--eb30)}
+.agenda .item .txt b{display:block;font-family:var(--font-display);font-weight:normal;font-size:44px;line-height:1.15;margin-bottom:6px}
+.agenda .item .txt span{font-size:var(--t-small);color:var(--fg-2)}
+/* challenge */
+.pain .card-title{font-size:44px;margin-bottom:10px}
+.pain .row{margin-bottom:20px}
+.base-callout{display:flex;align-items:center;gap:56px}
+.base-callout .stat{font-size:200px;color:var(--cb68)}
+/* provocation */
+.slide .provoke{font-family:var(--font-display);font-size:104px;line-height:1.04;letter-spacing:-.02em;margin:0}
+.vision{display:flex;gap:40px;align-items:center}
+.vision .tag{font-size:var(--t-min);letter-spacing:.14em;text-transform:uppercase;color:var(--cb68);font-weight:700;flex:0 0 auto}
+.vision p{font-size:var(--t-lede);line-height:1.3;margin:0}
+/* before / after */
+.bad{--bad:var(--pink60)}
+.slide .phone .chat .msg.late{background:var(--pink95);color:var(--pink20)}
+.slide .phone .chat .stamp{align-self:center;font-size:20px;color:var(--pink40);background:var(--pink95);padding:8px 16px;border-radius:30px;font-weight:600}
+.slide .phone .chat .photo{width:100%;height:150px;border-radius:14px;background:linear-gradient(135deg,#f6efe4,#e4d6bd);position:relative;margin-bottom:10px;overflow:hidden}
+.slide .phone .chat .photo i{position:absolute;left:16%;top:18%;width:96px;height:78px;border-radius:50% 45% 55% 40%;background:radial-gradient(circle at 40% 40%,#8c1236,#5a0820 70%,rgba(90,8,32,0) 72%)}
+.slide .phone .chat .photo em{position:absolute;right:10%;bottom:14%;width:84px;height:54px;background:#fff;border-radius:6px;transform:rotate(-6deg);box-shadow:0 3px 8px rgba(0,0,0,.2)}
+.friction{display:flex;flex-direction:column;gap:22px}
+.friction .f{display:flex;gap:28px;align-items:center;padding:26px 34px;border-radius:var(--r-md);background:var(--surface);border:2px solid var(--line)}
+.slide[data-theme="light"] .friction .f,.slide[data-theme="white"] .friction .f{border:none;box-shadow:var(--shadow)}
+.friction .f .big{font-family:var(--font-display);font-size:72px;line-height:1;min-width:230px;color:var(--pink40)}
+.friction .f p{font-size:var(--t-small);line-height:1.35}
+.win .f .big{color:var(--eb50)}
+.state-pill{display:inline-block;font-size:var(--t-min);font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:10px 22px;border-radius:40px;margin-bottom:28px}
+.state-pill.before{background:var(--pink95);color:var(--pink40)}
+.state-pill.after{background:var(--cb68);color:var(--eb15)}
+/* demo divider */
+.demo-actions{display:flex;gap:24px;margin-top:64px}
+/* value */
+.chips-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.chips-row .lbl{font-size:var(--t-foot);letter-spacing:.14em;text-transform:uppercase;color:var(--fg-2);margin-right:8px}
+.slide .agenda{margin-top:32px}
+.slide .agenda .item{padding:20px 0 18px}
+.slide .agenda .num{font-size:76px;min-width:120px}
+.slide .agenda .item .txt b{font-size:40px;margin-bottom:2px}
+/* compact phone chat so before/after fit the slide */
+.slide.cx .phone{height:880px;width:420px}
+.slide.cx .phone .app-bar{padding:62px 22px 14px}
+.slide.cx .phone .chat{padding:16px 16px;gap:9px}
+.slide.cx .phone .chat .msg{font-size:21px;line-height:1.3;padding:11px 15px;max-width:86%}
+.slide.cx .phone .chat .who{font-size:17px;margin:2px 4px -4px}
+.slide.cx .phone .chat .action{font-size:18px;padding:8px 14px}
+.slide.cx .phone .chat .photo{height:104px}
+.slide.cx .phone .chat .stamp{font-size:17px;padding:6px 14px}
+.slide[data-theme="bright"] .win .f .big{color:var(--white)}
+.slide[data-theme="bright"] .friction .f p{color:var(--white)}
+.slide .base-callout{padding:28px 48px}
+.slide .base-callout .stat{font-size:150px}
