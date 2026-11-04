@@ -193,3 +193,7 @@ body.deck-open{overflow:hidden}
 .slide.title .s-kicker.i{position:absolute}
 .slide.title .s-people{position:absolute;display:grid;grid-template-columns:repeat(2,minmax(0,32cqw));gap:1.6cqw 3cqw}
 .slide.title .s-people span{display:block}
+
+/* slides that show only the Salesforce logo in the top-right lockup */
+.slide.sf-only .logo-lockup img[alt="Brightcurrent"]{display:none}
+.team .s-card .contrib{margin-top:auto;padding-top:1.2cqw;border-top:1px solid #dbe4f3;width:100%;font-size:1.3cqw;line-height:1.4;color:#0b2a6b;font-weight:600;min-height:calc(1.3cqw*1.4*3 + 1.2cqw);box-sizing:border-box}
