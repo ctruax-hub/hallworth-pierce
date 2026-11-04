@@ -95,3 +95,14 @@ body.deck-open{overflow:hidden}
 
 .slide.frame{padding:0;animation:none}
 .slide.frame iframe{width:100%;height:100%;border:0;display:block;background:#001e5b}
+
+/* team slide */
+.team .s-card{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:3.4cqw 1.6cqw 2.6cqw}
+.team .s-card h4{font-size:1.9cqw;margin-bottom:.5cqw}
+.team .s-card p{font-size:1.4cqw;line-height:1.4}
+.team .avatar{width:14cqw;height:14cqw;border-radius:50%;background:var(--sfdeep);color:#fff;display:grid;place-items:center;font:700 3.4cqw/1 Georgia,serif;margin-bottom:1.6cqw;overflow:hidden}
+.team .avatar img{width:100%;height:100%;object-fit:cover}
+
+/* full-bleed image slides */
+.slide.image{padding:0;background:#0034c6}
+.slide.image .s-fill{width:100%;height:100%;object-fit:cover;display:block}

@@ -11,6 +11,17 @@ window.DECK = [
   <h2>Forward-looking statements</h2>
   <p class="s-legal">This presentation contains forward-looking statements about, among other things, trend analyses and statements regarding future events, anticipated growth and industry prospects, and our strategies, expectations, or plans regarding product releases and enhancements. The achievement or success of the matters covered by such forward-looking statements involves risks, uncertainties, and assumptions. If any such risks or uncertainties materialize or if any of the assumptions prove incorrect, results or outcomes could differ materially from those expressed or implied by these forward-looking statements. The risks and uncertainties referred to above include those factors discussed in Salesforce's reports filed from time to time with the Securities and Exchange Commission, including, but not limited to: our ability to meet the expectations of our customers; uncertainties regarding AI technologies and their integration into our product offerings; the effect of evolving domestic and foreign government regulations; regulatory developments and regulatory investigations involving us or affecting our industry; our ability to successfully introduce new services and product features, including related to AI and Agentforce; our ability to execute our business plans; our ability to meet our long-term revenue targets and profitable growth framework; the pace of change and innovation and our ability to compete in the markets in which we participate; our ability to maintain and enhance our brands; and expectations regarding contributions from acquired companies.</p>`},
 
+{ chapter:'Intro', title:'Thank you', cls:'cover image', html:`<img class="s-fill" src="assets/thank-you.jpg" alt="Thank you">`},
+
+{ chapter:'Intro', title:'The Brightcurrent FDE Team', html:`
+  <h2>The Brightcurrent FDE Team</h2>
+  <div class="s-grid g4 team">
+    <div class="s-card"><div class="avatar"><img src="assets/team-matthew.jpg" alt="Matthew Haines"></div><h4>Matthew Haines</h4><p>Principal Forward Deployed Engineer</p></div>
+    <div class="s-card"><div class="avatar"><img src="assets/team-anastasiya.jpg" alt="Anastasiya Combs"></div><h4>Anastasiya Combs</h4><p>Distinguished Deployment Strategist</p></div>
+    <div class="s-card"><div class="avatar"><img src="assets/team-caleb.jpg" alt="Caleb Truax"></div><h4>Caleb Truax</h4><p>Lead Deployment Strategist</p></div>
+    <div class="s-card"><div class="avatar"><img src="assets/team-derek.jpg" alt="Derek Jackson"></div><h4>Derek Jackson</h4><p>Senior Manager, Forward Deployed Engineering</p></div>
+  </div>`},
+
 { chapter:'Challenge', title:'Our Challenge', html:`
   <h2>Our Challenge</h2>
   <p class="s-lead">Shoppers can't quickly find the right laundry product or the right fix for a stain, and our support team answers the same questions all day.</p>
@@ -162,5 +173,5 @@ window.DECK = [
   </div>
   <div class="s-note"><b>Next steps:</b> Confirm scope and success metrics, schedule a working session with Care and E-commerce, and book the next customer meeting.</div>`},
 
-{ chapter:'Next Steps', title:'Thank you', cls:'section', html:`<h2 class="s-big">Thank you</h2><p class="s-sub">Questions?</p>`}
+{ chapter:'Next Steps', title:'Thank you', cls:'cover image', html:`<img class="s-fill" src="assets/thank-you.jpg" alt="Thank you">`}
 ];
