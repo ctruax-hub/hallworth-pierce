@@ -19,12 +19,8 @@
   function render(){
     var s=S[cur];
     if(s.frame){stage.innerHTML='<section class="slide frame"><iframe src="'+s.frame+'" title="'+s.title+'" allow="fullscreen"></iframe></section>';var fr=stage.querySelector('iframe');fr.addEventListener('load',function(){try{fr.contentWindow.focus();}catch(e){}});}else
-<<<<<<< HEAD
-    stage.innerHTML='<section class="slide '+(s.cls||'')+'">'+s.html+((/cover|section|story/.test(s.cls||''))?'':'<img class="logo-corner" src="assets/brand-brightcurrent.png" alt="Brightcurrent">')+'</section>';
+    stage.innerHTML='<section class="slide '+(s.cls||'')+'">'+s.html+((/cover|section|story/.test(s.cls||''))?'':'<div class="logo-lockup"><img src="assets/brand-brightcurrent.png" alt="Brightcurrent"><img src="assets/logo-salesforce.png" alt="Salesforce"></div>')+'</section>';
     if(s.steps)applyStep();
-=======
-    stage.innerHTML='<section class="slide '+(s.cls||'')+'">'+s.html+((/cover|section/.test(s.cls||''))?'':'<div class="logo-lockup"><img src="assets/brand-brightcurrent.png" alt="Brightcurrent"><img src="assets/logo-salesforce.png" alt="Salesforce"></div>')+'</section>';
->>>>>>> 97418e192f9b4018efd894c7ee176b25115da193
     d.querySelector('.bar div').style.width=((cur+1)/S.length*100)+'%';
     d.querySelector('.ttl').textContent=(cur+1)+' / '+S.length+'  ·  '+s.title+(s.steps?' ('+(step+1)+'/'+s.steps+')':'');
     var ci=0;chapters.forEach(function(c,i){if(c.start<=cur)ci=i;});
