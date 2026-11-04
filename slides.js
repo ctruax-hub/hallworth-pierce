@@ -96,6 +96,8 @@ window.DECK = [
   </div>
   <div class="s-note"><b>Why this approach:</b> Start in text on the web, where the most questions arrive and risk is lowest, then add surfaces that reuse the same agent.</div>`},
 
+{ chapter:'Knowledge', title:'Knowledge grounding', cls:'frame', frame:'decks/knowledge.html#1' },
+
 { chapter:'Trust', title:'Responsible AI', html:`
   <h2>Responsible AI</h2>
   <div class="s-grid g2 wide-r">
