@@ -24,7 +24,9 @@ header.site{top:var(--bar)}
 .deck .stage *{box-sizing:border-box}
 .slide{position:absolute;inset:0;padding:5cqw 5.5cqw 4cqw;display:flex;flex-direction:column;animation:sin .35s ease}
 @keyframes sin{from{opacity:0;transform:translateX(1.5cqw)}to{opacity:1;transform:none}}
-.slide .logo-corner{position:absolute;top:2.6cqw;right:4.5cqw;height:5.4cqw;width:auto}
+/* Brightcurrent + Salesforce lockup, positioned to match the capstone template's content layout */
+.slide .logo-lockup{position:absolute;top:4.6cqw;right:4.3cqw;display:flex;align-items:center;gap:1.1cqw;z-index:2}
+.slide .logo-lockup img{height:3.65cqw;width:auto;display:block}
 .slide h2{font:700 3.4cqw/1.15 "Helvetica Neue",Arial,sans-serif;color:var(--sfdeep);margin:0 0 2.2cqw;letter-spacing:-.02em}
 .s-lead{font-size:2cqw;line-height:1.45;max-width:62cqw;margin:0 0 2cqw}
 .s-h3{font-size:1.5cqw;text-transform:uppercase;letter-spacing:.12em;color:var(--sf);margin:.4cqw 0 1.2cqw}
@@ -106,3 +108,12 @@ body.deck-open{overflow:hidden}
 /* full-bleed image slides */
 .slide.image{padding:0;background:#0034c6}
 .slide.image .s-fill{width:100%;height:100%;object-fit:cover;display:block}
+
+/* title slide: template background + artwork (positions from the capstone template's "Title Blue 3" layout) */
+.slide.cover.title{background:#0034c6 url(assets/title/bg.jpg) center/cover no-repeat}
+.slide.title .t-art{position:absolute;inset:0;pointer-events:none}
+.slide.title .t-art img{position:absolute;height:auto;display:block}
+.slide.title > :not(.t-art){position:relative;z-index:1}
+.slide.title .s-kicker.i{position:absolute}
+.slide.title .s-people{position:absolute;display:grid;grid-template-columns:repeat(2,minmax(0,32cqw));gap:1.6cqw 3cqw}
+.slide.title .s-people span{display:block}
