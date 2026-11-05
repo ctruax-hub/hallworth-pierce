@@ -772,6 +772,81 @@
   </div>
 </section>
 
+<section class="slide" data-theme="dark" data-world="drift" data-title="Discovery" data-sid="discovery" data-chapter="appendix" style="padding-top:72px;padding-bottom:64px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Appendix</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:62px">Discovery: what we asked, found and decided</h2>
+    <div class="dq-tabs" data-anim="rise" style="--d:200ms" data-no-advance>
+      <button class="dq on" type="button" data-q="0"><b>1</b><span>Monitoring framework<small>Technology, people, process</small></span></button>
+      <button class="dq" type="button" data-q="1"><b>2</b><span>Operating approach<small>Who runs it, and how</small></span></button>
+      <button class="dq" type="button" data-q="2"><b>3</b><span>Data quality and governance<small>Across three brands</small></span></button>
+      <button class="dq" type="button" data-q="3"><b>4</b><span>AI and data standards<small>What exists, what is missing</small></span></button>
+    </div>
+    <div class="dq-body" data-anim="rise" style="--d:350ms">
+      <p class="dq-ask" id="dqAsk"></p>
+      <div class="dq-cols">
+        <div class="card glass dq-col"><h3 class="card-title">What we found</h3><ul id="dqFound"></ul></div>
+        <div class="card glass dq-col dec"><h3 class="card-title">What we decided</h3><ul id="dqDec"></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Discovery outcomes are assumed for this presentation. Fictional company, figures and systems.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">Backup for questions about how we made our design choices.</p><ul class="n-pts"><li>Each tab: the question, what we found, the decision.</li><li>All answers assumed for the capstone.</li></ul></aside>
+</section>
+<script>
+(function(){
+  var s=document.querySelector('section.slide[data-sid="discovery"]');
+  var Q=[
+    {ask:'How does H&amp;P monitor customer service today, across technology, people and process?',
+     found:[['Technology','Each brand reports from its own Service Cloud dashboards. There is no single view across Brightcurrent, Softly and Fresh Spin.'],
+            ['Technology','Email queue age is tracked in a weekly spreadsheet. IT watches site uptime, but nobody watches answer quality.'],
+            ['People','Three brand care analysts. No one owns AI quality, and the IT operations center covers infrastructure only.'],
+            ['Process','Monthly business reviews per brand. QA hand checks about 2% of cases. Incidents go through ServiceNow, Severity 1 to 4.']],
+     dec:[['Technology','Agentforce Analytics, Health Monitoring and Session Tracing feed one cross brand Tableau dashboard for care.'],
+          ['People','A named AI Operations Analyst in the H&amp;P Care Center of Excellence owns agent quality.'],
+          ['Process','Daily health checks during hypercare, then a weekly agent review. Agent issues become a new ServiceNow category with the same severities.']]},
+    {ask:'What operating model will H&amp;P accept for running an AI agent in production?',
+     found:[['Model','A shared Care Center of Excellence at H&amp;P, with a care team inside each brand.'],
+            ['Change','A monthly change advisory board, and a release freeze from mid November to early January.'],
+            ['Coverage','Care is staffed 8 AM to 8 PM Eastern. Only the product safety line runs 24/7, through an outsourced partner.'],
+            ['Risk','Leadership wants a human able to switch the agent off at any time.']],
+     dec:[['Model','Hub and spoke. The Center of Excellence owns the platform, guardrails and releases. Each brand owns its content and tone.'],
+          ['Change','Agent releases every two weeks through the standard board. Knowledge updates are pre approved standard changes.'],
+          ['Coverage','The agent answers 24/7. After hours it opens a case for callback, and safety issues go straight to the 24/7 safety line.'],
+          ['Risk','The Support Team Lead owns the off switch, which sends every chat to the care team in minutes.']]},
+    {ask:'How clean is the customer and content data the agent depends on, and who governs it?',
+     found:[['Profiles','2.1M customer records across three brands, with about 22% duplicated across brands.'],
+            ['Profiles','15% of loyalty records have no email. Consent is stored separately for each brand.'],
+            ['Content','1,240 knowledge articles. 31% are over two years old, and 40% have no named owner.'],
+            ['Product','The catalog lives in the product information system and syncs to the websites once a day.']],
+     dec:[['Profiles','Data 360 holds the unified profile. Matching runs on exact email, then normalized phone, then name and address.'],
+          ['Profiles','Each brand keeps its own consent. Cross brand suggestions appear only for customers who opted in.'],
+          ['Content','The agent only uses articles that are published, owned and reviewed in the last 12 months.'],
+          ['Owners','One Data Steward and one Content Manager per brand, with a quarterly data quality review.']]},
+    {ask:'Which AI and data quality standards does H&amp;P already have, and which does it need?',
+     found:[['Have','A Responsible AI policy from 2025, based on the NIST AI Risk Management Framework.'],
+            ['Have','A four level data classification policy, and a privacy program covering CCPA and other state laws.'],
+            ['Have','Brand voice guidelines for each brand.'],
+            ['Missing','No acceptance criteria for AI agents, no data quality targets, and no change control for prompts.']],
+     dec:[['Agent','Release standard: 95% accuracy on a 300 utterance golden set, 100% of toxicity tests passed, and no safety failures.'],
+          ['Trust','The Einstein Trust Layer masks personal data, with zero data retention by the model provider.'],
+          ['Data','Targets: 98% profile match precision, articles no older than 12 months, catalog synced within 24 hours.'],
+          ['Review','Prompts and topics change only through a release. A quarterly Responsible AI review covers bias and incidents.']]}
+  ];
+  function li(r){return '<li><span class="dq-tag">'+r[0]+'</span><p>'+r[1]+'</p></li>';}
+  function show(i){
+    var q=Q[i];
+    [].forEach.call(s.querySelectorAll('.dq'),function(b,k){b.classList.toggle('on',k===i);});
+    s.querySelector('#dqAsk').innerHTML=q.ask;
+    s.querySelector('#dqFound').innerHTML=q.found.map(li).join('');
+    s.querySelector('#dqDec').innerHTML=q.dec.map(li).join('');
+    var body=s.querySelector('.dq-cols');body.classList.remove('swap');void body.offsetWidth;body.classList.add('swap');
+  }
+  s.addEventListener('click',function(e){var b=e.target.closest('.dq');if(b)show(+b.getAttribute('data-q'));});
+  show(0);
+})();
+</script>
+
 <section class="slide" data-theme="light" data-world="quiet" data-title="Rate card reference" data-sid="rates" data-chapter="appendix" style="padding-top:72px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Appendix</p>

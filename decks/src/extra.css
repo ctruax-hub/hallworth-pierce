@@ -493,3 +493,30 @@
 .cv-goal b{font-size:36px}
 .wf{margin-top:24px}
 .wf-area{height:180px}
+
+/* ===== discovery (appendix) ===== */
+.dq-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+.dq{display:flex;align-items:center;gap:18px;padding:18px 22px;border-radius:22px;border:2px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;text-align:left;font-family:var(--font-body);transition:all .3s}
+.dq b{flex:0 0 50px;height:50px;border-radius:50%;display:grid;place-items:center;background:rgba(144,208,254,.2);font:normal 26px/1 var(--font-display);color:var(--cb80);transition:all .3s}
+.dq span{display:flex;flex-direction:column;font:normal 28px/1.1 var(--font-display)}
+.dq small{font:600 18px/1.25 var(--font-body);color:var(--cb80);margin-top:6px}
+.dq:hover{border-color:var(--cb80)}
+.dq.on{background:var(--eb50);border-color:var(--eb50);box-shadow:0 14px 40px rgba(6,106,254,.4)}
+.dq.on b{background:var(--white);color:var(--eb30)}
+.dq.on small{color:var(--cb90)}
+.slide .dq-ask{margin:26px 0 18px;font:normal 34px/1.25 var(--font-display);color:var(--white);padding-left:22px;border-left:6px solid var(--cb68)}
+.dq-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dq-cols.swap .dq-col{animation:pcfade .4s ease}
+.dq-col{padding:26px 32px}
+.dq-col .card-title{font-size:32px;margin-bottom:14px}
+.dq-col.dec{background:rgba(4,225,203,.1);border-color:rgba(4,225,203,.5)}
+.dq-col.dec .card-title{color:var(--teal80)}
+.dq-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.dq-col li{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:start}
+.dq-tag{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:8px;background:rgba(144,208,254,.18);color:var(--cb80);text-align:center;margin-top:3px}
+.dq-col.dec .dq-tag{background:rgba(4,225,203,.2);color:var(--teal80)}
+.slide .dq-col li p{font-size:22px;line-height:1.38;color:var(--white)}
+.slide .dq-col li p{font-size:24px}
+.dq-tag{font-size:16px}
+.dq-col ul{gap:18px}
+.dq-col{padding:28px 34px}
