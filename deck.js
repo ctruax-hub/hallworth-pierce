@@ -7,7 +7,7 @@
   // [label, deck chapters it covers, is a demo step]
   var NAV=[['Introductions',['intro']],['Challenge Statement',['challenge']],['DEMO',['demo1'],1],
            ['Architecture',['data-arch','agent-arch']],['Roadmap',['roadmap']],['Test, Deploy &amp; Monitor',['release']],
-           ['DEMO',['demo2'],1],['Business Value',['value']],['Thank You',['thanks']],['Appendix',['appendix']]];
+           ['Observability',['observability']],['Business Value',['value']],['Thank You',['thanks']],['Appendix',['appendix']]];
   var GROUP={'data-arch':'Data architecture','agent-arch':'Agent architecture'};
   var frame=null,openNow=false,pending=null,curN=0,curCh=null;
 

@@ -53,7 +53,7 @@
       <div class="item" data-no-advance data-goto="challenge"><span class="num">02</span><div class="txt"><b>Challenge statement</b><span>What we heard</span></div></div>
       <div class="item" data-no-advance data-goto="release"><span class="num">06</span><div class="txt"><b>Test, deploy and monitor</b><span>How we keep it accurate and safe</span></div></div>
       <div class="item" data-no-advance data-goto="demo1"><span class="num">03</span><div class="txt"><b>Demo</b></div></div>
-      <div class="item" data-no-advance data-goto="demo2"><span class="num">07</span><div class="txt"><b>Demo</b></div></div>
+      <div class="item" data-no-advance data-goto="observability"><span class="num">07</span><div class="txt"><b>Observability</b><span>How we watch it in production</span></div></div>
       <div class="item" data-no-advance data-goto="data-arch"><span class="num">04</span><div class="txt"><b>Architecture</b><span>What we built</span></div></div>
       <div class="item" data-no-advance data-goto="value"><span class="num">08</span><div class="txt"><b>Business value</b><span>What it is worth</span></div></div>
     </div>
@@ -192,51 +192,15 @@
 <section class="slide" data-theme="light" data-world="quiet" data-title="Personas" data-sid="personas" data-chapter="challenge" data-ptab="cust" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Personas</p>
-    <h2 data-anim="rise" style="--d:100ms;font-size:62px">Who we are building for</h2>
-    <div class="ps-tabs" data-anim="rise" style="--d:200ms" data-no-advance>
-      <button class="tbtn on" type="button" data-ptab="cust">Customers</button>
-      <button class="tbtn" type="button" data-ptab="stake">Stakeholders</button>
-    </div>
-
-    <!-- TAB 1: stakeholders -->
-    <div class="ps-panel ps-stake">
-      <div class="ps-cols">
-        <div class="ps-col exec">
-          <h3 class="ps-h">Executives</h3>
-          <div class="ps-role"><div class="ps-rt"><b>Chief Customer Officer</b><span class="org hp">H&amp;P</span></div><p>Portfolio sponsor. Funds the rollout to Softly and Fresh Spin.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>Chief Information Officer</b><span class="org hp">H&amp;P</span></div><p>One platform and data standard across every brand. Owns security.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>General Manager</b><span class="org bc">Brightcurrent</span></div><p>Owns the brand P&amp;L. Wants conversion and loyalty.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>VP Consumer Care</b><span class="org bc">Brightcurrent</span></div><p>Executive sponsor. Owns the KPIs and approves go live.</p></div>
-        </div>
-        <div class="ps-col">
-          <h3 class="ps-h">Customer service</h3>
-          <div class="ps-role"><div class="ps-rt"><b>Support Team Lead</b><span class="org bc">Brightcurrent</span></div><p>Handles safety escalations. Can take the agent offline.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>Case Specialist, Tier 1</b><span class="org bc">Brightcurrent</span></div><p>Resolves verified cases and every handoff from the agent.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>Content Manager</b><span class="org bc">Brightcurrent</span></div><p>Owns stain, product and policy articles the agent cites.</p></div>
-        </div>
-        <div class="ps-col">
-          <h3 class="ps-h">Data team</h3>
-          <div class="ps-role"><div class="ps-rt"><b>Data 360 Architect</b><span class="org bc">Brightcurrent</span></div><p>Data streams, DLO to DMO mapping and identity resolution.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>Data Steward</b><span class="org bc">Brightcurrent</span></div><p>Keeps brand data separated and scans for leaks between brands.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>Analytics Lead</b><span class="org bc">Brightcurrent</span></div><p>Reports resolution, satisfaction and cost to serve.</p></div>
-        </div>
-        <div class="ps-col gov">
-          <h3 class="ps-h">Governance</h3>
-          <div class="ps-role"><div class="ps-rt"><b>Legal and Compliance</b><span class="org hp">H&amp;P</span></div><p>Safety wording, acceptable use and brand claims.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>Privacy and Security</b><span class="org hp">H&amp;P</span></div><p>Customer verification, data retention and access.</p></div>
-          <div class="ps-role"><div class="ps-rt"><b>Responsible AI Lead</b><span class="org hp">H&amp;P</span></div><p>Consequence scanning, incident and bias review.</p></div>
-        </div>
-      </div>
-    </div>
-
+    <h2 data-anim="rise" style="--d:100ms;font-size:62px">Who the agent is for</h2>
     <!-- TAB 2: customers -->
     <div class="ps-panel ps-cust" data-anim="rise" style="--d:300ms">
       <div class="pc-list" id="psList"></div>
       <div class="card white pc-card" id="psCard"></div>
     </div>
   </div>
-  <div class="footer"><span>Fictional roles and customers for this proof of concept. Share of visits is illustrative.</span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">Customers first, then the stakeholders who build and govern the agent.</p><ul class="n-pts"><li>On Customers, click each persona. Each one maps to a path through the agent.</li><li>The VP Consumer Care is the executive sponsor and approves go live.</li></ul></aside>
+  <div class="footer"><span>Fictional customers for this proof of concept. Share of visits is illustrative. Stakeholders are in the Appendix.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">The customers who actually talk to the agent.</p><ul class="n-pts"><li>On Customers, click each persona. Each one maps to a path through the agent.</li><li>The VP Consumer Care is the executive sponsor and approves go live.</li></ul></aside>
 </section>
 <script>
 (function(){
@@ -314,107 +278,116 @@
       <div class="lane ka"><div class="lt">Knowledge articles</div></div>
       <div class="lane web"><div class="lt">Web content, sitemap crawler</div></div>
       <svg class="conn" viewBox="0 0 1680 704" data-anim="draw" style="--d:900ms" aria-hidden="true"><defs><marker id="sa3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#90D0FE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-      <path class="draw ka" d="M170 112 L170 134" marker-end="url(#sa3)"/>
-      <path class="draw ka" d="M170 188 L170 210" marker-end="url(#sa3)"/>
-      <path class="draw ka" d="M170 260 L170 282" marker-end="url(#sa3)"/>
-      <path class="draw ka" d="M170 340 L170 362" marker-end="url(#sa3)"/>
-      <path class="draw ka" d="M170 416 L170 438" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M560 112 L560 134" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M560 188 L560 210" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M560 416 L560 438" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M950 112 L950 134" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M950 188 L950 210" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M950 416 L950 438" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M560 260 L560 272 L950 272"/>
-      <path class="draw web" d="M950 260 L950 272"/>
-      <path class="draw web" d="M755 272 L755 282" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M755 340 L755 352 L560 352 L560 362" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M755 352 L950 352 L950 362" marker-end="url(#sa3)"/>
-      <path class="draw web fut" d="M1340 112 L1340 134" marker-end="url(#sa3)"/>
-      <path class="draw web fut" d="M1340 188 L1340 210" marker-end="url(#sa3)"/>
-      <path class="draw web fut" d="M1340 260 L1340 282" marker-end="url(#sa3)"/>
-      <path class="draw web fut" d="M1340 340 L1340 362" marker-end="url(#sa3)"/>
-      <path class="draw web fut" d="M1340 416 L1340 438" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M950 504 L950 538" marker-end="url(#sa3)"/>
-      <path class="draw web fut" d="M1340 504 L1340 538" marker-end="url(#sa3)"/>
-      <path class="draw ka" d="M170 504 L170 522 L1300 522"/>
-      <path class="draw ka" d="M900 522 L900 538" marker-end="url(#sa3)"/>
-      <path class="draw ka fut" d="M1300 522 L1300 538" marker-end="url(#sa3)"/>
-      <path class="draw web" d="M560 504 L560 622"/>
-      <path class="draw web" d="M950 604 L950 622"/>
-      <path class="draw web fut" d="M1340 604 L1340 622"/>
-      <path class="draw " d="M560 622 L1340 622"/>
-      <path class="draw " d="M950 622 L950 638" marker-end="url(#sa3)"/>
-      <path class="flow ka" d="M170 112 L170 134"/>
-      <path class="flow ka" d="M170 188 L170 210"/>
-      <path class="flow ka" d="M170 260 L170 282"/>
-      <path class="flow ka" d="M170 340 L170 362"/>
-      <path class="flow ka" d="M170 416 L170 438"/>
-      <path class="flow web" d="M560 112 L560 134"/>
-      <path class="flow web" d="M560 188 L560 210"/>
-      <path class="flow web" d="M560 416 L560 438"/>
-      <path class="flow web" d="M950 112 L950 134"/>
-      <path class="flow web" d="M950 188 L950 210"/>
-      <path class="flow web" d="M950 416 L950 438"/>
-      <path class="flow web" d="M560 260 L560 272 L950 272"/>
-      <path class="flow web" d="M950 260 L950 272"/>
-      <path class="flow web" d="M755 272 L755 282"/>
-      <path class="flow web" d="M755 340 L755 352 L560 352 L560 362"/>
-      <path class="flow web" d="M755 352 L950 352 L950 362"/>
-      <path class="flow web fut" d="M1340 112 L1340 134"/>
-      <path class="flow web fut" d="M1340 188 L1340 210"/>
-      <path class="flow web fut" d="M1340 260 L1340 282"/>
-      <path class="flow web fut" d="M1340 340 L1340 362"/>
-      <path class="flow web fut" d="M1340 416 L1340 438"/>
-      <path class="flow web" d="M950 504 L950 538"/>
-      <path class="flow web fut" d="M1340 504 L1340 538"/>
-      <path class="flow ka" d="M170 504 L170 522 L1300 522"/>
-      <path class="flow ka" d="M900 522 L900 538"/>
-      <path class="flow ka fut" d="M1300 522 L1300 538"/>
-      <path class="flow web" d="M560 504 L560 622"/>
-      <path class="flow web" d="M950 604 L950 622"/>
-      <path class="flow web fut" d="M1340 604 L1340 622"/>
-      <path class="flow " d="M560 622 L1340 622"/>
-      <path class="flow " d="M950 622 L950 638"/>
+      <path class="draw ka" d="M170 104 L170 186" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 228 L170 246" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 296 L170 314" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 360 L170 378" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 104 L560 122" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 168 L560 186" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 104 L950 122" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 168 L950 186" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 228 L560 238 L950 238"/>
+      <path class="draw web" d="M950 228 L950 238"/>
+      <path class="draw web" d="M755 238 L755 246" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M755 296 L755 306 L560 306 L560 314" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M755 306 L950 306 L950 314" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 360 L560 378" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 360 L950 378" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 104 L1340 122" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 168 L1340 186" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 228 L1340 246" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 296 L1340 314" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 360 L1340 378" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 434 L950 456" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 434 L1340 456" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 434 L560 534" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 434 L170 446 L1300 446"/>
+      <path class="draw ka" d="M900 446 L900 456" marker-end="url(#sa3)"/>
+      <path class="draw ka fut" d="M1300 446 L1300 456" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 512 L950 534" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 512 L1340 534" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 580 L560 606"/>
+      <path class="draw web" d="M950 580 L950 606"/>
+      <path class="draw web fut" d="M1340 580 L1340 606"/>
+      <path class="draw " d="M560 606 L1340 606"/>
+      <path class="draw " d="M950 606 L950 620" marker-end="url(#sa3)"/>
+      <path class="flow ka" d="M170 104 L170 186"/>
+      <path class="flow ka" d="M170 228 L170 246"/>
+      <path class="flow ka" d="M170 296 L170 314"/>
+      <path class="flow ka" d="M170 360 L170 378"/>
+      <path class="flow web" d="M560 104 L560 122"/>
+      <path class="flow web" d="M560 168 L560 186"/>
+      <path class="flow web" d="M950 104 L950 122"/>
+      <path class="flow web" d="M950 168 L950 186"/>
+      <path class="flow web" d="M560 228 L560 238 L950 238"/>
+      <path class="flow web" d="M950 228 L950 238"/>
+      <path class="flow web" d="M755 238 L755 246"/>
+      <path class="flow web" d="M755 296 L755 306 L560 306 L560 314"/>
+      <path class="flow web" d="M755 306 L950 306 L950 314"/>
+      <path class="flow web" d="M560 360 L560 378"/>
+      <path class="flow web" d="M950 360 L950 378"/>
+      <path class="flow web fut" d="M1340 104 L1340 122"/>
+      <path class="flow web fut" d="M1340 168 L1340 186"/>
+      <path class="flow web fut" d="M1340 228 L1340 246"/>
+      <path class="flow web fut" d="M1340 296 L1340 314"/>
+      <path class="flow web fut" d="M1340 360 L1340 378"/>
+      <path class="flow web" d="M950 434 L950 456"/>
+      <path class="flow web fut" d="M1340 434 L1340 456"/>
+      <path class="flow web" d="M560 434 L560 534"/>
+      <path class="flow ka" d="M170 434 L170 446 L1300 446"/>
+      <path class="flow ka" d="M900 446 L900 456"/>
+      <path class="flow ka fut" d="M1300 446 L1300 456"/>
+      <path class="flow web" d="M950 512 L950 534"/>
+      <path class="flow web fut" d="M1340 512 L1340 534"/>
+      <path class="flow web" d="M560 580 L560 606"/>
+      <path class="flow web" d="M950 580 L950 606"/>
+      <path class="flow web fut" d="M1340 580 L1340 606"/>
+      <path class="flow " d="M560 606 L1340 606"/>
+      <path class="flow " d="M950 606 L950 620"/>
       </svg>
-      <div class="nd src ka" style="left:20px;top:56px;width:300px;height:56px">Knowledge Articles</div>
-      <div class="nd st-conn ka" style="left:20px;top:136px;width:300px;height:52px">Data Library</div>
-      <div class="nd st-dlo ka" style="left:20px;top:212px;width:300px;height:48px">DLO</div>
-      <div class="nd st-dmo ka" style="left:20px;top:284px;width:300px;height:56px">DMO</div>
-      <div class="nd st-si ka" style="left:20px;top:364px;width:300px;height:52px">Chunking, search index</div>
-      <div class="nd st-ret ka" style="left:20px;top:440px;width:300px;height:64px"><span class="t">Retriever</span><span class="sb">Brand, Published, Public</span></div>
-      <div class="nd src web hp" style="left:410px;top:56px;width:300px;height:56px">Hallworth &amp; Pierce</div>
-      <div class="nd st-conn web" style="left:410px;top:136px;width:300px;height:52px">Sitemap connector</div>
-      <div class="nd st-dlo web" style="left:410px;top:212px;width:300px;height:48px">DLO</div>
-      <div class="nd st-si web" style="left:410px;top:364px;width:300px;height:52px">Chunking, search index</div>
-      <div class="nd st-ret web" style="left:410px;top:440px;width:300px;height:64px"><span class="t">Retriever</span><span class="sb">No ensemble</span></div>
-      <div class="nd src web bc" style="left:800px;top:56px;width:300px;height:56px">Brightcurrent<span class="act">Active</span></div>
-      <div class="nd st-conn web" style="left:800px;top:136px;width:300px;height:52px">Sitemap connector</div>
-      <div class="nd st-dlo web" style="left:800px;top:212px;width:300px;height:48px">DLO</div>
-      <div class="nd st-si web" style="left:800px;top:364px;width:300px;height:52px">Chunking, search index</div>
-      <div class="nd st-ret web" style="left:800px;top:440px;width:300px;height:64px"><span class="t">Retriever</span><span class="sb">sourceLabel = brightcurrent.com</span></div>
-      <div class="nd er web" style="left:800px;top:540px;width:300px;height:64px"><span class="t">ER</span><span class="sb">Ensemble retriever</span></div>
-      <div class="nd st-dmo web" style="left:410px;top:284px;width:690px;height:56px"><span class="t">Shared DMO</span><span class="sb">sourceLabel = brand URL</span></div>
-      <div class="nd src web fut" style="left:1190px;top:56px;width:300px;height:56px">Future brand<span class="act f">Phase 2+</span></div>
-      <div class="nd st-conn web fut" style="left:1190px;top:136px;width:300px;height:52px">Sitemap connector</div>
-      <div class="nd st-dlo web fut" style="left:1190px;top:212px;width:300px;height:48px">DLO</div>
-      <div class="nd st-dmo web fut" style="left:1190px;top:284px;width:300px;height:56px"><span class="t">DMO</span><span class="sb">sourceLabel = brand URL</span></div>
-      <div class="nd st-si web fut" style="left:1190px;top:364px;width:300px;height:52px">Chunking, search index</div>
-      <div class="nd st-ret web fut" style="left:1190px;top:440px;width:300px;height:64px">Retriever</div>
-      <div class="nd er web fut" style="left:1190px;top:540px;width:300px;height:64px"><span class="t">ER</span><span class="sb">Ensemble retriever</span></div>
-      <div class="nd af" style="left:380px;top:640px;width:1130px;height:64px"><span class="t">Agentforce: prompt template and agent action</span><span class="sb">Product Q&amp;A, troubleshooting and case management subagents</span></div>
-      <div class="p2"><b>Phase 2+</b><span>Softly and Fresh Spin use the same structure as Brightcurrent.</span><span>The agent and shared ensemble retriever stay unchanged.</span></div>
+      <div class="nd src ka" style="left:20px;top:56px;width:300px;height:48px">Knowledge Articles</div>
+      <div class="nd st-dlo ka" style="left:20px;top:188px;width:300px;height:40px">DLO</div>
+      <div class="nd st-dmo ka" style="left:20px;top:248px;width:300px;height:48px">DMO</div>
+      <div class="nd st-si ka" style="left:20px;top:316px;width:300px;height:44px">Chunking, search index</div>
+      <div class="nd st-ret ka" style="left:20px;top:380px;width:300px;height:54px"><span class="t">Retriever</span><span class="sb">Brand, Published, Public</span></div>
+      <div class="nd src web hp" style="left:410px;top:56px;width:300px;height:48px">Hallworth &amp; Pierce</div>
+      <div class="nd st-conn web" style="left:410px;top:124px;width:300px;height:44px">Sitemap connector</div>
+      <div class="nd st-dlo web" style="left:410px;top:188px;width:300px;height:40px">DLO</div>
+      <div class="nd st-si web" style="left:410px;top:316px;width:300px;height:44px">Chunking, search index</div>
+      <div class="nd st-ret web" style="left:410px;top:380px;width:300px;height:54px"><span class="t">Retriever</span><span class="sb">No ensemble</span></div>
+      <div class="nd lib web" style="left:410px;top:536px;width:300px;height:44px"><span class="t">H&amp;P Data Library</span></div>
+      <div class="nd src web bc" style="left:800px;top:56px;width:300px;height:48px">Brightcurrent<span class="act">Active</span></div>
+      <div class="nd st-conn web" style="left:800px;top:124px;width:300px;height:44px">Sitemap connector</div>
+      <div class="nd st-dlo web" style="left:800px;top:188px;width:300px;height:40px">DLO</div>
+      <div class="nd st-si web" style="left:800px;top:316px;width:300px;height:44px">Chunking, search index</div>
+      <div class="nd st-ret web" style="left:800px;top:380px;width:300px;height:54px"><span class="t">Retriever</span><span class="sb">sourceLabel = brightcurrent.com</span></div>
+      <div class="nd er web" style="left:800px;top:458px;width:300px;height:54px"><span class="t">ER</span><span class="sb">Ensemble retriever</span></div>
+      <div class="nd lib web bcl" style="left:800px;top:536px;width:300px;height:44px"><span class="t">Brightcurrent Data Library</span></div>
+      <div class="nd st-dmo web" style="left:410px;top:248px;width:690px;height:48px"><span class="t">Shared DMO</span><span class="sb">sourceLabel = brand URL</span></div>
+      <div class="nd src web fut" style="left:1190px;top:56px;width:300px;height:48px">Future brand<span class="act f">Phase 2+</span></div>
+      <div class="nd st-conn web fut" style="left:1190px;top:124px;width:300px;height:44px">Sitemap connector</div>
+      <div class="nd st-dlo web fut" style="left:1190px;top:188px;width:300px;height:40px">DLO</div>
+      <div class="nd st-dmo web fut" style="left:1190px;top:248px;width:300px;height:48px"><span class="t">DMO</span><span class="sb">sourceLabel = brand URL</span></div>
+      <div class="nd st-si web fut" style="left:1190px;top:316px;width:300px;height:44px">Chunking, search index</div>
+      <div class="nd st-ret web fut" style="left:1190px;top:380px;width:300px;height:54px">Retriever</div>
+      <div class="nd er web fut" style="left:1190px;top:458px;width:300px;height:54px"><span class="t">ER</span><span class="sb">Ensemble retriever</span></div>
+      <div class="nd lib web fut" style="left:1190px;top:536px;width:300px;height:44px"><span class="t">Brand Data Library</span></div>
+      <div class="nd af" style="left:380px;top:622px;width:1130px;height:62px"><span class="t">Agentforce: prompt template and agent action</span><span class="sb">Each brand&rsquo;s agent grounds on its own Data Library</span></div>
+      <div class="p2"><b>Phase 2+</b><span>Softly and Fresh Spin use the same structure as Brightcurrent, each with its own Data Library.</span><span>The agent stays unchanged.</span></div>
     </div>
   </div>
-  <div class="footer"><span>DLO: Data Lake Object. DMO: Data Model Object. ER: Ensemble Retriever. H&amp;P uses a retriever only. Active brands add an ER that also searches Knowledge.</span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">One pipeline, grounded by brand.</p><ul class="n-pts"><li>Web: each brand site has its own sitemap connector and DLO. H&amp;P and Brightcurrent share one DMO, tagged by brand URL.</li><li>Knowledge Articles come in through a Data Library and their own retriever, filtered to Published and Public.</li><li>Brightcurrent's ensemble retriever combines its web retriever with Knowledge. Future brands copy that structure.</li></ul></aside>
+  <div class="footer"><span>DLO: Data Lake Object. DMO: Data Model Object. ER: Ensemble Retriever. Each brand has its own Data Library.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">One pipeline, grounded by brand.</p><ul class="n-pts"><li>Web: each brand site has its own sitemap connector and DLO. H&amp;P and Brightcurrent share one DMO, tagged by brand URL.</li><li>Knowledge Articles come in through a Data Library and their own retriever, filtered to Published and Public.</li><li>Brightcurrent's ensemble retriever combines its web retriever with Knowledge, and feeds the Brightcurrent Data Library. Every brand gets its own Data Library.</li></ul></aside>
 </section>
 
 <!-- ============ AGENT ARCHITECTURE: routing ============ -->
-<section class="slide" data-theme="dark" data-world="drift" data-title="How the agent decides" data-sid="agent-routing" data-chapter="agent-arch">
+<section class="slide" data-theme="dark" data-world="drift" data-title="How the agent decides" data-sid="agent-routing" data-chapter="agent-arch" data-rmode="sub">
   <div class="content">
     <p class="eyebrow" data-anim="rise">Agent architecture</p>
     <h2 data-anim="rise" style="--d:100ms;font-size:60px">How the agent decides</h2>
+    <div class="corner rt-toggle" data-anim="rise" style="--d:200ms" data-no-advance>
+      <div class="tgroup"><span class="tg-l">Start from</span><button class="tbtn" type="button" data-rmode="cust">Customer says</button><button class="tbtn on" type="button" data-rmode="sub">Subagents</button></div>
+    </div>
     <div class="rt" id="rt" data-anim="rise" style="--d:250ms" data-no-advance>
       <svg class="rt-conn" id="rtConn" viewBox="0 0 1680 510" aria-hidden="true"></svg>
       <span class="rt-lab" style="left:0">Customer says</span>
@@ -427,7 +400,7 @@
     <div class="rt-steps" id="rtSteps"></div>
   </div>
   <div class="footer"><span>Case Management stays locked until the customer verifies a one time code sent to their email.</span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">Click an utterance. The green path is what the agent does.</p><ul class="n-pts"><li>The parent agent reads intent and routes to one subagent.</li><li>Opening a case goes through Customer Verification first, then Case Management.</li></ul></aside>
+  <aside class="notes"><p class="n-key">Starts with every subagent live. Click a subagent to see what a customer says, or switch to Customer says and click an utterance.</p><ul class="n-pts"><li>The parent agent reads intent and routes to one subagent.</li><li>Opening a case goes through Customer Verification first, then Case Management.</li></ul></aside>
 </section>
 <script>
 (function(){
@@ -488,8 +461,31 @@
     steps.innerHTML='';
     c.steps.forEach(function(st,k){var d=document.createElement('div');d.className='rt-step';d.style.animationDelay=(.3+k*.45)+'s';d.innerHTML='<span class="n">'+(k+1)+'</span><em>'+st[0]+'</em><p>'+st[1]+'</p>';steps.appendChild(d);});
   }
-  utt.addEventListener('click',function(e){var b=e.target.closest('button');if(b)render(+b.getAttribute('data-i'));});
-  render(0);
+  // subagent -> the example a customer would say to reach it
+  var MAP={safety:5,off:2,amb:6,cv:0,cm:0,prod:3,guide:4,faq:1};
+  function allActive(){
+    lockT.forEach(clearTimeout);lockT=[];setLock('locked');
+    [].forEach.call(utt.children,function(b){b.classList.remove('on');});
+    [].forEach.call(subs.children,function(d){d.classList.remove('on','dim','verified');d.classList.add('live');});
+    parent.classList.add('on');
+    var svg='';SUBS.forEach(function(x){var y=cy(x[0]);svg+='<path class="base live" d="M920 255 C1030 255 1070 '+y+' 1180 '+y+'"/>';});
+    conn.innerHTML=svg;
+    steps.innerHTML='<div class="rt-hint"><span class="n">&#8594;</span><p>All eight subagents are live. <b>Click any subagent</b> to see what a customer says to reach it.</p></div>';
+  }
+  function mode(){return slide.getAttribute('data-rmode');}
+  function pick(i,tileId){
+    [].forEach.call(subs.children,function(d){d.classList.remove('live');});
+    render(i);
+    if(tileId){var t=subs.querySelector('[data-id="'+tileId+'"]');t.classList.add('picked');setTimeout(function(){t.classList.remove('picked');},900);}
+  }
+  utt.addEventListener('click',function(e){var b=e.target.closest('button');if(b)pick(+b.getAttribute('data-i'));});
+  subs.addEventListener('click',function(e){var t=e.target.closest('.rt-sub');if(t)pick(MAP[t.getAttribute('data-id')],t.getAttribute('data-id'));});
+  [].forEach.call(slide.querySelectorAll('.rt-toggle .tbtn'),function(b){b.addEventListener('click',function(){
+    slide.setAttribute('data-rmode',b.getAttribute('data-rmode'));
+    [].forEach.call(slide.querySelectorAll('.rt-toggle .tbtn'),function(x){x.classList.toggle('on',x===b);});
+    if(mode()==='sub')allActive();else pick(0);
+  });});
+  allActive();
 })();
 </script>
 
@@ -500,6 +496,7 @@
     <div class="ps-tabs rm-tabs" data-anim="rise" style="--d:150ms" data-no-advance>
       <button class="tbtn on" type="button" data-rm="now">Today and next 90 days</button>
       <button class="tbtn" type="button" data-rm="scale">Scale to every brand</button>
+      <button class="tbtn" type="button" data-rm="own">Who owns it</button>
     </div>
     <div class="rmp rm-now">
     <h2 data-anim="rise" style="--d:100ms;font-size:62px">Built and tested. Today is the go or no go.</h2>
@@ -546,22 +543,32 @@
         <div class="sc-card h1"><span class="when">Months 4 to 6</span><h3>Every brand, one agent</h3>
           <p>Softly and Fresh Spin join Brightcurrent. Each brand keeps its own knowledge, voice and consent. One unified profile behind them.</p>
           <div class="sf"><i>Agentforce</i><i>Data 360</i><i>Service Cloud</i><i>Knowledge</i></div>
+          <p class="own"><span>Owner</span>Brand general managers, Data team</p>
           <p class="out">Outcome: one assistant across three brands</p></div>
         <div class="sc-card h2"><span class="when">Months 7 to 12</span><h3>Voice and video</h3>
           <p>The same agent answers the care line by voice. Customers share a photo or short video of a stain or washer, and live video help is one tap away.</p>
           <div class="sf"><i>Agentforce Voice</i><i>Service Cloud Voice</i><i>Data 360 Intelligent Processing</i><i>Visual Remote Assistant</i></div>
+          <p class="own"><span>Owner</span>Customer service, IT and security</p>
           <p class="out">Outcome: help on any channel</p></div>
         <div class="sc-card h2"><span class="when">Months 7 to 12</span><h3>Personalized recommendations</h3>
           <p>Care moments become the right next product. Purchase history across brands drives offers in chat, email and on site, only with consent.</p>
           <div class="sf"><i>Marketing Cloud Next</i><i>Personalization</i><i>Commerce Cloud</i><i>Loyalty Management</i></div>
+          <p class="own"><span>Owner</span>Marketing and e-commerce, Data team</p>
           <p class="out">Outcome: more cross brand discovery</p></div>
         <div class="sc-card h3"><span class="when">Months 4 to 18</span><h3>Real time analytics and ROI</h3>
           <p>One live view of resolution, satisfaction, revenue influenced and cost per brand. Churn risk flags trigger proactive outreach.</p>
           <div class="sf"><i>Tableau Next</i><i>Agentforce Analytics</i><i>Data 360 Calculated Insights</i><i>Digital Wallet</i></div>
+          <p class="own"><span>Owner</span>Data team, Finance</p>
           <p class="out">Outcome: ROI visible every day</p></div>
       </div>
     </div>
 
+    <div class="rmp rm-own">
+      <h2 style="font-size:58px">Who owns what at H&amp;P</h2>
+      <p class="ow-sub">One owner per workstream, a few supporting teams, and one executive sponsor who approves every gate.</p>
+      <div class="ow"><div class="ow-h"><span>Workstream</span><span><b>Executive sponsor</b><small>VP Consumer Care</small></span><span><b>Customer service</b><small>Support Team Lead</small></span><span><b>Content</b><small>Content Manager</small></span><span><b>Data team</b><small>Data 360 Architect</small></span><span><b>IT and security</b><small>Privacy and Security</small></span><span><b>Marketing</b><small>Marketing and e-commerce</small></span></div><div class="ow-r"><b>Web agent: pilot and go live</b><span></span><span><i class="o" title="Owns">Owns</i></span><span><i class="s" title="Supports"></i></span><span></span><span><i class="s" title="Supports"></i></span><span></span></div><div class="ow-r"><b>Email backlog agent</b><span></span><span><i class="o" title="Owns">Owns</i></span><span><i class="s" title="Supports"></i></span><span><i class="s" title="Supports"></i></span><span></span><span></span></div><div class="ow-r"><b>Knowledge articles and brand voice</b><span></span><span><i class="s" title="Supports"></i></span><span><i class="o" title="Owns">Owns</i></span><span></span><span></span><span><i class="s" title="Supports"></i></span></div><div class="ow-r"><b>Data 360, identity and consent</b><span></span><span></span><span></span><span><i class="o" title="Owns">Owns</i></span><span><i class="s" title="Supports"></i></span><span><i class="s" title="Supports"></i></span></div><div class="ow-r"><b>Safety, privacy and guardrails</b><span></span><span><i class="s" title="Supports"></i></span><span><i class="s" title="Supports"></i></span><span></span><span><i class="o" title="Owns">Owns</i></span><span></span></div><div class="ow-r"><b>KPIs, dashboards and ROI</b><span><i class="s" title="Supports"></i></span><span><i class="s" title="Supports"></i></span><span></span><span><i class="o" title="Owns">Owns</i></span><span></span><span></span></div><div class="ow-r"><b>Personalized recommendations</b><span></span><span></span><span><i class="s" title="Supports"></i></span><span><i class="s" title="Supports"></i></span><span></span><span><i class="o" title="Owns">Owns</i></span></div><div class="ow-r"><b>Scale to Softly and Fresh Spin</b><span><i class="o" title="Owns">Owns</i></span><span><i class="s" title="Supports"></i></span><span></span><span><i class="s" title="Supports"></i></span><span></span><span><i class="s" title="Supports"></i></span></div></div>
+      <div class="ow-leg"><span><i class="o">Owns</i>Accountable for delivery and results</span><span><i class="s"></i>Supports with people or decisions</span><span class="fde">Our FDE team builds each piece and hands it over to the owner.</span></div>
+    </div>
   </div>
   <div class="footer"><span>Week 13 of 26. Scale targets are proposed. The detailed delivery plan is in the Appendix.</span><span>Brightcurrent Agentforce capstone</span></div>
   <aside class="notes"><p class="n-key">We are at the go or no go. Ask for the decision.</p><ul class="n-pts"><li>Discovery, Build and UAT are done.</li><li>Two things go live in the 90 day window: the web agent and the email backlog agent.</li><li>The 90 day review measures the customer's stated goal.</li><li>Scale tab: four workstreams to the Multi-Brand Assistant Agent, each with its Salesforce products.</li></ul></aside>
@@ -576,13 +583,13 @@
 </script>
 
 <!-- ============ TEST, DEPLOY AND MONITOR ============ -->
-<section class="slide" data-theme="dark" data-world="drift" data-title="Test, deploy and monitor" data-sid="release" data-chapter="release" data-rstage="validate" style="padding-top:72px;padding-bottom:64px">
+<section class="slide" data-theme="dark" data-world="drift" data-title="Test, deploy and monitor" data-sid="release" data-chapter="release" data-rstage="build" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Test, deploy and monitor</p>
     <h2 data-anim="rise" style="--d:100ms;font-size:60px">Four stages. Every one tested, safe and watched.</h2>
     <div class="rs-tabs" data-anim="rise" style="--d:200ms" data-no-advance>
-      <button class="rs done" type="button" data-rstage="build"><b>&#10003;</b><span>Build<small>Developer sandbox</small></span></button>
-      <button class="rs done on" type="button" data-rstage="validate"><b>&#10003;</b><span>Validate<small>Full sandbox UAT</small></span></button>
+      <button class="rs done on" type="button" data-rstage="build"><b>&#10003;</b><span>Build<small>Developer sandbox</small></span></button>
+      <button class="rs done" type="button" data-rstage="validate"><b>&#10003;</b><span>Validate<small>Full sandbox UAT</small></span></button>
       <span class="rs-now"><i></i>Today: go or no go</span>
       <button class="rs" type="button" data-rstage="pilot"><b>3</b><span>Pilot<small>Production, 10%</small></span></button>
       <button class="rs" type="button" data-rstage="scale"><b>4</b><span>Scale<small>Production, 100%</small></span></button>
@@ -635,19 +642,23 @@
     box.classList.remove('swap');void box.offsetWidth;box.classList.add('swap');
   }
   s.addEventListener('click',function(e){var b=e.target.closest('.rs');if(b)show(b.getAttribute('data-rstage'));});
-  show('validate');
+  show('build');
 })();
 </script>
 
-<!-- ============ DEMO 2 ============ -->
-<section class="slide" data-theme="bright" data-world="segue" data-title="Live demo, part 2" data-sid="demo2" data-chapter="demo2">
-  <div class="content" style="justify-content:center">
-    <h1 data-anim="rise" style="--d:100ms">Back to the live agent.</h1>
-    <div class="demo-actions" data-anim="rise" style="--d:350ms" data-no-advance>
-      <button class="tbtn solid" type="button" data-act="agent">Open the agent</button>
-      <button class="tbtn" type="button" data-act="site">Show the site</button>
+<!-- ============ OBSERVABILITY ============ -->
+<section class="slide" data-theme="dark" data-world="horizon" data-title="Observability" data-sid="observability" data-chapter="observability" style="padding-top:72px;padding-bottom:64px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Observability</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:58px">Watching the agent in production</h2>
+    <div class="ob-chips" data-anim="rise" style="--d:200ms"><i>Agent Analytics</i><i>Health Monitoring</i><i>Session Tracing</i></div>
+    <div class="ob-frame" data-anim="rise" style="--d:300ms">
+      <div class="ob-bar"><span></span><span></span><span></span><b>Agentforce Observability</b></div>
+      <div class="ob-shot"><img src="../assets/observability.png" alt="Agentforce observability dashboard" onerror="this.parentNode.classList.add('missing')"><div class="ob-ph"><span>Add the screenshot as <code>assets/observability.png</code></span></div></div>
     </div>
   </div>
+  <div class="footer"><span>Live view from the Agentforce org.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">How we watch the agent once it is live.</p><ul class="n-pts"><li>Walk through the dashboard.</li><li>Ties back to the Monitor column on Test, deploy and monitor.</li></ul></aside>
 </section>
 
 <!-- ============ BUSINESS VALUE ============ -->
@@ -667,9 +678,10 @@
       <!-- tabbed detail -->
       <div class="pc-main">
         <div class="pc-tabs">
-          <button class="tbtn" type="button" data-tab="d360">Data 360</button>
-          <button class="tbtn" type="button" data-tab="af">Agentforce</button>
-          <button class="tbtn on" type="button" data-tab="combined">Combined view</button>
+          <button class="tbtn on" type="button" data-tab="combined">Summary</button>
+          <span class="pc-sep">Show the math</span>
+          <button class="tbtn sm" type="button" data-tab="af">Agentforce</button>
+          <button class="tbtn sm" type="button" data-tab="d360">Data 360</button>
         </div>
 
         <!-- DATA 360 -->
@@ -725,20 +737,16 @@
 
         <!-- COMBINED -->
         <div class="pc-panel p-combined">
-          <div class="cv-top">
-            <div class="card cv-hero solid-net"><span>Net savings every month</span><b id="c_net"></b><small id="c_net_y"></small></div>
-            <div class="card white compact cv-t"><span>Saved by the agent</span><b id="c_sav"></b><small id="c_sav_n"></small></div>
-            <div class="card white compact cv-t"><span>Platform cost</span><b id="c_cost"></b><small id="c_cost_split"></small></div>
-            <div class="card white compact cv-t"><span>Cost per resolved case</span><b id="c_cpr"></b><small id="c_cpr_n"></small></div>
+          <div class="card sv-hero solid-net">
+            <span class="k">Net savings every month</span>
+            <b id="c_net"></b>
+            <p><span id="c_net_y"></span> &middot; <span id="cv_sum"></span></p>
           </div>
-          <div class="card white cv-chart">
-            <div class="cv-head"><p class="pc-h">Monthly cost to serve</p><p class="cv-sum" id="cv_sum"></p></div>
-            <div class="cv-wf" id="wf"></div>
-          </div>
-          <div class="cv-goals">
-            <div class="cv-goal"><b>30%+</b><span>of tier 1 inquiries resolved without escalation, in 3 months</span></div>
-            <div class="cv-goal"><b>&frac12;</b><span>the email backlog time, in 3 months</span></div>
-            <div class="cv-lv"><span class="lbl">Value comes from</span><i>Containment savings</i><i>Cross brand revenue</i><span class="lbl">Also tracked</span><i>First contact resolution</i><i>Image ID accuracy</i><i>Safety escalations</i><i>CSAT</i></div>
+          <div class="card white sv-bars"><div id="wf"></div></div>
+          <div class="sv-tiles">
+            <div class="card white"><span class="k">It costs</span><b id="c_cost"></b><small id="c_cost_split"></small></div>
+            <div class="card white"><span class="k">It saves</span><b id="c_sav"></b><small id="c_sav_n"></small></div>
+            <div class="card white"><span class="k">Per resolved case</span><b id="c_cpr"></b><small id="c_cpr_n"></small></div>
           </div>
         </div>
       </div>
@@ -826,26 +834,19 @@
     var cost=afusd+dusd,sav=resolved*human,net=sav-cost,today=conv*human,withc=(conv-resolved)*human+cost;
     t('c_cost',usd(cost));t('c_cost_split','Agentforce '+k(afusd)+' + Data 360 '+k(dusd));
     t('c_sav',usd(sav));t('c_sav_n',n(resolved)+' cases resolved by the agent');
-    t('c_net',usd(net));t('c_net_y',usd(net*12)+' per year');
+    t('c_net',usd(net));t('c_net_y',usd(net*12)+' a year');
     t('c_cpr',resolved>0?usd(cost/resolved,2):'n/a');t('c_cpr_n','vs '+usd(human,2)+' when a person handles it');
     s.querySelector('.solid-net').classList.toggle('neg',net<0);
     drawWF({today:today,sav:sav,af:afusd,dc:dusd,withc:withc,net:net});
   }
   function drawWF(o){
-    var H=140,mx=Math.max(o.today,o.withc,1),px=function(x){return x/mx*H;},rem=o.today-o.sav;
-    var cols=[
-      ['Today','Every case handled by a person',0,o.today,'base',usd(o.today),o.today],
-      ['Resolved by the agent','Cases people no longer handle',rem,o.today,'save','&minus;'+usd(o.sav),rem],
-      ['Agentforce','Flex Credits',rem,rem+o.af,'af','+'+usd(o.af),rem+o.af],
-      ['Data 360','Flex Credits',rem+o.af,rem+o.af+o.dc,'dc','+'+usd(o.dc),o.withc],
-      ['With Agentforce','New cost to serve',0,o.withc,'new',usd(o.withc),null]];
-    g('wf').innerHTML=cols.map(function(c,i){
-      var lo=px(Math.min(c[2],c[3])),h=Math.max(4,px(Math.abs(c[3]-c[2])));
-      var link=c[6]===null?'':'<i class="wf-link" style="bottom:'+px(c[6])+'px"></i>';
-      return '<div class="wf-col '+c[4]+'"><div class="wf-area">'+link+'<div class="wf-bar" style="bottom:'+lo+'px;height:'+h+'px"><em>'+c[5]+'</em></div></div><span class="wf-lab"><b>'+c[0]+'</b>'+c[1]+'</span></div>';
-    }).join('');
-    var pct=Math.round(o.net/Math.max(o.today,1)*100);
-    g('cv_sum').innerHTML=o.net>=0?'<b>'+pct+'% lower</b> each month: '+usd(o.today)+' today, '+usd(o.withc)+' with Agentforce':'<b>'+Math.abs(pct)+'% higher</b> at these settings. Raise deflection or lower usage.';
+    var mx=Math.max(o.today,o.withc,1),people=o.withc-o.af-o.dc,pct=Math.round(o.net/Math.max(o.today,1)*100);
+    var w=function(x){return Math.max(0,x/mx*100)+'%';};
+    g('wf').innerHTML=
+      '<div class="sv-row"><span class="lb"><b>Today</b>Every case handled by a person</span><div class="tr"><i class="seg hm" style="width:'+w(o.today)+'"></i></div><b class="v">'+usd(o.today)+'</b></div>'+
+      '<div class="sv-row"><span class="lb"><b>With Agentforce</b>The agent resolves '+Math.round(v('defl'))+'% of cases</span><div class="tr"><i class="seg hm" style="width:'+w(people)+'"></i><i class="seg ag" style="width:'+w(o.af+o.dc)+'"></i>'+(o.net>0?'<i class="seg sv" style="width:'+w(o.net)+'"><em>Saved '+usd(o.net)+'</em></i>':'')+'</div><b class="v">'+usd(o.withc)+'</b></div>'+
+      '<div class="sv-leg"><span><i class="hm"></i>People</span><span><i class="ag"></i>Agentforce and Data 360</span><span><i class="sv"></i>Savings</span></div>';
+    g('cv_sum').textContent=o.net>=0?pct+'% lower cost to serve':Math.abs(pct)+'% higher at these settings';
   }
   s.addEventListener('input',calc);
   // keep arrow, delete and letter keys inside the calculator from changing slides
@@ -1009,6 +1010,44 @@
   show(0);
 })();
 </script>
+
+<section class="slide" data-theme="light" data-world="quiet" data-title="Stakeholders" data-sid="stakeholders" data-chapter="appendix" data-ptab="stake" style="padding-top:72px;padding-bottom:64px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Appendix</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:62px">Stakeholders at Brightcurrent and H&amp;P</h2>
+    <div class="ps-panel ps-stake" data-anim="rise" style="--d:250ms">
+      <div class="ps-cols">
+        <div class="ps-col exec">
+          <h3 class="ps-h">Executives</h3>
+          <div class="ps-role"><div class="ps-rt"><b>Chief Customer Officer</b><span class="org hp">H&amp;P</span></div><p>Portfolio sponsor. Funds the rollout to Softly and Fresh Spin.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Chief Information Officer</b><span class="org hp">H&amp;P</span></div><p>One platform and data standard across every brand. Owns security.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>General Manager</b><span class="org bc">Brightcurrent</span></div><p>Owns the brand P&amp;L. Wants conversion and loyalty.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>VP Consumer Care</b><span class="org bc">Brightcurrent</span></div><p>Executive sponsor. Owns the KPIs and approves go live.</p></div>
+        </div>
+        <div class="ps-col">
+          <h3 class="ps-h">Customer service</h3>
+          <div class="ps-role"><div class="ps-rt"><b>Support Team Lead</b><span class="org bc">Brightcurrent</span></div><p>Handles safety escalations. Can take the agent offline.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Case Specialist, Tier 1</b><span class="org bc">Brightcurrent</span></div><p>Resolves verified cases and every handoff from the agent.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Content Manager</b><span class="org bc">Brightcurrent</span></div><p>Owns stain, product and policy articles the agent cites.</p></div>
+        </div>
+        <div class="ps-col">
+          <h3 class="ps-h">Data team</h3>
+          <div class="ps-role"><div class="ps-rt"><b>Data 360 Architect</b><span class="org bc">Brightcurrent</span></div><p>Data streams, DLO to DMO mapping and identity resolution.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Data Steward</b><span class="org bc">Brightcurrent</span></div><p>Keeps brand data separated and scans for leaks between brands.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Analytics Lead</b><span class="org bc">Brightcurrent</span></div><p>Reports resolution, satisfaction and cost to serve.</p></div>
+        </div>
+        <div class="ps-col gov">
+          <h3 class="ps-h">Governance</h3>
+          <div class="ps-role"><div class="ps-rt"><b>Legal and Compliance</b><span class="org hp">H&amp;P</span></div><p>Safety wording, acceptable use and brand claims.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Privacy and Security</b><span class="org hp">H&amp;P</span></div><p>Customer verification, data retention and access.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Responsible AI Lead</b><span class="org hp">H&amp;P</span></div><p>Consequence scanning, incident and bias review.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer"><span>Fictional roles for this proof of concept.</span><span>Brightcurrent Agentforce capstone</span></div>
+</section>
 
 <section class="slide" data-theme="light" data-world="quiet" data-title="Detailed delivery plan" data-sid="delivery" data-chapter="appendix" style="padding-top:72px">
   <div class="content">
