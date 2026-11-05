@@ -105,6 +105,108 @@
   <aside class="notes"><p class="n-key">Fragmented support, siloed by brand, with no memory, no vision and no intelligence.</p><ul class="n-pts"><li>Customers often need help that depends on a photo.</li><li>Email handles that poorly.</li><li>Backlogs grow with no visibility into performance. About 3,850 open cases today: roughly 670 new contacts a day, each open for about 6 days.</li></ul></aside>
 </section>
 
+<section class="slide" data-theme="light" data-world="quiet" data-title="Personas" data-sid="personas" data-chapter="challenge" data-ptab="stake" style="padding-top:72px;padding-bottom:64px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Personas</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:62px">Who we are building for</h2>
+    <div class="ps-tabs" data-anim="rise" style="--d:200ms" data-no-advance>
+      <button class="tbtn on" type="button" data-ptab="stake">Stakeholders</button>
+      <button class="tbtn" type="button" data-ptab="cust">Customers</button>
+    </div>
+
+    <!-- TAB 1: stakeholders -->
+    <div class="ps-panel ps-stake" data-anim="rise" style="--d:300ms">
+      <div class="ps-cols">
+        <div class="ps-col exec">
+          <h3 class="ps-h">Executives</h3>
+          <div class="ps-role"><div class="ps-rt"><b>Chief Customer Officer</b><span class="org hp">H&amp;P</span></div><p>Portfolio sponsor. Funds the rollout to Softly and Fresh Spin.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Chief Information Officer</b><span class="org hp">H&amp;P</span></div><p>One platform and data standard across every brand. Owns security.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>General Manager</b><span class="org bc">Brightcurrent</span></div><p>Owns the brand P&amp;L. Wants conversion and loyalty.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>VP Consumer Care</b><span class="org bc">Brightcurrent</span></div><p>Executive sponsor. Owns the KPIs and approves go live.</p></div>
+        </div>
+        <div class="ps-col">
+          <h3 class="ps-h">Customer service</h3>
+          <div class="ps-role"><div class="ps-rt"><b>Support Team Lead</b><span class="org bc">Brightcurrent</span></div><p>Handles safety escalations. Can take the agent offline.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Case Specialist, Tier 1</b><span class="org bc">Brightcurrent</span></div><p>Resolves verified cases and every handoff from the agent.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Content Manager</b><span class="org bc">Brightcurrent</span></div><p>Owns stain, product and policy articles the agent cites.</p></div>
+        </div>
+        <div class="ps-col">
+          <h3 class="ps-h">Data team</h3>
+          <div class="ps-role"><div class="ps-rt"><b>Data 360 Architect</b><span class="org bc">Brightcurrent</span></div><p>Data streams, DLO to DMO mapping and identity resolution.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Data Steward</b><span class="org bc">Brightcurrent</span></div><p>Keeps brand data separated and scans for leaks between brands.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Analytics Lead</b><span class="org bc">Brightcurrent</span></div><p>Reports resolution, satisfaction and cost to serve.</p></div>
+        </div>
+        <div class="ps-col gov">
+          <h3 class="ps-h">Governance</h3>
+          <div class="ps-role"><div class="ps-rt"><b>Legal and Compliance</b><span class="org hp">H&amp;P</span></div><p>Safety wording, acceptable use and brand claims.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Privacy and Security</b><span class="org hp">H&amp;P</span></div><p>Customer verification, data retention and access.</p></div>
+          <div class="ps-role"><div class="ps-rt"><b>Responsible AI Lead</b><span class="org hp">H&amp;P</span></div><p>Consequence scanning, incident and bias review.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: customers -->
+    <div class="ps-panel ps-cust">
+      <div class="pc-list" id="psList"></div>
+      <div class="card white pc-card" id="psCard"></div>
+    </div>
+  </div>
+  <div class="footer"><span>Fictional roles and customers for this proof of concept. Share of visits is illustrative.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">Stakeholders first, then the customers who actually talk to the agent.</p><ul class="n-pts"><li>The VP Consumer Care is the executive sponsor and approves go live.</li><li>On Customers, click each persona. Each one maps to a path through the agent.</li></ul></aside>
+</section>
+<script>
+(function(){
+  var s=document.querySelector('section.slide[data-sid="personas"]');
+  var P=[
+    {i:'PS',n:'Priya',a:'The Everyday Launderer',who:'41, buys pods every month, two kids, sensitive skin in the family',share:38,
+     q:'I just want to know which one to buy.',
+     why:'Which product suits sensitive skin, how it does in cold water, and where to buy it nearby.',
+     want:'The right product in one answer, without reading every label.',
+     block:'Too many product lines across three brands that look alike.',
+     path:['Router','Product Support','FAQ & Policies']},
+    {i:'JR',n:'Jamie Rivera',a:'The Stain Emergency',who:'34, works late, spilled red wine on a silk blouse',share:27,
+     q:'I need to know before it sets.',
+     why:'A fresh stain on a delicate fabric and a care label too faded to read. Has a photo.',
+     want:'Clear steps tonight that will not ruin the blouse.',
+     block:'Email takes days and the photo never reaches the right person.',
+     path:['Router','Guides','Photo and label reading']},
+    {i:'MT',n:'Marcus',a:'The Care Label Decoder',who:'27, just bought a wool sweater, first time washing it',share:15,
+     q:'What does a triangle with lines even mean?',
+     why:'Does not understand the care symbols and does not want to shrink a new sweater.',
+     want:'A plain answer: what wash, what temperature, which product.',
+     block:'Symbol charts online are confusing and generic.',
+     path:['Router','Guides','Product Support']},
+    {i:'DK',n:'Dana',a:'The Complainant',who:'52, loyal customer, a pod leaked inside the box',share:14,
+     q:'I already explained this to the store.',
+     why:'Wants a refund or replacement for a damaged product.',
+     want:'To be recognized, verified quickly, and given a case number.',
+     block:'Repeating her story and her order details to every brand.',
+     path:['Router','Customer Verification','Case Management']},
+    {i:'AL',n:'Alex',a:'The Safety Concerned Parent',who:'30, toddler got detergent on his hands and mouth',share:6,
+     q:'Is my son okay? What do I do right now?',
+     why:'A possible exposure involving a child.',
+     want:'Immediate, correct guidance and a real person.',
+     block:'Any delay, or an answer that sounds like marketing.',
+     path:['Router','Safety','Human handoff and Poison Control referral']}
+  ];
+  var list=s.querySelector('#psList'),card=s.querySelector('#psCard');
+  P.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.setAttribute('data-i',i);
+    b.innerHTML='<span class="av">'+p.i+'</span><span class="tx"><b>'+p.a+'</b><small>'+p.n+'</small></span><span class="sh"><i style="width:'+(p.share/38*100)+'%"></i><em>'+p.share+'%</em></span>';list.appendChild(b);});
+  function show(i){
+    var p=P[i];
+    [].forEach.call(list.children,function(b,k){b.classList.toggle('on',k===i);});
+    card.innerHTML='<div class="pc-top"><span class="av big">'+p.i+'</span><div><p class="pc-arch">'+p.a+'</p><h3 class="card-title">'+p.n+'</h3><p class="pc-who">'+p.who+'</p></div><p class="pc-q">&ldquo;'+p.q+'&rdquo;</p></div>'+
+      '<div class="pc-grid"><div><h4>Why they visit</h4><p>'+p.why+'</p></div><div><h4>What they want</h4><p>'+p.want+'</p></div><div><h4>What gets in the way</h4><p>'+p.block+'</p></div>'+
+      '<div><h4>Path through the agent</h4><div class="pc-path">'+p.path.map(function(x,k){return (k?'<i>&rsaquo;</i>':'')+'<span>'+x+'</span>';}).join('')+'</div></div></div>';
+  }
+  list.addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(+b.getAttribute('data-i'));});
+  s.addEventListener('click',function(e){var b=e.target.closest('.ps-tabs .tbtn');if(!b)return;
+    s.setAttribute('data-ptab',b.getAttribute('data-ptab'));
+    [].forEach.call(s.querySelectorAll('.ps-tabs .tbtn'),function(x){x.classList.toggle('on',x===b);});});
+  show(1);
+})();
+</script>
+
 <section class="slide" data-theme="dark" data-world="finale" data-title="Provocation and vision" data-sid="vision" data-chapter="challenge">
   <div class="content spread">
     <div>
