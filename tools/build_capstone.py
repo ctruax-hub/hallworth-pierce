@@ -17,8 +17,10 @@ pre = rest[:first]
 # the three knowledge slides
 slides_k = re.findall(r'<section class="slide".*?</section>', rest, re.S)
 assert len(slides_k) == 3, len(slides_k)
-slides_k = [s.replace('<section class="slide" ', '<section class="slide" data-chapter="demo1" ', 1) for s in slides_k]
-body_slides = src.replace('<!--KNOWLEDGE-->', '\n'.join(slides_k))
+# chapters: hybrid + solution architecture -> Data Architecture; brand-aware -> Agent Architecture
+chap = ['data-arch', 'data-arch', 'agent-arch']
+slides_k = [s.replace('<section class="slide" ', '<section class="slide" data-chapter="%s" ' % c, 1) for s, c in zip(slides_k, chap)]
+body_slides = src.replace('<!--KNOWLEDGE_A-->', '\n'.join(slides_k[:2])).replace('<!--KNOWLEDGE_B-->', slides_k[2])
 
 # tail: closing stage div + engine + deck-specific scripts
 after = rest[rest.rindex('</section>') + len('</section>'):]
@@ -31,7 +33,7 @@ bridge = """<script>
     parent.postMessage({sfds:'slide',n:i+1,total:slides.length,chapter:s.getAttribute('data-chapter'),title:s.getAttribute('data-title')},'*');}
   new MutationObserver(report).observe(document.getElementById('sfds-stage'),{subtree:true,attributes:true,attributeFilter:['class']});
   setTimeout(report,60);
-  function goChapter(id){for(var i=0;i<slides.length;i++)if(slides[i].getAttribute('data-chapter')===id){location.hash='#'+(i+1);return;}}
+  function goChapter(id){var i;for(i=0;i<slides.length;i++)if(slides[i].getAttribute('data-chapter')===id){location.hash='#'+(i+1);return;}for(i=0;i<slides.length;i++)if(slides[i].getAttribute('data-sid')===id){location.hash='#'+(i+1);return;}}
   window.addEventListener('message',function(e){var d=e.data;if(!d||d.sfds!=='go')return;
     if(d.chapter)goChapter(d.chapter);else if(d.n)location.hash='#'+d.n;});
   document.addEventListener('click',function(e){

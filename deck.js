@@ -4,7 +4,7 @@
 (function(){
   var SRC='decks/capstone.html';
   // [label, chapter id in the deck, is a demo step]
-  var NAV=[['Introductions','intro'],['Challenge Statement','challenge'],['DEMO','demo1',1],['Roadmap','roadmap'],['Test Plan','test'],['Observability','observability'],['DEMO','demo2',1],['Business Value','value']];
+  var NAV=[['Introductions','intro'],['Challenge Statement','challenge'],['DEMO','demo1',1],['Data Architecture','data-arch'],['Agent Architecture','agent-arch'],['Roadmap','roadmap'],['Test Plan','test'],['Observability','observability'],['DEMO','demo2',1],['Business Value','value']];
   var frame=null,openNow=false,pending=null;
 
   var bar=document.querySelector('.topbar');
