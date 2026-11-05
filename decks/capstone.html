@@ -1100,6 +1100,54 @@ body:hover .sfds-count{opacity:1;}
 .ur{grid-template-columns:590px 176px 1fr 214px}
 .ur-ph span{white-space:nowrap;font-size:17px}
 .ur-later b{white-space:nowrap;font-size:27px}
+
+/* ===== test, deploy and monitor ===== */
+.rs-tabs{display:grid;grid-template-columns:1fr 1fr auto 1fr 1fr;gap:16px;align-items:stretch;margin-top:28px}
+.rs{display:flex;align-items:center;gap:18px;padding:18px 22px;border-radius:22px;border:2px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;text-align:left;font-family:var(--font-body);transition:all .3s}
+.rs b{flex:0 0 50px;height:50px;border-radius:50%;display:grid;place-items:center;background:rgba(144,208,254,.2);font:normal 26px/1 var(--font-display);color:var(--cb80)}
+.rs.done b{background:var(--teal60);color:var(--white);font:700 24px/1 var(--font-body)}
+.rs span{display:flex;flex-direction:column;font:normal 36px/1.05 var(--font-display)}
+.rs small{font:600 18px/1.25 var(--font-body);color:var(--cb80);margin-top:6px}
+.rs:hover{border-color:var(--cb80)}
+.rs.on{background:var(--eb50);border-color:var(--eb50);box-shadow:0 14px 40px rgba(6,106,254,.4)}
+.rs.on small{color:var(--cb90)}
+.rs-now{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:0 6px;font-size:17px;font-weight:700;color:#fcc003;text-align:center;width:120px;line-height:1.2}
+.rs-now i{width:22px;height:22px;background:var(--yel80);transform:rotate(45deg);border-radius:3px;box-shadow:0 0 0 7px rgba(252,192,3,.22)}
+.rs-cols{display:grid;grid-template-columns:repeat(3,1fr) 1.1fr;gap:20px;margin-top:22px}
+.rs-cols.swap .rs-col{animation:pcfade .4s ease}
+.rs-col{padding:24px 26px;border-radius:24px}
+.rs-h{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.rs-h .ic{width:46px;height:46px;flex:0 0 46px;border-radius:12px;display:grid;place-items:center;background:rgba(144,208,254,.16);color:var(--cb68)}
+.rs-h .ic svg{width:28px;height:28px}
+.rs-col .card-title{font-size:34px;margin:0}
+.rs-col.safe .rs-h .ic{background:rgba(4,225,203,.16);color:var(--teal80)}
+.rs-col.safe{border-color:rgba(4,225,203,.45)}
+.rs-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.rs-col li{position:relative;padding-left:24px;font-size:22px;line-height:1.35;color:var(--white)}
+.rs-col li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--cb68)}
+.rs-col.safe li::before{background:var(--teal80)}
+.rs-col.gate{background:#fff6dc;border:3px solid var(--yel70)}
+.rs-col.gate .rs-h .ic{background:var(--yel80);color:var(--yel20)}
+.rs-col.gate .card-title{color:var(--yel20)}
+.slide .rs-col .ex{font-size:23px;line-height:1.35;color:var(--eb15);font-weight:600}
+.slide .rs-col .who{margin-top:16px;padding-top:14px;border-top:2px solid rgba(228,162,1,.35);font-size:21px;line-height:1.3;color:var(--eb15)}
+.rs-col .who span{display:block;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--yel20);font-weight:700;margin-bottom:4px}
+.rs-strip{display:grid;grid-template-columns:1.3fr .8fr 1fr;gap:20px;margin-top:22px}
+.rs-s{border:2px solid var(--line);background:var(--surface);border-radius:20px;padding:16px 22px}
+.rs-s .lbl{display:block;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--cb80);font-weight:700;margin-bottom:10px}
+.chips2{display:flex;flex-wrap:wrap;gap:8px}
+.chips2 i{font-style:normal;font-size:18px;font-weight:600;padding:6px 12px;border-radius:20px;background:rgba(144,208,254,.16);color:var(--white)}
+.rs-s.roll{border-color:rgba(255,83,138,.5);background:rgba(255,83,138,.1)}
+.rs-s.roll .lbl{color:var(--pink60)}
+.slide .rs-s.roll p{font-size:20px;line-height:1.35;color:var(--white)}
+.rs-col{padding:28px 28px;min-height:330px}
+.rs-col li{font-size:24px}
+.slide .rs-col .ex{font-size:25px}
+.slide .rs-col .who{font-size:23px}
+.rs-cols{margin-top:26px}
+.rs-strip{margin-top:26px}
+.chips2 i{font-size:19px}
+.slide .rs-s.roll p{font-size:21px}
 </style>
 </head>
 <body>
@@ -1175,15 +1223,13 @@ body:hover .sfds-count{opacity:1;}
     <h2 data-anim="rise" style="--d:100ms">What we'll cover today</h2>
     <div class="agenda" data-stagger="rise" data-base="250" data-step="80">
       <div class="item" data-no-advance data-goto="team"><span class="num">01</span><div class="txt"><b>Introductions</b><span>Who we are and what we built</span></div></div>
-      <div class="item" data-no-advance data-goto="test"><span class="num">06</span><div class="txt"><b>Test plan</b><span>How we prove it works</span></div></div>
-      <div class="item" data-no-advance data-goto="challenge"><span class="num">02</span><div class="txt"><b>Challenge statement</b><span>What we heard</span></div></div>
-      <div class="item" data-no-advance data-goto="deploy"><span class="num">07</span><div class="txt"><b>Deployment plan</b><span>How we roll it out safely</span></div></div>
-      <div class="item" data-no-advance data-goto="demo1"><span class="num">03</span><div class="txt"><b>Demo</b></div></div>
-      <div class="item" data-no-advance data-goto="observability"><span class="num">08</span><div class="txt"><b>Observability</b><span>How we measure and improve</span></div></div>
-      <div class="item" data-no-advance data-goto="data-arch"><span class="num">04</span><div class="txt"><b>Architecture</b><span>What we built</span></div></div>
-      <div class="item" data-no-advance data-goto="demo2"><span class="num">09</span><div class="txt"><b>Demo</b></div></div>
       <div class="item" data-no-advance data-goto="roadmap"><span class="num">05</span><div class="txt"><b>Roadmap</b><span>Where we are and the decision today</span></div></div>
-      <div class="item" data-no-advance data-goto="value"><span class="num">10</span><div class="txt"><b>Business value</b><span>What it is worth</span></div></div>
+      <div class="item" data-no-advance data-goto="challenge"><span class="num">02</span><div class="txt"><b>Challenge statement</b><span>What we heard</span></div></div>
+      <div class="item" data-no-advance data-goto="release"><span class="num">06</span><div class="txt"><b>Test, deploy and monitor</b><span>How we keep it accurate and safe</span></div></div>
+      <div class="item" data-no-advance data-goto="demo1"><span class="num">03</span><div class="txt"><b>Demo</b></div></div>
+      <div class="item" data-no-advance data-goto="demo2"><span class="num">07</span><div class="txt"><b>Demo</b></div></div>
+      <div class="item" data-no-advance data-goto="data-arch"><span class="num">04</span><div class="txt"><b>Architecture</b><span>What we built</span></div></div>
+      <div class="item" data-no-advance data-goto="value"><span class="num">08</span><div class="txt"><b>Business value</b><span>What it is worth</span></div></div>
     </div>
   </div>
   <div class="footer"><span>Click any item to jump to it.</span><span>Brightcurrent Agentforce capstone</span></div>
@@ -1622,91 +1668,67 @@ body:hover .sfds-count{opacity:1;}
   <aside class="notes"><p class="n-key">We are at the go or no go. Ask for the decision.</p><ul class="n-pts"><li>Discovery, Build and UAT are done.</li><li>Two things go live in the 90 day window: the web agent and the email backlog agent.</li><li>The 90 day review measures the customer's stated goal.</li></ul></aside>
 </section>
 
-<!-- ============ TEST PLAN ============ -->
-<section class="slide" data-theme="light" data-world="quiet" data-title="Test plan" data-sid="test" data-chapter="test">
+<!-- ============ TEST, DEPLOY AND MONITOR ============ -->
+<section class="slide" data-theme="dark" data-world="drift" data-title="Test, deploy and monitor" data-sid="release" data-chapter="release" data-rstage="validate" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
-    <p class="eyebrow" data-anim="rise">Test plan</p>
-    <h2 data-anim="rise" style="--d:100ms">Five ways we test the agent</h2>
-    <div class="grid cols-5 mt-56" data-stagger="rise" data-base="300">
-      <div class="card white"><div class="badge">1</div><h3 class="card-title">Functional</h3><p>Expected prompts get the correct answers.</p></div>
-      <div class="card white"><div class="badge">2</div><h3 class="card-title">Guardrail</h3><p>Fires when expected and stays in scope.</p></div>
-      <div class="card white"><div class="badge">3</div><h3 class="card-title">Multi-turn</h3><p>Keeps state across a whole conversation.</p></div>
-      <div class="card white"><div class="badge">4</div><h3 class="card-title">Trust &amp; safety</h3><p>Perturbation, bias and guardrail regression.</p></div>
-      <div class="card white"><div class="badge">5</div><h3 class="card-title">Edge cases</h3><p>Odd inputs, blurry photos and regressions.</p></div>
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Test, deploy and monitor</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:60px">Four stages. Every one tested, safe and watched.</h2>
+    <div class="rs-tabs" data-anim="rise" style="--d:200ms" data-no-advance>
+      <button class="rs done" type="button" data-rstage="build"><b>&#10003;</b><span>Build<small>Developer sandbox</small></span></button>
+      <button class="rs done on" type="button" data-rstage="validate"><b>&#10003;</b><span>Validate<small>Full sandbox UAT</small></span></button>
+      <span class="rs-now"><i></i>Today: go or no go</span>
+      <button class="rs" type="button" data-rstage="pilot"><b>3</b><span>Pilot<small>Production, 10%</small></span></button>
+      <button class="rs" type="button" data-rstage="scale"><b>4</b><span>Scale<small>Production, 100%</small></span></button>
     </div>
-    <div class="card white compact mt-40" data-anim="rise" style="--d:900ms"><p style="font-size:30px"><b>Findings and AI-assisted code review:</b> add real test examples here, such as a prompt that revealed a gap and how it was fixed.</p></div>
-  </div>
-  <div class="footer"><span>Draft content. Update with the final test plan.</span><span>Brightcurrent Agentforce capstone</span></div>
-</section>
-
-<!-- ============ DEPLOYMENT PLAN ============ -->
-<section class="slide" data-theme="dark" data-world="drift" data-title="Deployment plan" data-sid="deploy" data-chapter="deploy" data-stage="build">
-  <div class="content">
-    <p class="eyebrow" data-anim="rise">Deployment plan</p>
-    <h2 data-anim="rise" style="--d:100ms">From sandbox to every customer, one gate at a time</h2>
-    <div class="stages dp-stages mt-40" data-anim="rise" style="--d:250ms" data-no-advance>
-      <button class="stg on" type="button" data-stage="build"><b>1</b><span>Build<small>Developer sandbox</small></span></button>
-      <button class="stg" type="button" data-stage="validate"><b>2</b><span>Validate<small>Full sandbox UAT</small></span></button>
-      <button class="stg" type="button" data-stage="pilot"><b>3</b><span>Pilot<small>Production, 10%</small></span></button>
-      <button class="stg" type="button" data-stage="scale"><b>4</b><span>Scale<small>Production, 100%</small></span></button>
-    </div>
-    <div class="stage-panels mt-32" data-anim="rise" style="--d:400ms">
-      <div class="sp" data-s="build"><div class="card glass"><h3 class="card-title">What moves</h3><p>The agent, its subagents, actions, prompt templates and flows. Data 360 streams, DLO to DMO mappings and the search index.</p></div><div class="card glass"><h3 class="card-title">Exit criteria</h3><p>Unit tests pass in Testing Center. Every change is peer reviewed and in version control.</p></div><div class="card glass"><h3 class="card-title">Sign off</h3><p>Lead Forward Deployed Engineer.</p></div></div>
-      <div class="sp" data-s="validate"><div class="card glass"><h3 class="card-title">What moves</h3><p>The same release through the DevOps Center pipeline, plus the messaging channel and the embedded chat on a staging site.</p></div><div class="card glass"><h3 class="card-title">Exit criteria</h3><p>The full test plan passes at 95% or better, with zero safety failures. Security review is complete.</p></div><div class="card glass"><h3 class="card-title">Sign off</h3><p>Customer care leadership and IT security.</p></div></div>
-      <div class="sp" data-s="pilot"><div class="card glass"><h3 class="card-title">What moves</h3><p>Live on Brightcurrent for 10% of web visitors, with handoff to a person always on.</p></div><div class="card glass"><h3 class="card-title">Exit criteria</h3><p>Two weeks with 25% or more of cases resolved, satisfaction at or above today, and no safety incidents.</p></div><div class="card glass"><h3 class="card-title">Sign off</h3><p>Executive sponsor, at the go or no go meeting.</p></div></div>
-      <div class="sp" data-s="scale"><div class="card glass"><h3 class="card-title">What moves</h3><p>All Brightcurrent visitors, around the clock. Softly and Fresh Spin follow using the same release path.</p></div><div class="card glass"><h3 class="card-title">Exit criteria</h3><p>Targets held for 30 days, then hypercare closes and the agent moves to business as usual support.</p></div><div class="card glass"><h3 class="card-title">Sign off</h3><p>Project steering committee.</p></div></div>
-    </div>
-    <div class="callout glass dp-roll mt-32" data-anim="rise" style="--d:600ms">
-      <span class="tag">Rollback</span>
-      <p>Every release is versioned. If anything goes wrong, we deactivate the agent version and send chats to the care team in minutes.</p>
+    <div class="rs-cols" id="rsCols" data-anim="rise" style="--d:350ms"></div>
+    <div class="rs-strip" data-anim="rise" style="--d:500ms">
+      <div class="rs-s"><span class="lbl">Five test types</span><div class="chips2"><i>Functional</i><i>Guardrail</i><i>Multi turn</i><i>Trust and safety</i><i>Edge and regression</i></div></div>
+      <div class="rs-s"><span class="lbl">What we track</span><div class="chips2"><i>Adoption</i><i>Ability</i><i>Consumption</i></div></div>
+      <div class="rs-s roll"><span class="lbl">Rollback</span><p>Deactivate the agent version and every chat goes to the care team in minutes.</p></div>
     </div>
   </div>
-  <div class="footer"><span></span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">Four environments, four gates.</p><ul class="n-pts"><li>Click through each stage.</li><li>Draft plan. Confirm environments, percentages and approvers with the customer.</li></ul></aside>
+  <div class="footer"><span>Draft plan. Thresholds and approvers to confirm with the customer.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">One release path: test it, keep it safe, watch it, then pass the gate.</p><ul class="n-pts"><li>Build and Validate are done. We are at the go or no go before Pilot.</li><li>Click each stage. The four columns are the same every time.</li></ul></aside>
 </section>
 <script>
 (function(){
-  var s=document.querySelector('section.slide[data-sid="deploy"]');
-  [].forEach.call(s.querySelectorAll('.stg'),function(b){b.addEventListener('click',function(){
-    s.setAttribute('data-stage',b.getAttribute('data-stage'));
-    [].forEach.call(s.querySelectorAll('.stg'),function(x){x.classList.toggle('on',x===b);});
-  });});
-})();
-</script>
-
-<!-- ============ OBSERVABILITY ============ -->
-<section class="slide" data-theme="dark" data-world="horizon" data-title="Observability" data-sid="observability" data-chapter="observability" data-stage="build">
-  <div class="content">
-    <p class="eyebrow" data-anim="rise">Observability</p>
-    <h2 data-anim="rise" style="--d:100ms">If we can't see it, we can't improve it</h2>
-    <div class="stages mt-40" data-anim="rise" style="--d:250ms" data-no-advance>
-      <button class="stg on" type="button" data-stage="build"><b>1</b>Build</button>
-      <button class="stg" type="button" data-stage="test"><b>2</b>Test</button>
-      <button class="stg" type="button" data-stage="monitor"><b>3</b>Monitor</button>
-      <button class="stg" type="button" data-stage="optimize"><b>4</b>Optimize</button>
-    </div>
-    <div class="stage-panels mt-32" data-anim="rise" style="--d:400ms">
-      <div class="sp" data-s="build"><div class="card glass"><h3 class="card-title">What happens</h3><p>Topics, actions and prompts are configured and guardrails are set.</p></div><div class="card glass"><h3 class="card-title">Tools</h3><p>Agentforce Builder, Prompt Builder and Data 360.</p></div><div class="card glass"><h3 class="card-title">Output</h3><p>A versioned agent, ready for testing.</p></div></div>
-      <div class="sp" data-s="test"><div class="card glass"><h3 class="card-title">What happens</h3><p>Batch tests run before every release: functional, guardrail, multi turn, and trust and safety.</p></div><div class="card glass"><h3 class="card-title">Tools</h3><p>Agentforce Testing Center.</p></div><div class="card glass"><h3 class="card-title">Output</h3><p>A pass or fail gate. Nothing ships on a fail.</p></div></div>
-      <div class="sp" data-s="monitor"><div class="card glass"><h3 class="card-title">What happens</h3><p>Every conversation is traced and health is watched against targets.</p></div><div class="card glass"><h3 class="card-title">Tools</h3><p>Agent Analytics dashboards, Health Monitoring and Session Tracing.</p></div><div class="card glass"><h3 class="card-title">Output</h3><p>A live view of adoption, ability and consumption.</p></div></div>
-      <div class="sp" data-s="optimize"><div class="card glass"><h3 class="card-title">What happens</h3><p>A weekly review turns findings into fixes for topics, knowledge and prompts.</p></div><div class="card glass"><h3 class="card-title">Tools</h3><p>Review cadence, session traces and test results.</p></div><div class="card glass"><h3 class="card-title">Output</h3><p>Better answers each release, with results fed back into testing.</p></div></div>
-    </div>
-    <p class="track-lbl mt-32" data-anim="rise" style="--d:600ms">What we track</p>
-    <div class="track3" data-stagger="rise" data-base="700">
-      <div class="tk"><b>Adoption</b><span>Conversations, active customers and repeat use.</span></div>
-      <div class="tk"><b>Ability</b><span>Resolution, accuracy and escalations.</span></div>
-      <div class="tk"><b>Consumption</b><span>Credits per conversation and cost per resolution.</span></div>
-    </div>
-  </div>
-  <div class="footer"><span></span><span>Brightcurrent Agentforce capstone</span></div>
-</section>
-<script>
-(function(){
-  var s=document.querySelector('section.slide[data-sid="observability"]');
-  [].forEach.call(s.querySelectorAll('.stg'),function(b){b.addEventListener('click',function(){
-    s.setAttribute('data-stage',b.getAttribute('data-stage'));
-    [].forEach.call(s.querySelectorAll('.stg'),function(x){x.classList.toggle('on',x===b);});
-  });});
+  var s=document.querySelector('section.slide[data-sid="release"]');
+  var I={
+    test:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg>',
+    safe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>',
+    mon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>',
+    gate:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>'
+  };
+  var S={
+    build:{test:['Unit tests for every subagent in Testing Center.','A 300 utterance golden set is started.'],
+           safe:['Safety subagent and guardrails configured.','Trust Layer masks personal data.','Topics outside laundry care are blocked.'],
+           mon:['Session tracing on in the sandbox.','Every change reviewed and versioned.'],
+           gate:{exit:'Unit tests pass and every change is peer reviewed.',who:'Lead Forward Deployed Engineer'}},
+    validate:{test:['All five test types run on the golden set.','95% or better on accuracy.'],
+           safe:['Red team: 50 adversarial prompts, including child exposure and prompt injection.','100% of toxicity tests pass.','No answers leak across brands.'],
+           mon:['Dashboards built and baselined.','Security review complete.'],
+           gate:{exit:'Test plan at 95% or better, zero safety failures.',who:'Care leadership and IT security'}},
+    pilot:{test:['Regression suite runs on every release.','Real conversations added to the golden set.'],
+           safe:['Every safety conversation goes to a person.','Support Team Lead can switch the agent off.'],
+           mon:['Daily health check in Agent Analytics.','Every escalation traced and reviewed.'],
+           gate:{exit:'Two weeks at 25% or more resolved, satisfaction at or above today, no safety incidents.',who:'Executive sponsor, at the go or no go'}},
+    scale:{test:['Regression before every two week release.','Golden set grows every month.'],
+           safe:['Safety escalations tracked as a KPI.','Quarterly Responsible AI review.'],
+           mon:['Weekly agent review, monthly business review.','Adoption, ability and consumption against targets.'],
+           gate:{exit:'Targets held for 30 days, then hypercare closes.',who:'Project steering committee'}}
+  };
+  function col(k,t,items){return '<div class="card glass rs-col '+k+'"><div class="rs-h"><span class="ic">'+I[k]+'</span><h3 class="card-title">'+t+'</h3></div><ul>'+items.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>';}
+  function show(st){
+    var d=S[st];
+    s.setAttribute('data-rstage',st);
+    [].forEach.call(s.querySelectorAll('.rs'),function(b){b.classList.toggle('on',b.getAttribute('data-rstage')===st);});
+    var g='<div class="card rs-col gate"><div class="rs-h"><span class="ic">'+I.gate+'</span><h3 class="card-title">Gate</h3></div><p class="ex">'+d.gate.exit+'</p><p class="who"><span>Sign off</span>'+d.gate.who+'</p></div>';
+    var box=s.querySelector('#rsCols');
+    box.innerHTML=col('test','Test',d.test)+col('safe','Safety',d.safe)+col('mon','Monitor',d.mon)+g;
+    box.classList.remove('swap');void box.offsetWidth;box.classList.add('swap');
+  }
+  s.addEventListener('click',function(e){var b=e.target.closest('.rs');if(b)show(b.getAttribute('data-rstage'));});
+  show('validate');
 })();
 </script>
 
