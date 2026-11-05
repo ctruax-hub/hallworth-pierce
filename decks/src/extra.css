@@ -435,3 +435,61 @@
 .pc-top{grid-template-columns:120px minmax(0,1fr) 420px}
 .pc-card .card-title{white-space:nowrap}
 .slide .pc-q{font-size:34px}
+
+/* ===== combined view, executive layout ===== */
+.cv-top{display:grid;grid-template-columns:1.45fr 1fr 1fr 1fr;gap:18px}
+.cv-top .card{padding:22px 24px;border-radius:24px}
+.cv-top span{display:block;font-size:19px;font-weight:600;color:var(--eb30);line-height:1.2}
+.cv-top b{display:block;font-family:var(--font-display);font-weight:normal;font-size:44px;line-height:1.1;color:var(--eb15);margin:8px 0 4px;white-space:nowrap}
+.cv-top small{display:block;font-size:17px;line-height:1.3;color:#4a5b82}
+.cv-hero{background:var(--eb50);box-shadow:var(--shadow)}
+.cv-hero span,.cv-hero small{color:var(--cb90)!important}
+.cv-hero b{font-size:66px;color:var(--white)!important}
+.cv-hero small{font-size:21px!important}
+.cv-hero.neg{background:var(--pink40)}
+.cv-chart{margin-top:18px;padding:22px 30px 18px;border-radius:24px}
+.cv-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+.slide .cv-sum{font-size:21px;color:var(--eb15);line-height:1.2}
+.cv-sum b{color:var(--teal60);font-weight:700}
+.wf{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:10px}
+.wf-col{display:flex;flex-direction:column;align-items:center;min-width:0}
+.wf-area{position:relative;width:100%;height:270px}
+.wf-bar{position:absolute;left:50%;width:120px;margin-left:-60px;border-radius:10px;transition:bottom .5s var(--ease),height .5s var(--ease)}
+.wf-bar em{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);padding-bottom:8px;font-style:normal;font-family:var(--font-display);font-size:30px;white-space:nowrap;color:var(--eb15)}
+.wf-link{position:absolute;left:calc(50% + 60px);width:calc(100% - 120px + 24px);height:0;border-top:2px dashed #9fb4d6;transition:bottom .5s var(--ease)}
+.wf-col.base .wf-bar{background:#9fb4d6}
+.wf-col.save .wf-bar{background:repeating-linear-gradient(135deg,var(--teal60) 0 14px,#2bbfb3 14px 28px)}
+.wf-col.save .wf-bar em{bottom:auto;top:50%;transform:translate(-50%,-50%);padding:0;color:var(--white);font-size:32px;text-shadow:0 1px 6px rgba(2,52,52,.4)}
+.wf-col.af .wf-bar{background:var(--eb50)}
+.wf-col.dc .wf-bar{background:var(--cb68)}
+.wf-col.new .wf-bar{background:var(--eb15)}
+.wf-lab{margin-top:12px;text-align:center;font-size:17px;line-height:1.25;color:#4a5b82}
+.wf-lab b{display:block;font-size:20px;color:var(--eb15);margin-bottom:2px}
+.cv-goals{display:grid;grid-template-columns:230px 230px 1fr;gap:18px;margin-top:18px}
+.cv-goal{background:var(--white);border-radius:20px;box-shadow:var(--shadow);padding:14px 20px;display:flex;flex-direction:column;justify-content:center}
+.cv-goal b{font-family:var(--font-display);font-weight:normal;font-size:40px;line-height:1;color:var(--eb50)}
+.cv-goal span{font-size:16px;line-height:1.3;color:var(--eb15);margin-top:6px}
+.cv-lv{background:var(--cb95);border-radius:20px;padding:14px 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;align-content:center}
+.cv-lv .lbl{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--eb30);font-weight:700;margin-right:2px}
+.cv-lv .lbl:not(:first-child){margin-left:10px}
+.cv-lv i{font-style:normal;font-size:16px;font-weight:600;padding:5px 12px;border-radius:20px;background:var(--white);color:var(--eb15);border:1.5px solid #cfe0f7}
+.wf-area{height:200px}
+.cv-top .card{padding:18px 22px}
+.cv-hero b{font-size:58px}
+.cv-chart{padding:18px 28px 14px;margin-top:16px}
+.wf{margin-top:4px}
+.wf-lab{margin-top:8px}
+.cv-goals{margin-top:16px}
+.wf-bar{width:150px;margin-left:-75px}
+.wf-link{left:calc(50% + 75px);width:calc(100% - 150px + 24px);border-top-color:#7f9ac6}
+.wf-col.save .wf-bar em{top:auto;bottom:100%;transform:translateX(-50%);padding-bottom:8px;color:var(--teal60);text-shadow:none;font-size:30px}
+.wf-col.af .wf-bar em{color:var(--eb50)}
+.wf-col.dc .wf-bar em{color:#0a7bbf}
+.wf-col.new .wf-bar em{font-size:34px}
+.wf-col.base .wf-bar em{font-size:34px}
+.wf{margin-top:34px}
+.wf-area{height:172px}
+.cv-goal{padding:12px 18px}
+.cv-goal b{font-size:36px}
+.wf{margin-top:24px}
+.wf-area{height:180px}
