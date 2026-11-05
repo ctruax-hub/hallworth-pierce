@@ -1186,6 +1186,72 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
 .slide .sc-card p{font-size:22px}
 .sc-card .sf i{font-size:16px}
 .slide .sc-card p.out{font-size:20px}
+
+/* ===== KPIs: internal / external ===== */
+.slide[data-ktab="int"] .kp-ext,.slide[data-ktab="ext"] .kp-int{display:none}
+.slide[data-ktab] .kp{animation:pcfade .35s ease}
+.kp-tabs{top:-6px}
+.kp-tabs .tbtn{font-size:21px;padding:10px 22px}
+.slide .kp h2{margin-top:22px;margin-bottom:0}
+.slide .kp-sub{font-size:24px;color:var(--eb30);margin-top:10px}
+.kp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:26px}
+.kc{background:var(--white);border-radius:22px;box-shadow:var(--shadow);padding:24px 26px;display:flex;flex-direction:column;border-top:8px solid var(--eb50)}
+.kc.safe{border-top-color:var(--teal60)}
+.kc .cat{font-size:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--eb50)}
+.kc.safe .cat{color:var(--teal60)}
+.kc .hero{display:flex;align-items:center;gap:16px;margin:12px 0 14px;padding-bottom:16px;border-bottom:2px solid #e6eef9}
+.kc .hero b{font:normal 60px/1 var(--font-display);color:var(--eb15)}
+.kc .hero span{font-size:18px;line-height:1.3;color:#3a4a6b}
+.kc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.kc li{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:baseline}
+.kc li span{font-size:19px;color:var(--eb15);line-height:1.25}
+.kc li em{font-style:normal;font:normal 26px/1 var(--font-display);color:var(--eb50)}
+.kc.safe li em{color:var(--teal60)}
+.kc li small{font-size:15px;color:#6b7a99;min-width:62px;text-align:right}
+.slide .kc .uc{margin-top:auto;padding-top:16px;font-size:18px;line-height:1.35;color:#3a4a6b;font-style:italic}
+.kp-foot{display:flex;align-items:center;gap:20px;margin-top:22px;padding:18px 26px;border-radius:20px;background:var(--teal95);border:2px solid var(--teal60)}
+.kp-foot .ok{width:44px;height:44px;flex:0 0 44px;border-radius:50%;display:grid;place-items:center;background:var(--teal60);color:var(--white);font-size:24px;font-weight:700}
+.slide .kp-foot p{font-size:23px;line-height:1.35;color:var(--teal20)}
+/* external table */
+.kx{margin-top:22px;background:var(--white);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.kx-h,.kx-r{display:grid;grid-template-columns:1fr 300px 190px 190px 200px;align-items:center;gap:16px;padding:0 28px}
+.kx-h{background:var(--eb15);color:var(--white);font:normal 24px/1 var(--font-display);height:56px}
+.kx .r{text-align:right}
+.kx-g{padding:10px 28px 6px;font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--eb50);background:var(--cb95)}
+.kx-r{height:52px;border-top:2px solid #eef3fb}
+.kx-r b{font-size:21px;color:var(--eb15);font-weight:600}
+.kx-r .kpc{justify-self:start;font-size:15px;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--cb90);color:var(--eb30);white-space:nowrap}
+.kx-r .t{font-size:20px;color:#6b7a99}
+.kx-r .n{font:normal 26px/1 var(--font-display);color:var(--eb50)}
+.kx-r .y{font:normal 26px/1 var(--font-display);color:var(--eb15)}
+.kx-r.goal{background:#fff6dc}
+.kx-r.goal b::before{content:"";display:inline-block;width:12px;height:12px;background:var(--yel80);transform:rotate(45deg);border-radius:2px;margin-right:12px;vertical-align:2px}
+.slide .kx-note{margin-top:14px;font-size:19px;color:var(--eb30);display:flex;align-items:center;gap:10px}
+.kx-note .gk{width:12px;height:12px;background:var(--yel80);transform:rotate(45deg);border-radius:2px;flex:0 0 12px}
+.kx-r{height:64px}
+.kx-r b{font-size:23px}
+.kx-r .t{font-size:21px}
+.kx-r .n,.kx-r .y{font-size:30px}
+.kx-r .kpc{font-size:16px;padding:5px 12px}
+.kx-h{height:60px;font-size:26px}
+.kx-g{padding:12px 28px 8px;font-size:16px}
+/* internal KPIs: fill the slide */
+.kp-grid{margin-top:32px;gap:22px}
+.kc{padding:30px 30px 26px;min-height:470px}
+.kc .cat{font-size:18px}
+.kc .hero{flex-direction:column;align-items:flex-start;gap:8px;margin:16px 0 18px;padding-bottom:20px}
+.kc .hero b{font-size:84px}
+.kc .hero span{font-size:21px}
+.kc ul{gap:16px}
+.kc li span{font-size:21px}
+.kc li em{font-size:32px}
+.kc li small{font-size:16px}
+.slide .kc .uc{font-size:20px}
+.kp-foot{margin-top:26px;padding:20px 28px}
+.slide .kp-foot p{font-size:25px}
+.kc .hero span br{display:none}
+.kc .hero .tg{font-size:16px;font-weight:700;padding:4px 12px;border-radius:20px;background:var(--cb95);color:var(--eb30)}
+.kc.safe .hero .tg{background:var(--teal95);color:var(--teal20)}
 </style>
 </head>
 <body>
@@ -2032,6 +2098,67 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
     if(b.hasAttribute('data-dm')){st.dm=b.getAttribute('data-dm');pick('data-dm',b);s.setAttribute('data-dm',st.dm);calc();}
   });
   calc();
+})();
+</script>
+
+<section class="slide" data-theme="light" data-world="quiet" data-title="KPIs" data-sid="kpis" data-chapter="value" data-ktab="int" style="padding-top:72px;padding-bottom:64px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">KPIs</p>
+    <div class="ps-tabs kp-tabs" data-anim="rise" style="--d:150ms" data-no-advance>
+      <button class="tbtn on" type="button" data-ktab="int">Internal</button>
+      <button class="tbtn" type="button" data-ktab="ext">External</button>
+    </div>
+
+    <!-- INTERNAL -->
+    <div class="kp kp-int">
+      <h2 style="font-size:58px">Is the agent ready? UAT says yes.</h2>
+      <p class="kp-sub">How H&amp;P measures the agent itself. Every target was met in UAT, which is why we are asking for go.</p>
+      <div class="kp-grid">
+        <div class="kc"><span class="cat">Task success</span><div class="hero"><b>96%</b><span>tasks completed</span><small class="tg">Target over 95%</small></div>
+          <ul><li><span>First attempt success</span><em>84%</em><small>&gt;80%</small></li><li><span>Error recovery</span><em>92%</em><small>&gt;90%</small></li></ul>
+          <p class="uc">Seen in: a verified customer opening a case in one conversation</p></div>
+        <div class="kc"><span class="cat">Quality</span><div class="hero"><b>96.4%</b><span>accurate answers</span><small class="tg">Target over 95%</small></div>
+          <ul><li><span>Response relevance</span><em>0.93</em><small>&gt;0.9</small></li><li><span>Format compliance</span><em>99%</em><small>&gt;98%</small></li></ul>
+          <p class="uc">Seen in: the right care steps for silk with red wine, cited from Knowledge</p></div>
+        <div class="kc"><span class="cat">Performance</span><div class="hero"><b>1.6s</b><span>average response</span><small class="tg">Target under 2s</small></div>
+          <ul><li><span>95th percentile latency</span><em>3.8s</em><small>&lt;5s</small></li><li><span>Cost per conversation</span><em>$0.54</em><small>Flex Credits</small></li></ul>
+          <p class="uc">Seen in: a stain answer before the stain sets</p></div>
+        <div class="kc safe"><span class="cat">Safety</span><div class="hero"><b>100%</b><span>toxicity tests passed</span><small class="tg">Target 100%</small></div>
+          <ul><li><span>Guardrail adherence</span><em>98%</em><small>&ge;95%</small></li><li><span>Security violations</span><em>0</em><small>&lt;0.1%</small></li></ul>
+          <p class="uc">Seen in: a child exposure handed to a person, every time</p></div>
+      </div>
+      <div class="kp-foot"><span class="ok">&#10003;</span><p><b>All 12 internal targets met in UAT</b> on the 300 utterance golden set, including 50 red team prompts.</p></div>
+    </div>
+
+    <!-- EXTERNAL -->
+    <div class="kp kp-ext">
+      <h2 style="font-size:58px">Are customers better off? Here is how we will know.</h2>
+      <p class="kp-sub">What customers feel and what the business sees, from today to 90 days to a year.</p>
+      <div class="kx">
+        <div class="kx-h"><span>KPI</span><span>Use case</span><span class="r">Today</span><span class="r">90 days</span><span class="r">12 months</span></div>
+        <div class="kx-g">Customers feel it</div>
+        <div class="kx-r"><b>Time to first answer</b><span class="kpc">Stain Emergency</span><span class="r t">4.2 days</span><span class="r n">Seconds</span><span class="r y">Seconds</span></div>
+        <div class="kx-r"><b>Photos and care labels read right first time</b><span class="kpc">Care Label Decoder</span><span class="r t">Not possible</span><span class="r n">90%</span><span class="r y">95%</span></div>
+        <div class="kx-r"><b>Customer satisfaction</b><span class="kpc">Everyday Launderer</span><span class="r t">3.6 / 5</span><span class="r n">4.1 / 5</span><span class="r y">4.4 / 5</span></div>
+        <div class="kx-r"><b>Safety contacts reaching a person</b><span class="kpc">Safety Concerned Parent</span><span class="r t">100%</span><span class="r n">100%</span><span class="r y">100%</span></div>
+        <div class="kx-g">The business sees it</div>
+        <div class="kx-r goal"><b>Tier 1 inquiries resolved without escalation</b><span class="kpc">Every persona</span><span class="r t">0%</span><span class="r n">30%</span><span class="r y">40%</span></div>
+        <div class="kx-r goal"><b>Email backlog time</b><span class="kpc">The Complainant</span><span class="r t">4.2 days</span><span class="r n">2.1 days</span><span class="r y">Under 1 day</span></div>
+        <div class="kx-r"><b>Customers buying a second H&amp;P brand</b><span class="kpc">Multi-Brand Assistant</span><span class="r t">Baseline</span><span class="r n">+5%</span><span class="r y">+20%</span></div>
+        <div class="kx-r"><b>Customer churn</b><span class="kpc">Multi-Brand Assistant</span><span class="r t">Baseline</span><span class="r n">&minus;3%</span><span class="r y">&minus;10%</span></div>
+      </div>
+      <p class="kx-note"><span class="gk"></span>Customer&rsquo;s stated goal: 30% of tier 1 resolved without escalation and email backlog time halved within three months.</p>
+    </div>
+  </div>
+  <div class="footer"><span>UAT results and targets are illustrative for this proof of concept.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">Internal answers: is it ready? External answers: did it help?</p><ul class="n-pts"><li>Internal: every target met in UAT, so we can ask for go.</li><li>External: each KPI maps to a persona and a use case. The two highlighted rows are the customer's stated goal.</li></ul></aside>
+</section>
+<script>
+(function(){
+  var s=document.querySelector('section.slide[data-sid="kpis"]');
+  s.addEventListener('click',function(e){var b=e.target.closest('.kp-tabs .tbtn');if(!b)return;
+    var v=b.getAttribute('data-ktab');s.setAttribute('data-ktab',v);
+    [].forEach.call(s.querySelectorAll('.kp-tabs .tbtn'),function(x){x.classList.toggle('on',x===b);});});
 })();
 </script>
 

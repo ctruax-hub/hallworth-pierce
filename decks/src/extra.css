@@ -686,3 +686,69 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
 .slide .sc-card p{font-size:22px}
 .sc-card .sf i{font-size:16px}
 .slide .sc-card p.out{font-size:20px}
+
+/* ===== KPIs: internal / external ===== */
+.slide[data-ktab="int"] .kp-ext,.slide[data-ktab="ext"] .kp-int{display:none}
+.slide[data-ktab] .kp{animation:pcfade .35s ease}
+.kp-tabs{top:-6px}
+.kp-tabs .tbtn{font-size:21px;padding:10px 22px}
+.slide .kp h2{margin-top:22px;margin-bottom:0}
+.slide .kp-sub{font-size:24px;color:var(--eb30);margin-top:10px}
+.kp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:26px}
+.kc{background:var(--white);border-radius:22px;box-shadow:var(--shadow);padding:24px 26px;display:flex;flex-direction:column;border-top:8px solid var(--eb50)}
+.kc.safe{border-top-color:var(--teal60)}
+.kc .cat{font-size:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--eb50)}
+.kc.safe .cat{color:var(--teal60)}
+.kc .hero{display:flex;align-items:center;gap:16px;margin:12px 0 14px;padding-bottom:16px;border-bottom:2px solid #e6eef9}
+.kc .hero b{font:normal 60px/1 var(--font-display);color:var(--eb15)}
+.kc .hero span{font-size:18px;line-height:1.3;color:#3a4a6b}
+.kc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.kc li{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:baseline}
+.kc li span{font-size:19px;color:var(--eb15);line-height:1.25}
+.kc li em{font-style:normal;font:normal 26px/1 var(--font-display);color:var(--eb50)}
+.kc.safe li em{color:var(--teal60)}
+.kc li small{font-size:15px;color:#6b7a99;min-width:62px;text-align:right}
+.slide .kc .uc{margin-top:auto;padding-top:16px;font-size:18px;line-height:1.35;color:#3a4a6b;font-style:italic}
+.kp-foot{display:flex;align-items:center;gap:20px;margin-top:22px;padding:18px 26px;border-radius:20px;background:var(--teal95);border:2px solid var(--teal60)}
+.kp-foot .ok{width:44px;height:44px;flex:0 0 44px;border-radius:50%;display:grid;place-items:center;background:var(--teal60);color:var(--white);font-size:24px;font-weight:700}
+.slide .kp-foot p{font-size:23px;line-height:1.35;color:var(--teal20)}
+/* external table */
+.kx{margin-top:22px;background:var(--white);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.kx-h,.kx-r{display:grid;grid-template-columns:1fr 300px 190px 190px 200px;align-items:center;gap:16px;padding:0 28px}
+.kx-h{background:var(--eb15);color:var(--white);font:normal 24px/1 var(--font-display);height:56px}
+.kx .r{text-align:right}
+.kx-g{padding:10px 28px 6px;font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--eb50);background:var(--cb95)}
+.kx-r{height:52px;border-top:2px solid #eef3fb}
+.kx-r b{font-size:21px;color:var(--eb15);font-weight:600}
+.kx-r .kpc{justify-self:start;font-size:15px;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--cb90);color:var(--eb30);white-space:nowrap}
+.kx-r .t{font-size:20px;color:#6b7a99}
+.kx-r .n{font:normal 26px/1 var(--font-display);color:var(--eb50)}
+.kx-r .y{font:normal 26px/1 var(--font-display);color:var(--eb15)}
+.kx-r.goal{background:#fff6dc}
+.kx-r.goal b::before{content:"";display:inline-block;width:12px;height:12px;background:var(--yel80);transform:rotate(45deg);border-radius:2px;margin-right:12px;vertical-align:2px}
+.slide .kx-note{margin-top:14px;font-size:19px;color:var(--eb30);display:flex;align-items:center;gap:10px}
+.kx-note .gk{width:12px;height:12px;background:var(--yel80);transform:rotate(45deg);border-radius:2px;flex:0 0 12px}
+.kx-r{height:64px}
+.kx-r b{font-size:23px}
+.kx-r .t{font-size:21px}
+.kx-r .n,.kx-r .y{font-size:30px}
+.kx-r .kpc{font-size:16px;padding:5px 12px}
+.kx-h{height:60px;font-size:26px}
+.kx-g{padding:12px 28px 8px;font-size:16px}
+/* internal KPIs: fill the slide */
+.kp-grid{margin-top:32px;gap:22px}
+.kc{padding:30px 30px 26px;min-height:470px}
+.kc .cat{font-size:18px}
+.kc .hero{flex-direction:column;align-items:flex-start;gap:8px;margin:16px 0 18px;padding-bottom:20px}
+.kc .hero b{font-size:84px}
+.kc .hero span{font-size:21px}
+.kc ul{gap:16px}
+.kc li span{font-size:21px}
+.kc li em{font-size:32px}
+.kc li small{font-size:16px}
+.slide .kc .uc{font-size:20px}
+.kp-foot{margin-top:26px;padding:20px 28px}
+.slide .kp-foot p{font-size:25px}
+.kc .hero span br{display:none}
+.kc .hero .tg{font-size:16px;font-weight:700;padding:4px 12px;border-radius:20px;background:var(--cb95);color:var(--eb30)}
+.kc.safe .hero .tg{background:var(--teal95);color:var(--teal20)}

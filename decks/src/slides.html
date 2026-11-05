@@ -750,6 +750,67 @@
 })();
 </script>
 
+<section class="slide" data-theme="light" data-world="quiet" data-title="KPIs" data-sid="kpis" data-chapter="value" data-ktab="int" style="padding-top:72px;padding-bottom:64px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">KPIs</p>
+    <div class="ps-tabs kp-tabs" data-anim="rise" style="--d:150ms" data-no-advance>
+      <button class="tbtn on" type="button" data-ktab="int">Internal</button>
+      <button class="tbtn" type="button" data-ktab="ext">External</button>
+    </div>
+
+    <!-- INTERNAL -->
+    <div class="kp kp-int">
+      <h2 style="font-size:58px">Is the agent ready? UAT says yes.</h2>
+      <p class="kp-sub">How H&amp;P measures the agent itself. Every target was met in UAT, which is why we are asking for go.</p>
+      <div class="kp-grid">
+        <div class="kc"><span class="cat">Task success</span><div class="hero"><b>96%</b><span>tasks completed</span><small class="tg">Target over 95%</small></div>
+          <ul><li><span>First attempt success</span><em>84%</em><small>&gt;80%</small></li><li><span>Error recovery</span><em>92%</em><small>&gt;90%</small></li></ul>
+          <p class="uc">Seen in: a verified customer opening a case in one conversation</p></div>
+        <div class="kc"><span class="cat">Quality</span><div class="hero"><b>96.4%</b><span>accurate answers</span><small class="tg">Target over 95%</small></div>
+          <ul><li><span>Response relevance</span><em>0.93</em><small>&gt;0.9</small></li><li><span>Format compliance</span><em>99%</em><small>&gt;98%</small></li></ul>
+          <p class="uc">Seen in: the right care steps for silk with red wine, cited from Knowledge</p></div>
+        <div class="kc"><span class="cat">Performance</span><div class="hero"><b>1.6s</b><span>average response</span><small class="tg">Target under 2s</small></div>
+          <ul><li><span>95th percentile latency</span><em>3.8s</em><small>&lt;5s</small></li><li><span>Cost per conversation</span><em>$0.54</em><small>Flex Credits</small></li></ul>
+          <p class="uc">Seen in: a stain answer before the stain sets</p></div>
+        <div class="kc safe"><span class="cat">Safety</span><div class="hero"><b>100%</b><span>toxicity tests passed</span><small class="tg">Target 100%</small></div>
+          <ul><li><span>Guardrail adherence</span><em>98%</em><small>&ge;95%</small></li><li><span>Security violations</span><em>0</em><small>&lt;0.1%</small></li></ul>
+          <p class="uc">Seen in: a child exposure handed to a person, every time</p></div>
+      </div>
+      <div class="kp-foot"><span class="ok">&#10003;</span><p><b>All 12 internal targets met in UAT</b> on the 300 utterance golden set, including 50 red team prompts.</p></div>
+    </div>
+
+    <!-- EXTERNAL -->
+    <div class="kp kp-ext">
+      <h2 style="font-size:58px">Are customers better off? Here is how we will know.</h2>
+      <p class="kp-sub">What customers feel and what the business sees, from today to 90 days to a year.</p>
+      <div class="kx">
+        <div class="kx-h"><span>KPI</span><span>Use case</span><span class="r">Today</span><span class="r">90 days</span><span class="r">12 months</span></div>
+        <div class="kx-g">Customers feel it</div>
+        <div class="kx-r"><b>Time to first answer</b><span class="kpc">Stain Emergency</span><span class="r t">4.2 days</span><span class="r n">Seconds</span><span class="r y">Seconds</span></div>
+        <div class="kx-r"><b>Photos and care labels read right first time</b><span class="kpc">Care Label Decoder</span><span class="r t">Not possible</span><span class="r n">90%</span><span class="r y">95%</span></div>
+        <div class="kx-r"><b>Customer satisfaction</b><span class="kpc">Everyday Launderer</span><span class="r t">3.6 / 5</span><span class="r n">4.1 / 5</span><span class="r y">4.4 / 5</span></div>
+        <div class="kx-r"><b>Safety contacts reaching a person</b><span class="kpc">Safety Concerned Parent</span><span class="r t">100%</span><span class="r n">100%</span><span class="r y">100%</span></div>
+        <div class="kx-g">The business sees it</div>
+        <div class="kx-r goal"><b>Tier 1 inquiries resolved without escalation</b><span class="kpc">Every persona</span><span class="r t">0%</span><span class="r n">30%</span><span class="r y">40%</span></div>
+        <div class="kx-r goal"><b>Email backlog time</b><span class="kpc">The Complainant</span><span class="r t">4.2 days</span><span class="r n">2.1 days</span><span class="r y">Under 1 day</span></div>
+        <div class="kx-r"><b>Customers buying a second H&amp;P brand</b><span class="kpc">Multi-Brand Assistant</span><span class="r t">Baseline</span><span class="r n">+5%</span><span class="r y">+20%</span></div>
+        <div class="kx-r"><b>Customer churn</b><span class="kpc">Multi-Brand Assistant</span><span class="r t">Baseline</span><span class="r n">&minus;3%</span><span class="r y">&minus;10%</span></div>
+      </div>
+      <p class="kx-note"><span class="gk"></span>Customer&rsquo;s stated goal: 30% of tier 1 resolved without escalation and email backlog time halved within three months.</p>
+    </div>
+  </div>
+  <div class="footer"><span>UAT results and targets are illustrative for this proof of concept.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">Internal answers: is it ready? External answers: did it help?</p><ul class="n-pts"><li>Internal: every target met in UAT, so we can ask for go.</li><li>External: each KPI maps to a persona and a use case. The two highlighted rows are the customer's stated goal.</li></ul></aside>
+</section>
+<script>
+(function(){
+  var s=document.querySelector('section.slide[data-sid="kpis"]');
+  s.addEventListener('click',function(e){var b=e.target.closest('.kp-tabs .tbtn');if(!b)return;
+    var v=b.getAttribute('data-ktab');s.setAttribute('data-ktab',v);
+    [].forEach.call(s.querySelectorAll('.kp-tabs .tbtn'),function(x){x.classList.toggle('on',x===b);});});
+})();
+</script>
+
 <section class="slide no-world" data-theme="dark" data-title="Thank you" data-sid="thanks" data-chapter="thanks" style="padding:0">
   <div class="bg"><img src="../assets/thank-you.jpg" alt="Thank you"></div>
 </section>
