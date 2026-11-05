@@ -452,12 +452,21 @@
 
         <!-- DATA 360 -->
         <div class="pc-panel p-d360">
-          <div class="pc-sub"><label class="sl inline"><span>Grounding queries per conversation <b id="o_qpc"></b></span><input type="range" id="qpc" min="1" max="8" step="1" value="3"></label><span class="pc-note">Retriever and unified profile lookups</span></div>
+          <div class="dm-row">
+            <div class="tgroup"><span class="tg-l">Pricing model</span><button class="tbtn on" type="button" data-dm="flex">Flex Credits</button><button class="tbtn" type="button" data-dm="prof">Profiles</button><button class="tbtn" type="button" data-dm="ent">Enterprise Profiles</button></div>
+            <span class="dm-price" id="dm_price"></span>
+          </div>
+          <div class="dm-sl">
+            <label class="sl"><span>Unified profiles <b id="o_prof"></b></span><input type="range" id="prof" min="50000" max="3000000" step="50000" value="500000"></label>
+            <label class="sl"><span>Unification runs / mo <b id="o_runs"></b></span><input type="range" id="runs" min="1" max="30" step="1" value="4"></label>
+            <label class="sl"><span>Queries / conversation <b id="o_qpc"></b></span><input type="range" id="qpc" min="1" max="8" step="1" value="3"></label>
+            <label class="sl"><span>Rows scanned / query <b id="o_rpq"></b></span><input type="range" id="rpq" min="500" max="20000" step="500" value="2000"></label>
+          </div>
           <table class="pc-t">
             <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"></colgroup>
-            <thead><tr><th>Data 360 capability</th><th>Unit</th><th class="r">Qty / mo</th><th class="r">Credits / unit</th><th class="r">Credits / mo</th><th class="r">Cost / mo</th></tr></thead>
+            <thead><tr><th>Data 360 usage type</th><th>Unit</th><th class="r">Qty / mo</th><th class="r">Base rate</th><th class="r">Credits / mo</th><th class="r">Cost / mo</th></tr></thead>
             <tbody id="d360rows"></tbody>
-            <tfoot><tr><td colspan="4">Data 360 total</td><td class="r" id="d_cr_tot"></td><td class="r" id="d_usd_tot"></td></tr></tfoot>
+            <tfoot><tr><td colspan="4" id="d_foot_l">Data 360 total</td><td class="r" id="d_cr_tot"></td><td class="r" id="d_usd_tot"></td></tr></tfoot>
           </table>
         </div>
 
@@ -510,29 +519,35 @@
       </div>
     </div>
   </div>
-  <div class="footer"><span>Agentforce rates from the rate card effective June 17, 2026. Rows marked Assumed are placeholders to confirm with your Salesforce account team. Storage and licenses not included.</span><span></span></div>
+  <div class="footer"><span>Rates: Flex Credits Rate Card, updated Nov 3, 2026, and the Data 360 pricing page. Volumes are estimates. Data 360 volume tiers applied per usage type. Storage not included.</span><span></span></div>
   <aside class="notes"><p class="n-key">Move the sliders live. Start on Combined, then show the detail tabs.</p><ul class="n-pts"><li>Deflected cases are the savings. Agentforce and Data 360 credits are the cost.</li><li>Per resolution pricing charges only for conversations the agent resolves.</li></ul></aside>
 </section>
 <script>
 (function(){
   var s=document.querySelector('section.slide[data-sid="pricing"]');
-  var CR=0.005, st={model:'flex',env:'prod'};
-  // [key, capability, detail, unit, qty, credits/unit, source]  source: c = your rate card, a = assumed
+  var CR=0.005, st={model:'flex',env:'prod',dm:'flex'};
+  // Data 360 volume tiers (Flex Credits Rate Card, Nov 3 2026): credit bands per usage type per month
+  var BANDS=[300000,1500000,12500000,Infinity];
+  // key, usage type, detail, unit label, base..tier4 multipliers, sandbox, included in profile plans, qty mode
   var D360=[
-    ['ing','Batch data ingestion','Service Cloud, Commerce and loyalty records into DLOs','1M rows',3,2000,'a'],
-    ['xf','Data transforms and mapping','DLO to DMO mapping and batch transforms','1M rows',3,400,'a'],
-    ['web','Web content crawler','Sitemap crawl of 3 brand sites, chunked and indexed','MB processed',1500,60,'a'],
-    ['idr','Identity resolution','Unified profiles across Brightcurrent, Softly and Fresh Spin','1M rows',1,100000,'a'],
-    ['ci','Calculated insights','Customer value and contact history','1M rows',1,15,'a'],
-    ['q','Data 360 queries','Agent grounding and profile lookups','query',0,3,'c'],
-    ['seg','Segmentation','Brand and cross brand audiences','run',30,50,'c']
+    ['ing','Batch ingestion','Service Cloud, Commerce and loyalty into DLOs','1M rows',[0,0,0,0],'free','in',6],
+    ['prep','Data 360 Prep','DLO to DMO mapping, harmonization and transforms','1M rows',[40,32,16,8],'','in',6],
+    ['uni','Data 360 Unification','Identity resolution into unified profiles across 3 brands','1M rows',[75000,60000,30000,15000],'','in','calc'],
+    ['seg','Data 360 Segmentation','Brand and cross brand audiences','1M rows',[50,40,20,10],'','in',15],
+    ['str','Data 360 Streaming Pipeline','Live case and order updates for the agent','1M rows',[3500,2800,1400,700],'','meter',0.5],
+    ['uns','Data 360 Unstructured Processing','Web content crawler: chunk and index 3 brand sites','MB',[150,120,60,30],'','meter',1500],
+    ['q','Data 360 Queries','Agent grounding and unified profile lookups','1M rows',[3,2.4,1.2,0.6],'','meter','calc']
   ];
+  var PLAN={prof:{usd:240,inc:1,label:'Profiles: $240 per 1K profiles a year, 1 Flex Credit per profile included'},
+            ent:{usd:420,inc:2,label:'Enterprise Profiles: $420 per 1K profiles a year, 2 Flex Credits per profile included'},
+            flex:{label:'Flex Credits: $500 per 100K credits, pay for what you use'}};
   var tb=s.querySelector('#d360rows');
   D360.forEach(function(r){
-    var tr=document.createElement('tr');
-    tr.innerHTML='<td><b>'+r[1]+'</b><span class="src '+(r[6]==='c'?'c':'a')+'">'+(r[6]==='c'?'Rate card':'Assumed')+'</span><small>'+r[2]+'</small></td><td>'+r[3]+'</td>'+
-      '<td class="r"><input type="number" min="0" id="dq_'+r[0]+'" value="'+r[4]+'"'+(r[0]==='q'?' readonly tabindex="-1"':'')+'></td>'+
-      '<td class="r"><input type="number" min="0" id="dc_'+r[0]+'" value="'+r[5]+'"></td><td class="r" id="dcr_'+r[0]+'"></td><td class="r" id="dusd_'+r[0]+'"></td>';
+    var tr=document.createElement('tr');tr.id='row_'+r[0];
+    var calc=r[7]==='calc';
+    tr.innerHTML='<td><b>'+r[1]+'</b><small>'+r[2]+'</small></td><td>'+r[3]+'</td>'+
+      '<td class="r"><input type="number" min="0" step="any" id="dq_'+r[0]+'" value="'+(calc?0:r[7])+'"'+(calc?' readonly tabindex="-1"':'')+'></td>'+
+      '<td class="r">'+(r[5]==='free'?'Free':r[4][0].toLocaleString('en-US'))+'</td><td class="r" id="dcr_'+r[0]+'"></td><td class="r" id="dusd_'+r[0]+'"></td>';
     tb.appendChild(tr);
   });
   function g(id){return s.querySelector('#'+id);}
@@ -541,31 +556,48 @@
   function usd(x,dp){return (x<0?'-':'')+'$'+Math.abs(x).toLocaleString('en-US',{minimumFractionDigits:dp||0,maximumFractionDigits:dp||0});}
   function k(x){var a=Math.abs(x);return a>=1e6?usd(x/1e6,2)+'M':a>=1e5?usd(x/1e3)+'K':a>=1e4?usd(x/1e3,1)+'K':usd(x);}
   function t(id,txt){g(id).textContent=txt;}
+  function tiered(units,m){var left=units,cr=0,prev=0;for(var i=0;i<4&&left>0;i++){if(!m[i])return 0;var cap=(BANDS[i]-prev)/m[i],take=Math.min(left,cap);cr+=take*m[i];left-=take;prev=BANDS[i];}return cr;}
   function calc(){
     var contacts=v('contacts'),defl=v('defl')/100,human=v('human'),impl=v('impl');
     t('o_contacts',n(contacts));t('o_defl',Math.round(defl*100)+'%');t('o_human',usd(human,2));t('o_impl',k(impl));
     var conv=contacts,resolved=conv*defl;
-    // Data 360
-    var qpc=v('qpc');t('o_qpc',qpc);g('dq_q').value=Math.round(conv*qpc);
-    var dcr=0;D360.forEach(function(r){var c=v('dq_'+r[0])*v('dc_'+r[0]);dcr+=c;t('dcr_'+r[0],n(c));t('dusd_'+r[0],usd(c*CR));});
-    var dusd=dcr*CR;t('d_cr_tot',n(dcr));t('d_usd_tot',usd(dusd));
-    // Agentforce
+    // ---- Data 360 ----
+    var prof=v('prof'),runs=v('runs'),qpc=v('qpc'),rpq=v('rpq');
+    t('o_prof',prof>=1e6?(prof/1e6).toFixed(2).replace(/\.?0+$/,'')+'M':n(prof/1e3)+'K');t('o_runs',runs);t('o_qpc',qpc);t('o_rpq',n(rpq));
+    g('dq_uni').value=+(prof/1e6*runs).toFixed(2);
+    g('dq_q').value=+(conv*qpc*rpq/1e6).toFixed(1);
+    var plan=st.dm!=='flex', meterCr=0, allCr=0;
+    D360.forEach(function(r){
+      var q=v('dq_'+r[0]),cr=(st.env==='sbx'&&r[4][0])?q*r[4][1]:tiered(q,r[4]);
+      var incl=plan&&r[6]==='in';
+      if(r[5]==='free'){t('dcr_'+r[0],'0');t('dusd_'+r[0],'Free');}
+      else if(incl){t('dcr_'+r[0],'Included');t('dusd_'+r[0],'$0');}
+      else{t('dcr_'+r[0],n(cr));t('dusd_'+r[0],usd(cr*CR));meterCr+=cr;}
+      allCr+=cr;
+      g('row_'+r[0]).classList.toggle('incl',incl||r[5]==='free');
+    });
+    var dusd,lic=0,incCr=0;
+    if(!plan){dusd=meterCr*CR;t('d_foot_l','Data 360 total');t('d_cr_tot',n(meterCr));}
+    else{lic=prof/1000*PLAN[st.dm].usd/12;incCr=prof*PLAN[st.dm].inc/12;var billCr=Math.max(0,meterCr-incCr);dusd=lic+billCr*CR;
+      t('d_foot_l','License '+usd(lic)+' + metered '+n(meterCr)+' credits, less '+n(incCr)+' included');t('d_cr_tot',n(billCr));}
+    t('d_usd_tot',usd(dusd));t('dm_price',PLAN[st.dm].label);
+    // ---- Agentforce ----
     var sa=v('sa'),ca=v('ca'),sp=v('sp'),ap=v('ap');t('o_sa',sa);t('o_ca',ca);t('o_sp',sp);t('o_ap',ap);
-    var saR=st.env==='prod'?20:16, rows, per, afcr;
+    var act=st.env==='prod'?20:16, env=st.env==='prod'?'production':'sandbox', rows, per, afcr;
     if(st.model==='flex'){
-      rows=[['Standard action ('+(st.env==='prod'?'production':'sandbox')+')',saR,sa],['Custom action (production)',20,ca],['Standard prompt',6,sp],['Advanced prompt',16,ap]];
+      rows=[['Standard action ('+env+')',act,sa],['Custom action ('+env+')',act,ca],['Standard prompt',4,sp],['Advanced prompt',16,ap]];
       per=rows.reduce(function(a,r){return a+r[1]*r[2];},0);afcr=per*conv;
     }else{
-      rows=[['Help agent resolution, per resolved conversation',400,1]];
-      per=400;afcr=400*resolved;
+      var hr=st.env==='prod'?400:0;
+      rows=[['Help Agent Resolution ('+env+'), per resolved conversation',hr,1]];per=hr;afcr=hr*resolved;
     }
     g('afrows').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td class="r">'+r[1]+'</td><td class="r">'+r[2]+'</td><td class="r">'+n(r[1]*r[2])+'</td></tr>';}).join('');
     var afusd=afcr*CR;
     t('af_pc',n(per)+' credits');
-    t('af_cpc',st.model==='flex'?usd(per*CR,2):usd(2,2)+' / resolution');
+    t('af_cpc',st.model==='flex'?usd(per*CR,2):usd(per*CR,2)+' / resolution');
     t('af_conv',n(st.model==='flex'?conv:resolved)+(st.model==='flex'?'':' resolved'));
     t('af_cr',n(afcr));t('af_usd',usd(afusd));
-    // Combined
+    // ---- Combined ----
     var cost=afusd+dusd,sav=resolved*human,net=sav-cost,today=conv*human,withc=(conv-resolved)*human+cost;
     t('c_cost',usd(cost));t('c_cost_split','Agentforce '+k(afusd)+' + Data 360 '+k(dusd));
     t('c_sav',usd(sav));t('c_sav_n',n(resolved)+' cases resolved by the agent');
@@ -573,7 +605,7 @@
     t('c_pay',net>0?(impl/net<1?'< 1 month':(impl/net).toFixed(1)+' months'):'No payback');
     t('c_roi',net>0?'First year ROI '+Math.round((net*12-impl)/Math.max(impl+cost*12,1)*100)+'%':'Raise deflection or lower cost');
     s.querySelector('.solid-net').classList.toggle('neg',net<0);
-    var mx=Math.max(today,withc);
+    var mx=Math.max(today,withc,1);
     g('b_today').style.width=(today/mx*100)+'%';
     g('b_h').style.width=((conv-resolved)*human/mx*100)+'%';g('b_af').style.width=(afusd/mx*100)+'%';g('b_dc').style.width=(dusd/mx*100)+'%';
     t('b_today_v',usd(today));t('b_with_v',usd(withc));
@@ -582,11 +614,13 @@
   s.addEventListener('input',calc);
   // keep arrow, delete and letter keys inside the calculator from changing slides
   s.addEventListener('keydown',function(e){if(e.target.closest('input'))e.stopPropagation();});
+  function pick(attr,b){[].forEach.call(s.querySelectorAll('.tbtn['+attr+']'),function(x){x.classList.toggle('on',x===b);});}
   s.addEventListener('click',function(e){
     var b=e.target.closest('.tbtn');if(!b)return;
-    if(b.hasAttribute('data-tab')){s.setAttribute('data-tab',b.getAttribute('data-tab'));[].forEach.call(s.querySelectorAll('.tbtn[data-tab]'),function(x){x.classList.toggle('on',x===b);});}
-    if(b.hasAttribute('data-model')){st.model=b.getAttribute('data-model');[].forEach.call(s.querySelectorAll('.tbtn[data-model]'),function(x){x.classList.toggle('on',x===b);});s.classList.toggle('res',st.model==='res');calc();}
-    if(b.hasAttribute('data-env')){st.env=b.getAttribute('data-env');[].forEach.call(s.querySelectorAll('.tbtn[data-env]'),function(x){x.classList.toggle('on',x===b);});calc();}
+    if(b.hasAttribute('data-tab')){s.setAttribute('data-tab',b.getAttribute('data-tab'));pick('data-tab',b);}
+    if(b.hasAttribute('data-model')){st.model=b.getAttribute('data-model');pick('data-model',b);s.classList.toggle('res',st.model==='res');calc();}
+    if(b.hasAttribute('data-env')){st.env=b.getAttribute('data-env');pick('data-env',b);calc();}
+    if(b.hasAttribute('data-dm')){st.dm=b.getAttribute('data-dm');pick('data-dm',b);s.setAttribute('data-dm',st.dm);calc();}
   });
   calc();
 })();

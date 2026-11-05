@@ -327,3 +327,16 @@
 .slide[data-tab="d360"] .p-d360,.slide[data-tab="af"] .p-af,.slide[data-tab="combined"] .p-combined{animation:pcfade .35s ease}
 .af-build .tbtn{white-space:nowrap;padding:9px 14px;font-size:19px}
 .af-build .tg-l{min-width:58px}
+/* pricing v2: data 360 models */
+.dm-row{display:flex;align-items:center;gap:22px;margin-bottom:12px}
+.dm-row .tgroup{display:flex;gap:10px;align-items:center}
+.dm-row .tg-l{font-size:20px;color:var(--eb30);margin-right:4px}
+.dm-row .tbtn{font-size:19px;padding:9px 16px;white-space:nowrap;background:var(--white);border-color:rgba(6,106,254,.22)}
+.dm-row .tbtn.on{background:var(--eb50);border-color:var(--eb50);color:var(--white)}
+.dm-price{font-size:18px;color:var(--eb30);line-height:1.25}
+.dm-sl{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:12px}
+.dm-sl .sl span{font-size:18px}.dm-sl .sl span b{font-size:24px}
+.p-d360 .pc-t col.c1{width:410px}.p-d360 .pc-t col.c2{width:110px}.p-d360 .pc-t col.c3{width:150px}.p-d360 .pc-t col.c4{width:130px}.p-d360 .pc-t col.c5{width:170px}
+.pc-t tr.incl td{color:#6b7a99}
+.pc-t tr.incl td:nth-child(5),.pc-t tr.incl td:nth-child(6){font-weight:700;color:var(--teal60)}
+#d_foot_l{font-size:18px}
