@@ -17,10 +17,12 @@ pre = rest[:first]
 # the three knowledge slides
 slides_k = re.findall(r'<section class="slide".*?</section>', rest, re.S)
 assert len(slides_k) == 3, len(slides_k)
-# chapters: hybrid + solution architecture -> Data Architecture; brand-aware -> Agent Architecture
-chap = ['data-arch', 'data-arch', 'agent-arch']
-slides_k = [s.replace('<section class="slide" ', '<section class="slide" data-chapter="%s" ' % c, 1) for s, c in zip(slides_k, chap)]
-body_slides = src.replace('<!--KNOWLEDGE_A-->', '\n'.join(slides_k[:2])).replace('<!--KNOWLEDGE_B-->', slides_k[2])
+# place each knowledge slide where src has <!--K:sid:chapter-->
+ksl = {re.search(r'data-sid="([^"]+)"', s).group(1): s for s in slides_k}
+def _place(m):
+    sid, ch = m.group(1), m.group(2)
+    return ksl[sid].replace('<section class="slide" ', '<section class="slide" data-chapter="%s" ' % ch, 1)
+body_slides = re.sub(r'<!--K:([a-z0-9-]+):([a-z0-9-]+)-->', _place, src)
 
 # tail: closing stage div + engine + deck-specific scripts
 after = rest[rest.rindex('</section>') + len('</section>'):]

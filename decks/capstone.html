@@ -951,7 +951,7 @@ body:hover .sfds-count{opacity:1;}
 .cv-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
 .slide .cv-sum{font-size:21px;color:var(--eb15);line-height:1.2}
 .cv-sum b{color:var(--teal60);font-weight:700}
-.wf{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:10px}
+.cv-wf{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:10px}
 .wf-col{display:flex;flex-direction:column;align-items:center;min-width:0}
 .wf-area{position:relative;width:100%;height:270px}
 .wf-bar{position:absolute;left:50%;width:120px;margin-left:-60px;border-radius:10px;transition:bottom .5s var(--ease),height .5s var(--ease)}
@@ -977,7 +977,7 @@ body:hover .sfds-count{opacity:1;}
 .cv-top .card{padding:18px 22px}
 .cv-hero b{font-size:58px}
 .cv-chart{padding:18px 28px 14px;margin-top:16px}
-.wf{margin-top:4px}
+.cv-wf{margin-top:4px}
 .wf-lab{margin-top:8px}
 .cv-goals{margin-top:16px}
 .wf-bar{width:150px;margin-left:-75px}
@@ -987,11 +987,11 @@ body:hover .sfds-count{opacity:1;}
 .wf-col.dc .wf-bar em{color:#0a7bbf}
 .wf-col.new .wf-bar em{font-size:34px}
 .wf-col.base .wf-bar em{font-size:34px}
-.wf{margin-top:34px}
+.cv-wf{margin-top:34px}
 .wf-area{height:172px}
 .cv-goal{padding:12px 18px}
 .cv-goal b{font-size:36px}
-.wf{margin-top:24px}
+.cv-wf{margin-top:24px}
 .wf-area{height:180px}
 
 /* ===== discovery (appendix) ===== */
@@ -1020,6 +1020,86 @@ body:hover .sfds-count{opacity:1;}
 .dq-tag{font-size:16px}
 .dq-col ul{gap:18px}
 .dq-col{padding:28px 34px}
+
+/* ===== unified roadmap ===== */
+.ur-goal{display:flex;gap:28px;align-items:center;margin-top:24px;padding:18px 30px;border-radius:20px;background:var(--eb15)}
+.ur-goal .lbl{flex:0 0 auto;font-size:var(--t-foot);letter-spacing:.14em;text-transform:uppercase;color:#f3c969;font-weight:700}
+.slide .ur-goal p{font:normal 28px/1.3 var(--font-display);color:var(--white)}
+.ur{display:grid;grid-template-columns:600px 170px 1fr 230px;gap:18px;margin-top:24px;align-items:stretch}
+.ur-done{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ur-ph{position:relative;background:#eef4fd;border-radius:18px;padding:18px 18px 16px;border:2px solid #d5e3f7}
+.ur-ph .ok{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--teal60);color:var(--white);font-style:normal;font-size:18px;font-weight:700}
+.ur-ph b{display:block;font:normal 30px/1.1 var(--font-display);color:var(--eb15);margin-right:34px}
+.ur-ph span{display:block;font-size:17px;font-weight:700;color:var(--teal60);margin:6px 0 8px}
+.slide .ur-ph p{font-size:19px;line-height:1.3;color:#3a4a6b}
+.ur-now{position:relative;border-radius:18px;background:#fff6dc;border:3px solid var(--yel70);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px 10px;gap:4px;box-shadow:0 14px 34px rgba(228,162,1,.28)}
+.ur-now .pin{width:26px;height:26px;background:var(--yel80);transform:rotate(45deg);border-radius:4px;margin-bottom:10px;box-shadow:0 0 0 8px rgba(252,192,3,.25)}
+.ur-now b{font:normal 24px/1.1 var(--font-display);color:var(--yel20)}
+.ur-now span{font-size:17px;font-weight:700;color:var(--yel20)}
+.ur-now em{font-style:normal;margin-top:6px;font-size:18px;font-weight:700;padding:5px 12px;border-radius:20px;background:var(--yel80);color:var(--yel20)}
+.ur-next{background:var(--white);border-radius:18px;box-shadow:var(--shadow);padding:14px 20px 16px;border:3px solid var(--eb50)}
+.slide .ur-nh{font-size:var(--t-foot);letter-spacing:.12em;text-transform:uppercase;color:var(--eb50);font-weight:700;margin-bottom:6px}
+.ur-mo{display:grid;grid-template-columns:150px repeat(3,1fr);font-size:15px;font-weight:700;color:var(--eb30);text-transform:uppercase;letter-spacing:.1em}
+.ur-mo span:first-child{grid-column:2}
+.ur-lane{display:grid;grid-template-columns:150px 1fr;align-items:center;height:44px;border-top:2px solid #e6eef9}
+.ur-lane .ln{font-size:18px;font-weight:700;color:var(--eb15);line-height:1.15}
+.ur-lane.key .ln{color:var(--eb50)}
+.ur-lane .trk{position:relative;height:100%;background:repeating-linear-gradient(90deg,#e6eef9 0 2px,transparent 2px 33.33%)}
+.ur-lane .bar{position:absolute;top:7px;height:30px;border-radius:8px;display:flex;align-items:center;padding:0 10px;font-style:normal;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;box-sizing:border-box}
+.ur-lane .bar.pilot{background:var(--teal80);color:var(--eb15)}
+.ur-lane .bar.live{background:var(--eb50);color:var(--white)}
+.ur-lane.key .bar.live{background:var(--eb30)}
+.ur-lane .ms{position:absolute;top:12px;width:20px;height:20px;margin-left:-14px;background:var(--yel80);transform:rotate(45deg);border-radius:3px}
+.ur-lane .msl{position:absolute;right:20px;top:11px;font-style:normal;font-size:15px;font-weight:700;color:var(--yel20);white-space:nowrap}
+.ur-later{background:#eef4fd;border-radius:18px;border:2px dashed #b9cdec;padding:18px 18px;display:flex;flex-direction:column;justify-content:center}
+.ur-later b{font:normal 26px/1.1 var(--font-display);color:var(--eb30);margin-bottom:8px}
+.slide .ur-later p{font-size:19px;line-height:1.3;color:#3a4a6b}
+.ur-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.ur-cards .card{padding:24px 30px;border-radius:24px}
+.ur-cards .card-title{font-size:32px;margin-bottom:12px}
+.ur-ask{background:var(--eb50);box-shadow:var(--shadow);--fg:var(--white)}
+.ur-ask .card-title{color:var(--white)}
+.ur-ask ol{margin:0;padding-left:28px;display:flex;flex-direction:column;gap:8px}
+.ur-ask li{font-size:22px;line-height:1.32;color:var(--cb95)}
+.ur-ask li b{color:var(--white)}
+.slide .ur-why p{font-size:22px;line-height:1.4;color:var(--eb15)}
+/* gantt in appendix: today marker */
+.g-ms.now i{background:var(--eb50);box-shadow:0 0 0 6px rgba(6,106,254,.2)}
+.g-ms.now span{color:var(--eb50)}
+.g-today-wrap{position:relative}
+.g-today-wrap::after{content:"";position:absolute;top:44px;bottom:48px;left:calc(330px + (100% - 330px) * .462);border-left:3px dashed var(--eb50);pointer-events:none}
+.slide[data-sid="delivery"] .g-row{height:50px}
+.slide[data-sid="delivery"] .g-row.g-top{height:40px}
+.slide[data-sid="delivery"] .g-row.g-gates{height:70px}
+.slide[data-sid="delivery"] .g-bar{top:9px;height:32px}
+.slide[data-sid="delivery"] .g-legend{margin-top:14px}
+/* roadmap: use the full slide */
+.ur{margin-top:28px;grid-template-columns:620px 180px 1fr 240px}
+.ur-ph{padding:22px 20px 20px}
+.ur-ph b{font-size:34px}
+.ur-ph span{font-size:18px}
+.slide .ur-ph p{font-size:21px}
+.ur-now b{font-size:28px}
+.ur-now span{font-size:19px}
+.ur-now em{font-size:20px}
+.ur-next{padding:18px 22px 18px}
+.slide .ur-nh{font-size:19px;margin-bottom:10px}
+.ur-mo{font-size:16px;grid-template-columns:170px repeat(3,1fr)}
+.ur-lane{grid-template-columns:170px 1fr;height:60px}
+.ur-lane .ln{font-size:20px}
+.ur-lane .bar{top:10px;height:40px;font-size:18px;padding:0 12px}
+.ur-lane .ms{top:19px;width:22px;height:22px}
+.ur-lane .msl{top:19px;font-size:17px}
+.ur-later b{font-size:30px}
+.slide .ur-later p{font-size:21px}
+.ur-cards{margin-top:28px}
+.ur-cards .card{padding:28px 34px}
+.ur-cards .card-title{font-size:36px}
+.ur-ask li{font-size:24px}
+.slide .ur-why p{font-size:24px}
+.ur{grid-template-columns:590px 176px 1fr 214px}
+.ur-ph span{white-space:nowrap;font-size:17px}
+.ur-later b{white-space:nowrap;font-size:27px}
 </style>
 </head>
 <body>
@@ -1102,7 +1182,7 @@ body:hover .sfds-count{opacity:1;}
       <div class="item" data-no-advance data-goto="observability"><span class="num">08</span><div class="txt"><b>Observability</b><span>How we measure and improve</span></div></div>
       <div class="item" data-no-advance data-goto="data-arch"><span class="num">04</span><div class="txt"><b>Architecture</b><span>What we built</span></div></div>
       <div class="item" data-no-advance data-goto="demo2"><span class="num">09</span><div class="txt"><b>Demo</b></div></div>
-      <div class="item" data-no-advance data-goto="roadmap"><span class="num">05</span><div class="txt"><b>Roadmap</b><span>MVP and what comes next</span></div></div>
+      <div class="item" data-no-advance data-goto="roadmap"><span class="num">05</span><div class="txt"><b>Roadmap</b><span>Where we are and the decision today</span></div></div>
       <div class="item" data-no-advance data-goto="value"><span class="num">10</span><div class="txt"><b>Business value</b><span>What it is worth</span></div></div>
     </div>
   </div>
@@ -1350,57 +1430,6 @@ body:hover .sfds-count{opacity:1;}
   </div>
 </section>
 
-<section class="slide" data-chapter="data-arch" data-theme="light" data-world="quiet" data-brand="A" data-title="Hybrid knowledge architecture" data-sid="hybrid-knowledge" data-section="Knowledge" data-min="1.5"><div class="sfds-world-print" aria-hidden="true" style="background:#CFE9FE"><div class="w-light" style="position:absolute;left:0;top:0;width:1920px;height:1080px"><div class="w-shape w-a" style="left:1460px;top:-520px;width:1000px;height:1000px;opacity:0.45"></div><div class="w-shape w-b" style="left:-480px;top:820px;width:800px;height:800px;opacity:0.25"></div></div></div>
-  <div class="content">
-    <p class="eyebrow" data-anim="rise">Hybrid knowledge</p>
-    <h2 data-anim="rise" style="--d:100ms;width:1020px">Two sources, indexed separately, answered as one</h2>
-    <div class="corner" data-anim="rise" style="--d:200ms" data-no-advance>
-      <span class="tg-l" style="font-size:24px;color:var(--fg-2)">Show answers for</span>
-      <div class="tgroup"><button class="tbtn on" type="button" data-brand="A">Brand A</button><button class="tbtn" type="button" data-brand="B">Brand B</button></div>
-    </div>
-
-    <div class="dg">
-      <svg class="conn" viewBox="0 0 1680 520" data-anim="draw" style="--d:700ms" aria-hidden="true">
-        <defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#066AFE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-        <path class="draw" d="M420 120 L652 120" marker-end="url(#ah1)"/>
-        <path class="draw" d="M420 400 L652 400" marker-end="url(#ah1)"/>
-        <path class="draw" d="M900 176 L900 204" marker-end="url(#ah1)"/>
-        <path class="draw" d="M900 344 L900 316" marker-end="url(#ah1)"/>
-        <path class="draw" d="M1130 260 L1292 260" marker-end="url(#ah1)"/>
-      </svg>
-
-      <div class="abs card white src" style="left:0;top:0" data-anim="left">
-        <svg class="ic"><use href="#i-globe"/></svg>
-        <h3 class="card-title">Web Content Crawler</h3>
-        <p>Website articles and help content, ingested automatically</p>
-      </div>
-      <div class="abs card white src" style="left:0;top:280px" data-anim="left">
-        <svg class="ic"><use href="#i-shield"/></svg>
-        <h3 class="card-title">Salesforce Knowledge</h3>
-        <p>Curated, governed articles organized by brand</p>
-      </div>
-
-      <div class="abs lane" style="left:430px;top:215px;--d:600ms" data-anim="rise">Ingested and indexed separately</div>
-
-      <div class="abs data360" data-anim="scale" style="--d:300ms">
-        <div class="dt">Data 360</div>
-        <div class="tile2" style="left:36px;top:68px;width:488px"><b>Website search index</b><span class="d">Pages from <span class="bl" data-bl>Brand A</span>'s site</span></div>
-        <div class="tile2 ens" style="left:56px;top:208px;width:448px"><b>Brand-scoped retriever</b><span class="d">Combines both indexes</span></div>
-        <div class="tile2" style="left:36px;top:348px;width:488px"><b>Knowledge search index</b><span class="d">Data Category: <span class="bl" data-bl>Brand A</span></span></div>
-      </div>
-
-      <div class="abs card deep agent" style="left:1300px;top:100px;--d:500ms" data-anim="right">
-        <svg class="ic"><use href="#i-chat"/></svg>
-        <h3 class="card-title">Agentforce</h3>
-        <p>Retrieves from <span class="bl" data-bl>Brand A</span>'s sources and answers with citations</p>
-      </div>
-    </div>
-
-    <div class="strip" data-anim="rise" style="--d:900ms"><p><b>Crawler for coverage. Knowledge for governance.</b> Together, a broader grounding foundation.</p></div>
-  </div>
-  <div class="footer"><span>Supported by Salesforce Knowledge data-library indexing and ensemble retrievers, which combine results from multiple sources.</span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">Two sources, indexed separately, answered as one.</p><ul class="n-pts"><li>The Web Content Crawler brings in each brand's website articles and help content automatically.</li><li>Salesforce Knowledge adds curated, governed articles, organized by brand through Data Categories.</li><li>Data 360 keeps a separate search index for each, and a brand-scoped retriever combines them.</li><li>Agentforce answers from the selected brand's sources and cites them. Use the Brand A and Brand B buttons to show how the labels follow the brand.</li></ul></aside>
-</section>
 <section class="slide" data-chapter="data-arch" data-theme="dark" data-world="drift" data-trace="both" data-title="Solution architecture" data-sid="solution-arch" data-section="Knowledge" data-min="2"><div class="sfds-world-print" aria-hidden="true" style="background:#001E5B"></div>
   <div class="content">
     <p class="eyebrow" data-anim="rise">Solution architecture</p>
@@ -1553,117 +1582,45 @@ body:hover .sfds-count{opacity:1;}
 })();
 </script>
 
-<section class="slide" data-chapter="agent-arch" data-theme="light" data-world="quiet" data-brand="A" data-scope="on" data-title="Brand-aware retrieval" data-sid="brand-aware" data-section="Knowledge" data-min="1.5"><div class="sfds-world-print" aria-hidden="true" style="background:#CFE9FE"><div class="w-light" style="position:absolute;left:0;top:0;width:1920px;height:1080px"><div class="w-shape w-a" style="left:1460px;top:-520px;width:1000px;height:1000px;opacity:0.45"></div><div class="w-shape w-b" style="left:-480px;top:820px;width:800px;height:800px;opacity:0.25"></div></div></div>
-  <div class="content">
-    <p class="eyebrow" data-anim="rise">Brand-aware retrieval<span class="pill next"><i></i>Proposed design</span></p>
-    <h2 data-anim="rise" style="--d:100ms;width:1100px">Each customer gets answers from their own brand only</h2>
-    <div class="corner" data-anim="rise" style="--d:200ms" data-no-advance>
-      <div class="tgroup"><span class="tg-l">Customer is on</span><button class="tbtn on" type="button" data-brand="A">Brand A site</button><button class="tbtn" type="button" data-brand="B">Brand B site</button></div>
-      <div class="tgroup"><span class="tg-l">Brand scoping</span><button class="tbtn on" type="button" data-scope="on">On</button><button class="tbtn" type="button" data-scope="off">Off</button></div>
-    </div>
-
-    <div class="dg">
-      <svg class="conn" viewBox="0 0 1680 340" data-anim="draw" style="--d:700ms" aria-hidden="true">
-        <defs><marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#066AFE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-        <path class="draw" d="M306 170 L352 170" marker-end="url(#ah3)"/>
-        <path class="draw arrA" d="M666 170 C 694 170, 692 75, 714 75" marker-end="url(#ah3)"/>
-        <path class="draw arrB" d="M666 170 C 694 170, 692 265, 714 265" marker-end="url(#ah3)"/>
-        <path class="draw arrA" d="M1106 75 L1152 75" marker-end="url(#ah3)"/>
-        <path class="draw arrB" d="M1106 265 L1152 265" marker-end="url(#ah3)"/>
-      </svg>
-
-      <div class="abs card white nd" style="left:0;top:30px;width:300px;height:280px;--d:100ms" data-anim="left">
-        <h3 class="card-title">Customer interaction</h3>
-        <p class="q" id="qText">“How do I treat a wine stain?”</p>
-        <p>Brand from site, channel or customer</p>
-      </div>
-      <div class="abs card white nd" style="left:360px;top:30px;width:300px;height:280px;--d:250ms" data-anim="rise">
-        <h3 class="card-title">Brand context resolution</h3>
-        <p>Resolves the brand and its permitted scope</p>
-      </div>
-      <div class="ret a on" id="retA" style="--d:400ms" data-anim="rise"><b>Brand A retriever</b><span>Website index + Knowledge: Brand A category</span></div>
-      <div class="ret b dim" id="retB" style="--d:500ms" data-anim="rise"><b>Brand B retriever</b><span>Website index + Knowledge: Brand B category</span></div>
-      <div class="abs card white resp" style="--d:650ms" data-anim="right">
-        <h3 class="card-title">Grounded response</h3>
-        <div class="cites" id="cites"></div>
-      </div>
-    </div>
-
-    <div class="strip" data-anim="rise" style="--d:900ms"><p id="banner"><b>Scoping on.</b> Only permitted, relevant brand content grounds the answer.</p></div>
-
-    <div class="layers" data-stagger="rise" data-base="1000">
-      <div class="card white"><h3 class="card-title">Web-source segmentation</h3><p>Limit the crawler to each brand's domain or URL patterns.</p></div>
-      <div class="card white"><h3 class="card-title">Knowledge Data Categories</h3><p>Tag articles by brand and filter by category in Knowledge libraries.</p></div>
-      <div class="card white"><h3 class="card-title">Brand-scoped retrieval</h3><p>Brand context picks the right index, retriever or ensemble.</p></div>
-    </div>
-  </div>
-  <div class="footer"><span>Crawler ingestion is demonstrated in the proof of concept. Brand-aware retrieval is the proposed configuration.</span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">Each customer gets answers from their own brand only.</p><ul class="n-pts"><li>The brand comes from the website, the channel or the customer relationship.</li><li>Brand context resolution selects the permitted scope, and only that brand's retriever is used.</li><li>Three layers make this work: web-source segmentation, Knowledge Data Categories and brand-scoped retrieval.</li><li>Demo: pick Brand B, then switch brand scoping off to show content from the other brand leaking into the answer.</li><li>Be clear that crawler ingestion is demonstrated in the proof of concept and brand-aware retrieval is the proposed configuration.</li></ul></aside>
-</section>
 <!-- ============ ROADMAP ============ -->
-<section class="slide" data-theme="light" data-world="quiet" data-title="Implementation roadmap" data-sid="roadmap" data-chapter="roadmap" data-view="exec">
+<section class="slide" data-theme="light" data-world="quiet" data-title="Roadmap" data-sid="roadmap" data-chapter="roadmap" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
-    <p class="eyebrow" data-anim="rise">Roadmap</p>
-    <h2 data-anim="rise" style="--d:100ms">26 weeks, with a decision at every gate</h2>
-    <div class="rm-toggle" data-anim="rise" style="--d:200ms" data-no-advance>
-      <span class="tg-l">View</span>
-      <button class="tbtn on" type="button" data-view="exec">Executive view</button>
-      <button class="tbtn" type="button" data-view="delivery">Delivery view</button>
-      <span class="rm-hint">Waterfall gates for control. Agile sprints for speed.</span>
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Roadmap</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:62px">Built and tested. Today is the go or no go.</h2>
+    <div class="ur-goal" data-anim="rise" style="--d:200ms">
+      <span class="lbl">Customer goal</span>
+      <p>&ldquo;The customer&rsquo;s stated goal is to resolve at least 30% of tier-1 inquiries without escalation and cut email backlog times in half within three months.&rdquo;</p>
     </div>
-
-    <div class="rm-view rm-exec" data-anim="rise" style="--d:300ms">
-      <div class="flow">
-        <div class="node on"><div class="step-n">1</div><div class="node-title">Discover &amp; design</div><p class="wk">Weeks 1 to 3</p><p>Agreed scope, success measures and design.</p><div class="gate"><i></i>Design sign off</div></div>
-        <i class="arrow"></i>
-        <div class="node"><div class="step-n">2</div><div class="node-title">Build</div><p class="wk">Weeks 4 to 9</p><p>A working agent on Brightcurrent, shown every two weeks.</p><div class="gate"><i></i>Build review</div></div>
-        <i class="arrow"></i>
-        <div class="node"><div class="step-n">3</div><div class="node-title">Test &amp; harden</div><p class="wk">Weeks 10 to 12</p><p>Proven accurate, safe and ready for real customers.</p><div class="gate"><i></i>Go or no go</div></div>
-        <i class="arrow"></i>
-        <div class="node"><div class="step-n">4</div><div class="node-title">Launch</div><p class="wk">Week 13</p><p>Live on the Brightcurrent website with support on hand.</p><div class="gate"><i></i>Go live</div></div>
-        <i class="arrow"></i>
-        <div class="node"><div class="step-n">5</div><div class="node-title">Optimize &amp; expand</div><p class="wk">Weeks 14 to 26</p><p>Targets met, then Softly and Fresh Spin.</p><div class="gate"><i></i>Phase 2 decision</div></div>
+    <div class="ur" data-anim="rise" style="--d:300ms">
+      <div class="ur-done">
+        <div class="ur-ph"><i class="ok">&#10003;</i><b>Discovery</b><span>Weeks 1 to 3</span><p>Scope, success measures and design signed off.</p></div>
+        <div class="ur-ph"><i class="ok">&#10003;</i><b>Build</b><span>Weeks 4 to 9</span><p>Agent, Data 360 and knowledge built in sandbox.</p></div>
+        <div class="ur-ph"><i class="ok">&#10003;</i><b>UAT</b><span>Weeks 10 to 12</span><p>Test plan passed. Security review complete.</p></div>
       </div>
-      <div class="rm-needs">
-        <span class="lbl">What we need from you</span>
-        <div class="chip">Executive sponsor named in week 1</div>
-        <div class="chip">System and data access by week 3</div>
-        <div class="chip">Launch approval in week 12</div>
+      <div class="ur-now"><span class="pin"></span><b>Where we are today</b><span>Week 13</span><em>Go or no go</em></div>
+      <div class="ur-next">
+        <p class="ur-nh">Next 90 days: the goal window</p>
+        <div class="ur-mo"><span>Month 1</span><span>Month 2</span><span>Month 3</span></div>
+        <div class="ur-lane"><span class="ln">Web agent</span><div class="trk"><i class="bar pilot" style="left:0;width:33.3%">Pilot, 10%</i><i class="bar live" style="left:33.3%;width:66.7%">Live for all visitors</i></div></div>
+        <div class="ur-lane key"><span class="ln">Email backlog agent</span><div class="trk"><i class="bar pilot" style="left:0;width:40%">Build and test</i><i class="bar live" style="left:40%;width:60%">Working the backlog</i></div></div>
+        <div class="ur-lane"><span class="ln">Goal check</span><div class="trk"><i class="ms" style="left:100%"></i><em class="msl">30% tier 1 resolved, backlog time halved</em></div></div>
       </div>
+      <div class="ur-later"><b>Months 4 to 6</b><p>Softly and Fresh Spin on the same platform, then mobile and Slack.</p></div>
     </div>
-
-    <div class="rm-view rm-delivery" data-anim="rise" style="--d:300ms">
-      <div class="gantt">
-        <div class="g-row g-top"><div class="g-label"></div><div class="g-track g-months"><span>Month 1</span><span>Month 2</span><span>Month 3</span><span>Month 4</span><span>Month 5</span><span>Month 6</span></div></div>
-        <div class="g-row g-gates"><div class="g-label">Decision gates</div><div class="g-track">
-          <div class="g-ms" style="left:11.5%"><i></i><span>Design sign off</span></div>
-          <div class="g-ms" style="left:34.6%"><i></i><span>Build review</span></div>
-          <div class="g-ms" style="left:46.2%"><i></i><span>Go or no go</span></div>
-          <div class="g-ms last" style="left:100%"><i></i><span>Phase 2 decision</span></div>
-        </div></div>
-        <div class="g-row"><div class="g-label">Discover &amp; design</div><div class="g-track"><div class="g-bar wf" style="left:0;width:11.54%">Design</div></div></div>
-        <div class="g-row"><div class="g-label">Data &amp; knowledge</div><div class="g-track"><div class="g-bar wf" style="left:3.85%;width:30.8%">Data 360, knowledge, brand scoping</div></div></div>
-        <div class="g-row"><div class="g-label">Agent build</div><div class="g-track"><div class="g-bar ag" style="left:11.54%;width:7.4%">S1</div><div class="g-bar ag" style="left:19.3%;width:7.4%">S2</div><div class="g-bar ag" style="left:27%;width:7.4%">S3</div></div></div>
-        <div class="g-row"><div class="g-label">Integrations</div><div class="g-track"><div class="g-bar ag" style="left:15.4%;width:19.2%">Service Cloud, chat</div></div></div>
-        <div class="g-row"><div class="g-label">Testing &amp; UAT</div><div class="g-track"><div class="g-bar wf" style="left:34.6%;width:11.5%">Test</div></div></div>
-        <div class="g-row"><div class="g-label">Change &amp; training</div><div class="g-track"><div class="g-bar run" style="left:26.9%;width:23.1%">Care team readiness</div></div></div>
-        <div class="g-row"><div class="g-label">Launch &amp; optimize</div><div class="g-track"><div class="g-bar launch" style="left:46.2%;width:3.85%"></div><div class="g-bar run" style="left:50%;width:15.4%">Hypercare</div><div class="g-bar ag" style="left:65.4%;width:34.6%">Optimize, Softly, Fresh Spin</div></div></div>
-        <div class="g-legend"><span><i class="dm"></i>Decision gate</span><span><i class="sw wf"></i>Waterfall phase</span><span><i class="sw ag"></i>Agile sprints, two weeks each</span><span><i class="sw run"></i>Ongoing</span><span><i class="sw" style="background:var(--yel80)"></i>Go live, week 13</span></div>
+    <div class="ur-cards">
+      <div class="card ur-ask" data-anim="rise" style="--d:450ms">
+        <h3 class="card-title">The decision we need today</h3>
+        <ol><li><b>Go live</b> with the Brightcurrent web agent: a 10% pilot, then all visitors.</li><li><b>Start the email backlog agent</b> so the 3,850 open cases get worked down.</li><li><b>Hold us to the goal</b> at the 90 day review.</li></ol>
+      </div>
+      <div class="card white ur-why" data-anim="rise" style="--d:550ms">
+        <h3 class="card-title">Why an email backlog agent</h3>
+        <p>Email is where customers wait: 3,850 open cases and a 4.2 day first reply. The email agent reads every message in the queue, resolves tier 1 questions, drafts replies for the care team to approve, and sends safety issues to a person first. That is how backlog time gets cut in half.</p>
       </div>
     </div>
   </div>
-  <div class="footer"><span>Week 13 launch. Targets measured three months after launch.</span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">Same plan, two views.</p><ul class="n-pts"><li>Executive view: phases, what you get and the decision at the end of each.</li><li>Delivery view: workstreams across the 26 weeks, sprints inside the build.</li></ul></aside>
+  <div class="footer"><span>Week 13 of 26. The detailed delivery plan is in the Appendix.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">We are at the go or no go. Ask for the decision.</p><ul class="n-pts"><li>Discovery, Build and UAT are done.</li><li>Two things go live in the 90 day window: the web agent and the email backlog agent.</li><li>The 90 day review measures the customer's stated goal.</li></ul></aside>
 </section>
-<script>
-(function(){
-  var s=document.querySelector('section.slide[data-sid="roadmap"]');
-  [].forEach.call(s.querySelectorAll('.tbtn[data-view]'),function(b){b.addEventListener('click',function(){
-    s.setAttribute('data-view',b.getAttribute('data-view'));
-    [].forEach.call(s.querySelectorAll('.tbtn[data-view]'),function(x){x.classList.toggle('on',x===b);});
-  });});
-})();
-</script>
 
 <!-- ============ TEST PLAN ============ -->
 <section class="slide" data-theme="light" data-world="quiet" data-title="Test plan" data-sid="test" data-chapter="test">
@@ -1847,7 +1804,7 @@ body:hover .sfds-count{opacity:1;}
           </div>
           <div class="card white cv-chart">
             <div class="cv-head"><p class="pc-h">Monthly cost to serve</p><p class="cv-sum" id="cv_sum"></p></div>
-            <div class="wf" id="wf"></div>
+            <div class="cv-wf" id="wf"></div>
           </div>
           <div class="cv-goals">
             <div class="cv-goal"><b>30%+</b><span>of tier 1 inquiries resolved without escalation, in 3 months</span></div>
@@ -2062,6 +2019,135 @@ body:hover .sfds-count{opacity:1;}
   show(0);
 })();
 </script>
+
+<section class="slide" data-theme="light" data-world="quiet" data-title="Detailed delivery plan" data-sid="delivery" data-chapter="appendix" style="padding-top:72px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Appendix</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:60px">Detailed delivery plan</h2>
+    <p class="small mt-16" data-anim="rise" style="--d:150ms;color:var(--eb30)">26 weeks. Waterfall gates for control, agile sprints for speed. We are at week 13.</p>
+    <div class="mt-32" data-anim="rise" style="--d:250ms">
+      <div class="gantt g-today-wrap">
+        <div class="g-row g-top"><div class="g-label"></div><div class="g-track g-months"><span>Month 1</span><span>Month 2</span><span>Month 3</span><span>Month 4</span><span>Month 5</span><span>Month 6</span></div></div>
+        <div class="g-row g-gates"><div class="g-label">Decision gates</div><div class="g-track">
+          <div class="g-ms" style="left:11.5%"><i></i><span>Design sign off</span></div>
+          <div class="g-ms" style="left:34.6%"><i></i><span>Build review</span></div>
+          <div class="g-ms now" style="left:46.2%"><i></i><span>Go or no go: today</span></div>
+          <div class="g-ms last" style="left:100%"><i></i><span>90 day goal check</span></div>
+        </div></div>
+        <div class="g-row"><div class="g-label">Discover &amp; design</div><div class="g-track"><div class="g-bar wf" style="left:0;width:11.54%">Design</div></div></div>
+        <div class="g-row"><div class="g-label">Data &amp; knowledge</div><div class="g-track"><div class="g-bar wf" style="left:3.85%;width:30.8%">Data 360, knowledge, brand scoping</div></div></div>
+        <div class="g-row"><div class="g-label">Agent build</div><div class="g-track"><div class="g-bar ag" style="left:11.54%;width:7.4%">S1</div><div class="g-bar ag" style="left:19.3%;width:7.4%">S2</div><div class="g-bar ag" style="left:27%;width:7.4%">S3</div></div></div>
+        <div class="g-row"><div class="g-label">Integrations</div><div class="g-track"><div class="g-bar ag" style="left:15.4%;width:19.2%">Service Cloud, chat</div></div></div>
+        <div class="g-row"><div class="g-label">Testing &amp; UAT</div><div class="g-track"><div class="g-bar wf" style="left:34.6%;width:11.5%">Test</div></div></div>
+        <div class="g-row"><div class="g-label">Change &amp; training</div><div class="g-track"><div class="g-bar run" style="left:26.9%;width:23.1%">Care team readiness</div></div></div>
+        <div class="g-row"><div class="g-label">Email backlog agent</div><div class="g-track"><div class="g-bar ag" style="left:50%;width:15.4%">Build and test</div><div class="g-bar run" style="left:65.4%;width:34.6%">Working the email backlog</div></div></div>
+        <div class="g-row"><div class="g-label">Launch &amp; optimize</div><div class="g-track"><div class="g-bar launch" style="left:46.2%;width:3.85%"></div><div class="g-bar run" style="left:50%;width:15.4%">Hypercare</div><div class="g-bar ag" style="left:65.4%;width:34.6%">Optimize, Softly, Fresh Spin</div></div></div>
+        <div class="g-legend"><span><i class="dm"></i>Decision gate</span><span><i class="sw wf"></i>Waterfall phase</span><span><i class="sw ag"></i>Agile sprints, two weeks each</span><span><i class="sw run"></i>Ongoing</span><span><i class="sw" style="background:var(--yel80)"></i>Go live, week 13</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Draft plan. Dates relative to project start.</span><span>Brightcurrent Agentforce capstone</span></div>
+</section>
+
+<section class="slide" data-chapter="appendix" data-theme="light" data-world="quiet" data-brand="A" data-title="Hybrid knowledge architecture" data-sid="hybrid-knowledge" data-section="Knowledge" data-min="1.5"><div class="sfds-world-print" aria-hidden="true" style="background:#CFE9FE"><div class="w-light" style="position:absolute;left:0;top:0;width:1920px;height:1080px"><div class="w-shape w-a" style="left:1460px;top:-520px;width:1000px;height:1000px;opacity:0.45"></div><div class="w-shape w-b" style="left:-480px;top:820px;width:800px;height:800px;opacity:0.25"></div></div></div>
+  <div class="content">
+    <p class="eyebrow" data-anim="rise">Hybrid knowledge</p>
+    <h2 data-anim="rise" style="--d:100ms;width:1020px">Two sources, indexed separately, answered as one</h2>
+    <div class="corner" data-anim="rise" style="--d:200ms" data-no-advance>
+      <span class="tg-l" style="font-size:24px;color:var(--fg-2)">Show answers for</span>
+      <div class="tgroup"><button class="tbtn on" type="button" data-brand="A">Brand A</button><button class="tbtn" type="button" data-brand="B">Brand B</button></div>
+    </div>
+
+    <div class="dg">
+      <svg class="conn" viewBox="0 0 1680 520" data-anim="draw" style="--d:700ms" aria-hidden="true">
+        <defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#066AFE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <path class="draw" d="M420 120 L652 120" marker-end="url(#ah1)"/>
+        <path class="draw" d="M420 400 L652 400" marker-end="url(#ah1)"/>
+        <path class="draw" d="M900 176 L900 204" marker-end="url(#ah1)"/>
+        <path class="draw" d="M900 344 L900 316" marker-end="url(#ah1)"/>
+        <path class="draw" d="M1130 260 L1292 260" marker-end="url(#ah1)"/>
+      </svg>
+
+      <div class="abs card white src" style="left:0;top:0" data-anim="left">
+        <svg class="ic"><use href="#i-globe"/></svg>
+        <h3 class="card-title">Web Content Crawler</h3>
+        <p>Website articles and help content, ingested automatically</p>
+      </div>
+      <div class="abs card white src" style="left:0;top:280px" data-anim="left">
+        <svg class="ic"><use href="#i-shield"/></svg>
+        <h3 class="card-title">Salesforce Knowledge</h3>
+        <p>Curated, governed articles organized by brand</p>
+      </div>
+
+      <div class="abs lane" style="left:430px;top:215px;--d:600ms" data-anim="rise">Ingested and indexed separately</div>
+
+      <div class="abs data360" data-anim="scale" style="--d:300ms">
+        <div class="dt">Data 360</div>
+        <div class="tile2" style="left:36px;top:68px;width:488px"><b>Website search index</b><span class="d">Pages from <span class="bl" data-bl>Brand A</span>'s site</span></div>
+        <div class="tile2 ens" style="left:56px;top:208px;width:448px"><b>Brand-scoped retriever</b><span class="d">Combines both indexes</span></div>
+        <div class="tile2" style="left:36px;top:348px;width:488px"><b>Knowledge search index</b><span class="d">Data Category: <span class="bl" data-bl>Brand A</span></span></div>
+      </div>
+
+      <div class="abs card deep agent" style="left:1300px;top:100px;--d:500ms" data-anim="right">
+        <svg class="ic"><use href="#i-chat"/></svg>
+        <h3 class="card-title">Agentforce</h3>
+        <p>Retrieves from <span class="bl" data-bl>Brand A</span>'s sources and answers with citations</p>
+      </div>
+    </div>
+
+    <div class="strip" data-anim="rise" style="--d:900ms"><p><b>Crawler for coverage. Knowledge for governance.</b> Together, a broader grounding foundation.</p></div>
+  </div>
+  <div class="footer"><span>Supported by Salesforce Knowledge data-library indexing and ensemble retrievers, which combine results from multiple sources.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">Two sources, indexed separately, answered as one.</p><ul class="n-pts"><li>The Web Content Crawler brings in each brand's website articles and help content automatically.</li><li>Salesforce Knowledge adds curated, governed articles, organized by brand through Data Categories.</li><li>Data 360 keeps a separate search index for each, and a brand-scoped retriever combines them.</li><li>Agentforce answers from the selected brand's sources and cites them. Use the Brand A and Brand B buttons to show how the labels follow the brand.</li></ul></aside>
+</section>
+
+<section class="slide" data-chapter="appendix" data-theme="light" data-world="quiet" data-brand="A" data-scope="on" data-title="Brand-aware retrieval" data-sid="brand-aware" data-section="Knowledge" data-min="1.5"><div class="sfds-world-print" aria-hidden="true" style="background:#CFE9FE"><div class="w-light" style="position:absolute;left:0;top:0;width:1920px;height:1080px"><div class="w-shape w-a" style="left:1460px;top:-520px;width:1000px;height:1000px;opacity:0.45"></div><div class="w-shape w-b" style="left:-480px;top:820px;width:800px;height:800px;opacity:0.25"></div></div></div>
+  <div class="content">
+    <p class="eyebrow" data-anim="rise">Brand-aware retrieval<span class="pill next"><i></i>Proposed design</span></p>
+    <h2 data-anim="rise" style="--d:100ms;width:1100px">Each customer gets answers from their own brand only</h2>
+    <div class="corner" data-anim="rise" style="--d:200ms" data-no-advance>
+      <div class="tgroup"><span class="tg-l">Customer is on</span><button class="tbtn on" type="button" data-brand="A">Brand A site</button><button class="tbtn" type="button" data-brand="B">Brand B site</button></div>
+      <div class="tgroup"><span class="tg-l">Brand scoping</span><button class="tbtn on" type="button" data-scope="on">On</button><button class="tbtn" type="button" data-scope="off">Off</button></div>
+    </div>
+
+    <div class="dg">
+      <svg class="conn" viewBox="0 0 1680 340" data-anim="draw" style="--d:700ms" aria-hidden="true">
+        <defs><marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#066AFE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <path class="draw" d="M306 170 L352 170" marker-end="url(#ah3)"/>
+        <path class="draw arrA" d="M666 170 C 694 170, 692 75, 714 75" marker-end="url(#ah3)"/>
+        <path class="draw arrB" d="M666 170 C 694 170, 692 265, 714 265" marker-end="url(#ah3)"/>
+        <path class="draw arrA" d="M1106 75 L1152 75" marker-end="url(#ah3)"/>
+        <path class="draw arrB" d="M1106 265 L1152 265" marker-end="url(#ah3)"/>
+      </svg>
+
+      <div class="abs card white nd" style="left:0;top:30px;width:300px;height:280px;--d:100ms" data-anim="left">
+        <h3 class="card-title">Customer interaction</h3>
+        <p class="q" id="qText">“How do I treat a wine stain?”</p>
+        <p>Brand from site, channel or customer</p>
+      </div>
+      <div class="abs card white nd" style="left:360px;top:30px;width:300px;height:280px;--d:250ms" data-anim="rise">
+        <h3 class="card-title">Brand context resolution</h3>
+        <p>Resolves the brand and its permitted scope</p>
+      </div>
+      <div class="ret a on" id="retA" style="--d:400ms" data-anim="rise"><b>Brand A retriever</b><span>Website index + Knowledge: Brand A category</span></div>
+      <div class="ret b dim" id="retB" style="--d:500ms" data-anim="rise"><b>Brand B retriever</b><span>Website index + Knowledge: Brand B category</span></div>
+      <div class="abs card white resp" style="--d:650ms" data-anim="right">
+        <h3 class="card-title">Grounded response</h3>
+        <div class="cites" id="cites"></div>
+      </div>
+    </div>
+
+    <div class="strip" data-anim="rise" style="--d:900ms"><p id="banner"><b>Scoping on.</b> Only permitted, relevant brand content grounds the answer.</p></div>
+
+    <div class="layers" data-stagger="rise" data-base="1000">
+      <div class="card white"><h3 class="card-title">Web-source segmentation</h3><p>Limit the crawler to each brand's domain or URL patterns.</p></div>
+      <div class="card white"><h3 class="card-title">Knowledge Data Categories</h3><p>Tag articles by brand and filter by category in Knowledge libraries.</p></div>
+      <div class="card white"><h3 class="card-title">Brand-scoped retrieval</h3><p>Brand context picks the right index, retriever or ensemble.</p></div>
+    </div>
+  </div>
+  <div class="footer"><span>Crawler ingestion is demonstrated in the proof of concept. Brand-aware retrieval is the proposed configuration.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">Each customer gets answers from their own brand only.</p><ul class="n-pts"><li>The brand comes from the website, the channel or the customer relationship.</li><li>Brand context resolution selects the permitted scope, and only that brand's retriever is used.</li><li>Three layers make this work: web-source segmentation, Knowledge Data Categories and brand-scoped retrieval.</li><li>Demo: pick Brand B, then switch brand scoping off to show content from the other brand leaking into the answer.</li><li>Be clear that crawler ingestion is demonstrated in the proof of concept and brand-aware retrieval is the proposed configuration.</li></ul></aside>
+</section>
 
 <section class="slide" data-theme="light" data-world="quiet" data-title="Rate card reference" data-sid="rates" data-chapter="appendix" style="padding-top:72px">
   <div class="content">
