@@ -382,9 +382,14 @@
 </script>
 
 <!-- ============ ROADMAP ============ -->
-<section class="slide" data-theme="light" data-world="quiet" data-title="Roadmap" data-sid="roadmap" data-chapter="roadmap" style="padding-top:72px;padding-bottom:64px">
+<section class="slide" data-theme="light" data-world="quiet" data-title="Roadmap" data-sid="roadmap" data-chapter="roadmap" data-rm="now" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Roadmap</p>
+    <div class="ps-tabs rm-tabs" data-anim="rise" style="--d:150ms" data-no-advance>
+      <button class="tbtn on" type="button" data-rm="now">Today and next 90 days</button>
+      <button class="tbtn" type="button" data-rm="scale">Scale to every brand</button>
+    </div>
+    <div class="rmp rm-now">
     <h2 data-anim="rise" style="--d:100ms;font-size:62px">Built and tested. Today is the go or no go.</h2>
     <div class="ur-goal" data-anim="rise" style="--d:200ms">
       <span class="lbl">Customer goal</span>
@@ -404,7 +409,7 @@
         <div class="ur-lane key"><span class="ln">Email backlog agent</span><div class="trk"><i class="bar pilot" style="left:0;width:40%">Build and test</i><i class="bar live" style="left:40%;width:60%">Working the backlog</i></div></div>
         <div class="ur-lane"><span class="ln">Goal check</span><div class="trk"><i class="ms" style="left:100%"></i><em class="msl">30% tier 1 resolved, backlog time halved</em></div></div>
       </div>
-      <div class="ur-later"><b>Months 4 to 6</b><p>Softly and Fresh Spin on the same platform, then mobile and Slack.</p></div>
+      <button class="ur-later" type="button" data-rm="scale" data-no-advance><b>Months 4 to 18</b><p>Scale to the Multi-Brand Assistant Agent.</p><span class="go">See the plan &rsaquo;</span></button>
     </div>
     <div class="ur-cards">
       <div class="card ur-ask" data-anim="rise" style="--d:450ms">
@@ -416,10 +421,47 @@
         <p>Email is where customers wait: 3,850 open cases and a 4.2 day first reply. The email agent reads every message in the queue, resolves tier 1 questions, drafts replies for the care team to approve, and sends safety issues to a person first. That is how backlog time gets cut in half.</p>
       </div>
     </div>
+    </div>
+    <div class="rmp rm-scale">
+      <h2 style="font-size:58px">From one brand to the Multi-Brand Assistant Agent</h2>
+      <div class="sc-goal">
+        <span class="lbl">Why scale</span>
+        <p>Consistent, personalized help across every H&amp;P brand, so customers discover more of the portfolio and stay longer.</p>
+        <div class="sc-kpi"><b>+20%</b><span>customers buying a second H&amp;P brand</span></div>
+        <div class="sc-kpi"><b>&minus;10%</b><span>customer churn in 12 months</span></div>
+      </div>
+      <div class="sc-grid">
+        <div class="sc-card h1"><span class="when">Months 4 to 6</span><h3>Every brand, one agent</h3>
+          <p>Softly and Fresh Spin join Brightcurrent. Each brand keeps its own knowledge, voice and consent. One unified profile behind them.</p>
+          <div class="sf"><i>Agentforce</i><i>Data 360</i><i>Service Cloud</i><i>Knowledge</i></div>
+          <p class="out">Outcome: one assistant across three brands</p></div>
+        <div class="sc-card h2"><span class="when">Months 7 to 12</span><h3>Voice and video</h3>
+          <p>The same agent answers the care line by voice. Customers share a photo or short video of a stain or washer, and live video help is one tap away.</p>
+          <div class="sf"><i>Agentforce Voice</i><i>Service Cloud Voice</i><i>Data 360 Intelligent Processing</i><i>Visual Remote Assistant</i></div>
+          <p class="out">Outcome: help on any channel</p></div>
+        <div class="sc-card h2"><span class="when">Months 7 to 12</span><h3>Personalized recommendations</h3>
+          <p>Care moments become the right next product. Purchase history across brands drives offers in chat, email and on site, only with consent.</p>
+          <div class="sf"><i>Marketing Cloud Next</i><i>Personalization</i><i>Commerce Cloud</i><i>Loyalty Management</i></div>
+          <p class="out">Outcome: more cross brand discovery</p></div>
+        <div class="sc-card h3"><span class="when">Months 4 to 18</span><h3>Real time analytics and ROI</h3>
+          <p>One live view of resolution, satisfaction, revenue influenced and cost per brand. Churn risk flags trigger proactive outreach.</p>
+          <div class="sf"><i>Tableau Next</i><i>Agentforce Analytics</i><i>Data 360 Calculated Insights</i><i>Digital Wallet</i></div>
+          <p class="out">Outcome: ROI visible every day</p></div>
+      </div>
+    </div>
+
   </div>
-  <div class="footer"><span>Week 13 of 26. The detailed delivery plan is in the Appendix.</span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">We are at the go or no go. Ask for the decision.</p><ul class="n-pts"><li>Discovery, Build and UAT are done.</li><li>Two things go live in the 90 day window: the web agent and the email backlog agent.</li><li>The 90 day review measures the customer's stated goal.</li></ul></aside>
+  <div class="footer"><span>Week 13 of 26. Scale targets are proposed. The detailed delivery plan is in the Appendix.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">We are at the go or no go. Ask for the decision.</p><ul class="n-pts"><li>Discovery, Build and UAT are done.</li><li>Two things go live in the 90 day window: the web agent and the email backlog agent.</li><li>The 90 day review measures the customer's stated goal.</li><li>Scale tab: four workstreams to the Multi-Brand Assistant Agent, each with its Salesforce products.</li></ul></aside>
 </section>
+<script>
+(function(){
+  var s=document.querySelector('section.slide[data-sid="roadmap"]');
+  s.addEventListener('click',function(e){var b=e.target.closest('[data-rm]');if(!b||b===s)return;
+    var v=b.getAttribute('data-rm');s.setAttribute('data-rm',v);
+    [].forEach.call(s.querySelectorAll('.rm-tabs .tbtn'),function(x){x.classList.toggle('on',x.getAttribute('data-rm')===v);});});
+})();
+</script>
 
 <!-- ============ TEST, DEPLOY AND MONITOR ============ -->
 <section class="slide" data-theme="dark" data-world="drift" data-title="Test, deploy and monitor" data-sid="release" data-chapter="release" data-rstage="validate" style="padding-top:72px;padding-bottom:64px">
