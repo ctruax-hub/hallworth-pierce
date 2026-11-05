@@ -193,6 +193,13 @@
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Personas</p>
     <h2 data-anim="rise" style="--d:100ms;font-size:62px">Who the agent is for</h2>
+    <div class="gl gl-5" data-stagger="rise" data-base="250">
+      <div class="gl-card"><b>38%</b><p>Everyday Launderer</p><small>Which product to buy</small></div>
+      <div class="gl-card"><b>27%</b><p>Stain Emergency</p><small>Help before it sets</small></div>
+      <div class="gl-card"><b>15%</b><p>Care Label Decoder</p><small>How to wash it</small></div>
+      <div class="gl-card"><b>14%</b><p>Complainant</p><small>Refund or replacement</small></div>
+      <div class="gl-card safe"><b>6%</b><p>Safety Concerned Parent</p><small>A person, right now</small></div>
+    </div>
     <!-- TAB 2: customers -->
     <div class="ps-panel ps-cust" data-anim="rise" style="--d:300ms">
       <div class="pc-list" id="psList"></div>
@@ -271,6 +278,13 @@
   <div class="content">
     <p class="eyebrow" data-anim="rise">Solution architecture</p>
     <h2 data-anim="rise" style="--d:100ms">One pipeline, grounded by brand</h2>
+    <div class="gl gl-flow" data-stagger="rise" data-base="250">
+      <div class="gl-card"><span class="gl-n">1</span><b>Ingest</b><p>Knowledge articles and every brand website flow into Data 360.</p></div>
+      <i class="gl-ar">&rsaquo;</i>
+      <div class="gl-card"><span class="gl-n">2</span><b>Ground</b><p>Each brand gets its own retriever and its own Data Library.</p></div>
+      <i class="gl-ar">&rsaquo;</i>
+      <div class="gl-card hi"><span class="gl-n">3</span><b>Answer</b><p>Agentforce answers from the right brand, and only that brand.</p></div>
+    </div>
     <div class="corner" data-anim="rise" style="--d:200ms" data-no-advance>
       <div class="tgroup"><span class="tg-l">Trace</span><button class="tbtn on" type="button" data-trace="both">Both</button><button class="tbtn" type="button" data-trace="web">Web</button><button class="tbtn" type="button" data-trace="ka">Knowledge Articles</button></div>
     </div>
@@ -493,6 +507,14 @@
 <section class="slide" data-theme="light" data-world="quiet" data-title="Roadmap" data-sid="roadmap" data-chapter="roadmap" data-rm="now" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Roadmap</p>
+    <div class="gl">
+      <h2 class="gl-h">Built and tested. Today is the go or no go.</h2>
+      <div class="gl-3" data-stagger="rise" data-base="250">
+        <div class="gl-card"><b class="ok">&#10003;</b><p>Discovery, build and UAT complete</p><small>Weeks 1 to 12</small></div>
+        <div class="gl-card gold"><b>Go</b><p>Web agent and email backlog agent</p><small>Week 13, the decision today</small></div>
+        <div class="gl-card"><b>90 days</b><p>30% resolved, email backlog halved</p><small>The customer&rsquo;s goal</small></div>
+      </div>
+    </div>
     <div class="ps-tabs rm-tabs" data-anim="rise" style="--d:150ms" data-no-advance>
       <button class="tbtn on" type="button" data-rm="now">Today and next 90 days</button>
       <button class="tbtn" type="button" data-rm="scale">Scale to every brand</button>
@@ -587,6 +609,12 @@
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Test, deploy and monitor</p>
     <h2 data-anim="rise" style="--d:100ms;font-size:60px">Four stages. Every one tested, safe and watched.</h2>
+    <div class="gl gl-4" data-stagger="rise" data-base="250">
+      <div class="gl-card done"><span class="gl-n">&#10003;</span><b>Build</b><p>Every subagent unit tested</p></div>
+      <div class="gl-card done"><span class="gl-n">&#10003;</span><b>Validate</b><p>95% accurate, zero safety failures</p></div>
+      <div class="gl-card"><span class="gl-n">3</span><b>Pilot</b><p>10% of visitors, people on every safety case</p></div>
+      <div class="gl-card"><span class="gl-n">4</span><b>Scale</b><p>All visitors, reviewed every week</p></div>
+    </div>
     <div class="rs-tabs" data-anim="rise" style="--d:200ms" data-no-advance>
       <button class="rs done on" type="button" data-rstage="build"><b>&#10003;</b><span>Build<small>Developer sandbox</small></span></button>
       <button class="rs done" type="button" data-rstage="validate"><b>&#10003;</b><span>Validate<small>Full sandbox UAT</small></span></button>
@@ -651,7 +679,6 @@
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Observability</p>
     <h2 data-anim="rise" style="--d:100ms;font-size:58px">Watching the agent in production</h2>
-    <div class="ob-chips" data-anim="rise" style="--d:200ms"><i>Agent Analytics</i><i>Health Monitoring</i><i>Session Tracing</i></div>
     <div class="ob-wrap" data-anim="rise" style="--d:300ms">
       <div class="ob-frame">
         <div class="ob-bar"><span></span><span></span><span></span><b>Agentforce Studio &middot; Analytics</b></div>
@@ -670,210 +697,37 @@
 </section>
 
 <!-- ============ BUSINESS VALUE ============ -->
-<section class="slide" data-theme="light" data-world="quiet" data-title="Pricing and savings calculator" data-sid="pricing" data-chapter="value" data-tab="combined" style="padding-top:64px;padding-bottom:56px">
+
+
+<section class="slide" data-theme="light" data-world="quiet" data-title="Business value" data-sid="value" data-chapter="value" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Business value</p>
-    <h2 data-anim="rise" style="--d:100ms;font-size:58px">What it costs, and what it saves</h2>
-    <div class="pc" data-anim="rise" style="--d:250ms" data-no-advance>
-      <!-- shared drivers -->
-      <div class="pc-rail card white">
-        <p class="pc-h">Drivers</p>
-        <label class="sl"><span>Monthly support contacts <b id="o_contacts"></b></span><input type="range" id="contacts" min="5000" max="100000" step="1000" value="20000"></label>
-        <label class="sl"><span>Case deflection rate <b id="o_defl"></b></span><input type="range" id="defl" min="5" max="70" step="1" value="30"></label>
-        <label class="sl"><span>Cost per human handled case <b id="o_human"></b></span><input type="range" id="human" min="3" max="25" step="0.5" value="8.5"></label>
-        <div class="pc-fx"><b>Flex Credits</b><span>100,000 credits = $500</span><span>1 credit = $0.005</span></div>
-      </div>
-      <!-- tabbed detail -->
-      <div class="pc-main">
-        <div class="pc-tabs">
-          <button class="tbtn on" type="button" data-tab="combined">Summary</button>
-          <span class="pc-sep">Show the math</span>
-          <button class="tbtn sm" type="button" data-tab="af">Agentforce</button>
-          <button class="tbtn sm" type="button" data-tab="d360">Data 360</button>
-        </div>
-
-        <!-- DATA 360 -->
-        <div class="pc-panel p-d360">
-          <div class="dm-row">
-            <div class="tgroup"><span class="tg-l">Pricing model</span><button class="tbtn on" type="button" data-dm="flex">Flex Credits</button><button class="tbtn" type="button" data-dm="prof">Profiles</button><button class="tbtn" type="button" data-dm="ent">Enterprise Profiles</button></div>
-            <span class="dm-price" id="dm_price"></span>
-          </div>
-          <div class="dm-sl">
-            <label class="sl"><span>Unified profiles <b id="o_prof"></b></span><input type="range" id="prof" min="50000" max="3000000" step="50000" value="500000"></label>
-            <label class="sl"><span>Unification runs / mo <b id="o_runs"></b></span><input type="range" id="runs" min="1" max="30" step="1" value="4"></label>
-            <label class="sl"><span>Queries / conversation <b id="o_qpc"></b></span><input type="range" id="qpc" min="1" max="8" step="1" value="3"></label>
-            <label class="sl"><span>Rows scanned / query <b id="o_rpq"></b></span><input type="range" id="rpq" min="500" max="20000" step="500" value="2000"></label>
-          </div>
-          <table class="pc-t">
-            <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"></colgroup>
-            <thead><tr><th>Data 360 usage type</th><th>Unit</th><th class="r">Qty / mo</th><th class="r">Base rate</th><th class="r">Credits / mo</th><th class="r">Cost / mo</th></tr></thead>
-            <tbody id="d360rows"></tbody>
-            <tfoot><tr><td colspan="4" id="d_foot_l">Data 360 total</td><td class="r" id="d_cr_tot"></td><td class="r" id="d_usd_tot"></td></tr></tfoot>
-          </table>
-        </div>
-
-        <!-- AGENTFORCE -->
-        <div class="pc-panel p-af">
-          <div class="af-grid">
-            <div class="card tint compact af-build">
-              <p class="pc-h">Per conversation</p>
-              <div class="tgroup"><span class="tg-l">Pricing</span><button class="tbtn on" type="button" data-model="flex">Per action</button><button class="tbtn" type="button" data-model="res">Per resolution</button></div>
-              <div class="tgroup mt-16"><span class="tg-l">Org</span><button class="tbtn on" type="button" data-env="prod">Production</button><button class="tbtn" type="button" data-env="sbx">Sandbox</button></div>
-              <div class="af-sl">
-                <label class="sl"><span>Standard actions <b id="o_sa"></b></span><input type="range" id="sa" min="0" max="10" step="1" value="3"></label>
-                <label class="sl"><span>Custom actions (case, verification) <b id="o_ca"></b></span><input type="range" id="ca" min="0" max="6" step="1" value="1"></label>
-                <label class="sl"><span>Standard prompts <b id="o_sp"></b></span><input type="range" id="sp" min="0" max="10" step="1" value="3"></label>
-                <label class="sl"><span>Advanced prompts (photo and label reading) <b id="o_ap"></b></span><input type="range" id="ap" min="0" max="4" step="1" value="1"></label>
-              </div>
-            </div>
-            <div class="af-out">
-              <table class="pc-t">
-                <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
-                <thead><tr><th>Agentforce usage</th><th class="r">Credits / unit</th><th class="r">Units / conv</th><th class="r">Credits / conv</th></tr></thead>
-                <tbody id="afrows"></tbody>
-                <tfoot><tr><td colspan="3">Per conversation</td><td class="r" id="af_pc"></td></tr></tfoot>
-              </table>
-              <div class="af-kpis">
-                <div><span>Cost per conversation</span><b id="af_cpc"></b></div>
-                <div><span>Conversations / mo</span><b id="af_conv"></b></div>
-                <div><span>Credits / mo</span><b id="af_cr"></b></div>
-                <div class="hl"><span>Agentforce / mo</span><b id="af_usd"></b></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- COMBINED -->
-        <div class="pc-panel p-combined">
-          <div class="card sv-hero solid-net">
-            <span class="k">Net savings every month</span>
-            <b id="c_net"></b>
-            <p><span id="c_net_y"></span> &middot; <span id="cv_sum"></span></p>
-          </div>
-          <div class="card white sv-bars"><div id="wf"></div></div>
-          <div class="sv-tiles">
-            <div class="card white"><span class="k">It costs</span><b id="c_cost"></b><small id="c_cost_split"></small></div>
-            <div class="card white"><span class="k">It saves</span><b id="c_sav"></b><small id="c_sav_n"></small></div>
-            <div class="card white"><span class="k">Per resolved case</span><b id="c_cpr"></b><small id="c_cpr_n"></small></div>
-          </div>
-        </div>
-      </div>
+    <h2 data-anim="rise" style="--d:100ms">What it costs, and what it saves</h2>
+    <div class="bv-hero" data-anim="rise" style="--d:250ms">
+      <div><span class="k">Saved every month</span><b>$38,310</b></div>
+      <div class="bv-yr"><b>$459,714</b><span>a year</span><b>23%</b><span>lower cost to serve</span></div>
+    </div>
+    <div class="bv-3" data-stagger="rise" data-base="450">
+      <div class="bv-card"><span class="k">It costs</span><b>$12,691</b><p>a month for Agentforce and Data 360</p></div>
+      <div class="bv-card"><span class="k">It saves</span><b>$51,000</b><p>a month: 6,000 cases the agent resolves</p></div>
+      <div class="bv-card"><span class="k">Per resolved case</span><b>$2.12</b><p>instead of $8.50 with a person</p></div>
     </div>
   </div>
-  <div class="footer"><span>Rates: Flex Credits Rate Card, updated Nov 3, 2026, and the Data 360 pricing page. Volumes are estimates. Data 360 volume tiers applied per usage type. Storage not included.</span><span></span></div>
-  <aside class="notes"><p class="n-key">Start on Combined: one number, one picture. Then open the detail tabs if asked.</p><ul class="n-pts"><li>Deflected cases are the savings. Agentforce and Data 360 credits are the cost.</li><li>Per resolution pricing charges only for conversations the agent resolves.</li></ul></aside>
+  <div class="footer"><span>Assumes 20,000 contacts a month, 30% deflection and $8.50 per human case. Full calculator in the Appendix.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">One number: $38,310 saved every month.</p><ul class="n-pts"><li>Costs $12,691 a month to run, saves $51,000.</li><li>If asked how: the full calculator with sliders is in the Appendix.</li></ul></aside>
 </section>
-<script>
-(function(){
-  var s=document.querySelector('section.slide[data-sid="pricing"]');
-  var CR=0.005, st={model:'flex',env:'prod',dm:'flex'};
-  // Data 360 volume tiers (Flex Credits Rate Card, Nov 3 2026): credit bands per usage type per month
-  var BANDS=[300000,1500000,12500000,Infinity];
-  // key, usage type, detail, unit label, base..tier4 multipliers, sandbox, included in profile plans, qty mode
-  var D360=[
-    ['ing','Batch ingestion','Service Cloud, Commerce and loyalty into DLOs','1M rows',[0,0,0,0],'free','in',6],
-    ['prep','Data 360 Prep','DLO to DMO mapping, harmonization and transforms','1M rows',[40,32,16,8],'','in',6],
-    ['uni','Data 360 Unification','Identity resolution into unified profiles across 3 brands','1M rows',[75000,60000,30000,15000],'','in','calc'],
-    ['seg','Data 360 Segmentation','Brand and cross brand audiences','1M rows',[50,40,20,10],'','in',15],
-    ['str','Data 360 Streaming Pipeline','Live case and order updates for the agent','1M rows',[3500,2800,1400,700],'','meter',0.5],
-    ['uns','Data 360 Unstructured Processing','Web content crawler: chunk and index 3 brand sites','MB',[150,120,60,30],'','meter',1500],
-    ['q','Data 360 Queries','Agent grounding and unified profile lookups','1M rows',[3,2.4,1.2,0.6],'','meter','calc']
-  ];
-  var PLAN={prof:{usd:240,inc:1,label:'Profiles: $240 per 1K profiles a year, 1 Flex Credit per profile included'},
-            ent:{usd:420,inc:2,label:'Enterprise Profiles: $420 per 1K profiles a year, 2 Flex Credits per profile included'},
-            flex:{label:'Flex Credits: $500 per 100K credits, pay for what you use'}};
-  var tb=s.querySelector('#d360rows');
-  D360.forEach(function(r){
-    var tr=document.createElement('tr');tr.id='row_'+r[0];
-    var calc=r[7]==='calc';
-    tr.innerHTML='<td><b>'+r[1]+'</b><small>'+r[2]+'</small></td><td>'+r[3]+'</td>'+
-      '<td class="r"><input type="number" min="0" step="any" id="dq_'+r[0]+'" value="'+(calc?0:r[7])+'"'+(calc?' readonly tabindex="-1"':'')+'></td>'+
-      '<td class="r">'+(r[5]==='free'?'Free':r[4][0].toLocaleString('en-US'))+'</td><td class="r" id="dcr_'+r[0]+'"></td><td class="r" id="dusd_'+r[0]+'"></td>';
-    tb.appendChild(tr);
-  });
-  function g(id){return s.querySelector('#'+id);}
-  function v(id){return parseFloat(g(id).value)||0;}
-  function n(x){return Math.round(x).toLocaleString('en-US');}
-  function usd(x,dp){return (x<0?'-':'')+'$'+Math.abs(x).toLocaleString('en-US',{minimumFractionDigits:dp||0,maximumFractionDigits:dp||0});}
-  function k(x){var a=Math.abs(x);return a>=1e6?usd(x/1e6,2)+'M':a>=1e5?usd(x/1e3)+'K':a>=1e4?usd(x/1e3,1)+'K':usd(x);}
-  function t(id,txt){g(id).textContent=txt;}
-  function tiered(units,m){var left=units,cr=0,prev=0;for(var i=0;i<4&&left>0;i++){if(!m[i])return 0;var cap=(BANDS[i]-prev)/m[i],take=Math.min(left,cap);cr+=take*m[i];left-=take;prev=BANDS[i];}return cr;}
-  function calc(){
-    var contacts=v('contacts'),defl=v('defl')/100,human=v('human');
-    t('o_contacts',n(contacts));t('o_defl',Math.round(defl*100)+'%');t('o_human',usd(human,2));
-    var conv=contacts,resolved=conv*defl;
-    // ---- Data 360 ----
-    var prof=v('prof'),runs=v('runs'),qpc=v('qpc'),rpq=v('rpq');
-    t('o_prof',prof>=1e6?(prof/1e6).toFixed(2).replace(/\.?0+$/,'')+'M':n(prof/1e3)+'K');t('o_runs',runs);t('o_qpc',qpc);t('o_rpq',n(rpq));
-    g('dq_uni').value=+(prof/1e6*runs).toFixed(2);
-    g('dq_q').value=+(conv*qpc*rpq/1e6).toFixed(1);
-    var plan=st.dm!=='flex', meterCr=0, allCr=0;
-    D360.forEach(function(r){
-      var q=v('dq_'+r[0]),cr=(st.env==='sbx'&&r[4][0])?q*r[4][1]:tiered(q,r[4]);
-      var incl=plan&&r[6]==='in';
-      if(r[5]==='free'){t('dcr_'+r[0],'0');t('dusd_'+r[0],'Free');}
-      else if(incl){t('dcr_'+r[0],'Included');t('dusd_'+r[0],'$0');}
-      else{t('dcr_'+r[0],n(cr));t('dusd_'+r[0],usd(cr*CR));meterCr+=cr;}
-      allCr+=cr;
-      g('row_'+r[0]).classList.toggle('incl',incl||r[5]==='free');
-    });
-    var dusd,lic=0,incCr=0;
-    if(!plan){dusd=meterCr*CR;t('d_foot_l','Data 360 total');t('d_cr_tot',n(meterCr));}
-    else{lic=prof/1000*PLAN[st.dm].usd/12;incCr=prof*PLAN[st.dm].inc/12;var billCr=Math.max(0,meterCr-incCr);dusd=lic+billCr*CR;
-      t('d_foot_l','License '+usd(lic)+' + metered '+n(meterCr)+' credits, less '+n(incCr)+' included');t('d_cr_tot',n(billCr));}
-    t('d_usd_tot',usd(dusd));t('dm_price',PLAN[st.dm].label);
-    // ---- Agentforce ----
-    var sa=v('sa'),ca=v('ca'),sp=v('sp'),ap=v('ap');t('o_sa',sa);t('o_ca',ca);t('o_sp',sp);t('o_ap',ap);
-    var act=st.env==='prod'?20:16, env=st.env==='prod'?'production':'sandbox', rows, per, afcr;
-    if(st.model==='flex'){
-      rows=[['Standard action ('+env+')',act,sa],['Custom action ('+env+')',act,ca],['Standard prompt',4,sp],['Advanced prompt',16,ap]];
-      per=rows.reduce(function(a,r){return a+r[1]*r[2];},0);afcr=per*conv;
-    }else{
-      var hr=st.env==='prod'?400:0;
-      rows=[['Help Agent Resolution ('+env+'), per resolved conversation',hr,1]];per=hr;afcr=hr*resolved;
-    }
-    g('afrows').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td class="r">'+r[1]+'</td><td class="r">'+r[2]+'</td><td class="r">'+n(r[1]*r[2])+'</td></tr>';}).join('');
-    var afusd=afcr*CR;
-    t('af_pc',n(per)+' credits');
-    t('af_cpc',st.model==='flex'?usd(per*CR,2):usd(per*CR,2)+' / resolution');
-    t('af_conv',n(st.model==='flex'?conv:resolved)+(st.model==='flex'?'':' resolved'));
-    t('af_cr',n(afcr));t('af_usd',usd(afusd));
-    // ---- Combined ----
-    var cost=afusd+dusd,sav=resolved*human,net=sav-cost,today=conv*human,withc=(conv-resolved)*human+cost;
-    t('c_cost',usd(cost));t('c_cost_split','Agentforce '+k(afusd)+' + Data 360 '+k(dusd));
-    t('c_sav',usd(sav));t('c_sav_n',n(resolved)+' cases resolved by the agent');
-    t('c_net',usd(net));t('c_net_y',usd(net*12)+' a year');
-    t('c_cpr',resolved>0?usd(cost/resolved,2):'n/a');t('c_cpr_n','vs '+usd(human,2)+' when a person handles it');
-    s.querySelector('.solid-net').classList.toggle('neg',net<0);
-    drawWF({today:today,sav:sav,af:afusd,dc:dusd,withc:withc,net:net});
-  }
-  function drawWF(o){
-    var mx=Math.max(o.today,o.withc,1),people=o.withc-o.af-o.dc,pct=Math.round(o.net/Math.max(o.today,1)*100);
-    var w=function(x){return Math.max(0,x/mx*100)+'%';};
-    g('wf').innerHTML=
-      '<div class="sv-row"><span class="lb"><b>Today</b>Every case handled by a person</span><div class="tr"><i class="seg hm" style="width:'+w(o.today)+'"></i></div><b class="v">'+usd(o.today)+'</b></div>'+
-      '<div class="sv-row"><span class="lb"><b>With Agentforce</b>The agent resolves '+Math.round(v('defl'))+'% of cases</span><div class="tr"><i class="seg hm" style="width:'+w(people)+'"></i><i class="seg ag" style="width:'+w(o.af+o.dc)+'"></i>'+(o.net>0?'<i class="seg sv" style="width:'+w(o.net)+'"><em>Saved '+usd(o.net)+'</em></i>':'')+'</div><b class="v">'+usd(o.withc)+'</b></div>'+
-      '<div class="sv-leg"><span><i class="hm"></i>People</span><span><i class="ag"></i>Agentforce and Data 360</span><span><i class="sv"></i>Savings</span></div>';
-    g('cv_sum').textContent=o.net>=0?pct+'% lower cost to serve':Math.abs(pct)+'% higher at these settings';
-  }
-  s.addEventListener('input',calc);
-  // keep arrow, delete and letter keys inside the calculator from changing slides
-  s.addEventListener('keydown',function(e){if(e.target.closest('input'))e.stopPropagation();});
-  function pick(attr,b){[].forEach.call(s.querySelectorAll('.tbtn['+attr+']'),function(x){x.classList.toggle('on',x===b);});}
-  s.addEventListener('click',function(e){
-    var b=e.target.closest('.tbtn');if(!b)return;
-    if(b.hasAttribute('data-tab')){s.setAttribute('data-tab',b.getAttribute('data-tab'));pick('data-tab',b);}
-    if(b.hasAttribute('data-model')){st.model=b.getAttribute('data-model');pick('data-model',b);s.classList.toggle('res',st.model==='res');calc();}
-    if(b.hasAttribute('data-env')){st.env=b.getAttribute('data-env');pick('data-env',b);calc();}
-    if(b.hasAttribute('data-dm')){st.dm=b.getAttribute('data-dm');pick('data-dm',b);s.setAttribute('data-dm',st.dm);calc();}
-  });
-  calc();
-})();
-</script>
 
 <section class="slide" data-theme="light" data-world="quiet" data-title="KPIs" data-sid="kpis" data-chapter="value" data-ktab="int" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">KPIs</p>
+    <div class="gl">
+      <h2 class="gl-h">How we know it works</h2>
+      <div class="gl-3" data-stagger="rise" data-base="250">
+        <div class="gl-card"><b>12 of 12</b><p>internal targets met in UAT</p><small>Accuracy, speed and safety</small></div>
+        <div class="gl-card gold"><b>30%</b><p>tier 1 resolved without escalation</p><small>Within 90 days</small></div>
+        <div class="gl-card gold"><b>&frac12;</b><p>the email backlog time</p><small>Within 90 days</small></div>
+      </div>
+    </div>
     <div class="ps-tabs kp-tabs" data-anim="rise" style="--d:150ms" data-no-advance>
       <button class="tbtn on" type="button" data-ktab="int">Internal</button>
       <button class="tbtn" type="button" data-ktab="ext">External</button>
@@ -1090,6 +944,207 @@
 
 <!--K:brand-aware:appendix-->
 
+<section class="slide" data-theme="light" data-world="quiet" data-title="Pricing and savings calculator" data-sid="pricing" data-chapter="appendix" data-tab="combined" style="padding-top:64px;padding-bottom:56px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Appendix</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:58px">Pricing calculator</h2>
+    <div class="pc" data-anim="rise" style="--d:250ms" data-no-advance>
+      <!-- shared drivers -->
+      <div class="pc-rail card white">
+        <p class="pc-h">Drivers</p>
+        <label class="sl"><span>Monthly support contacts <b id="o_contacts"></b></span><input type="range" id="contacts" min="5000" max="100000" step="1000" value="20000"></label>
+        <label class="sl"><span>Case deflection rate <b id="o_defl"></b></span><input type="range" id="defl" min="5" max="70" step="1" value="30"></label>
+        <label class="sl"><span>Cost per human handled case <b id="o_human"></b></span><input type="range" id="human" min="3" max="25" step="0.5" value="8.5"></label>
+        <div class="pc-fx"><b>Flex Credits</b><span>100,000 credits = $500</span><span>1 credit = $0.005</span></div>
+      </div>
+      <!-- tabbed detail -->
+      <div class="pc-main">
+        <div class="pc-tabs">
+          <button class="tbtn on" type="button" data-tab="combined">Summary</button>
+          <span class="pc-sep">Show the math</span>
+          <button class="tbtn sm" type="button" data-tab="af">Agentforce</button>
+          <button class="tbtn sm" type="button" data-tab="d360">Data 360</button>
+        </div>
+
+        <!-- DATA 360 -->
+        <div class="pc-panel p-d360">
+          <div class="dm-row">
+            <div class="tgroup"><span class="tg-l">Pricing model</span><button class="tbtn on" type="button" data-dm="flex">Flex Credits</button><button class="tbtn" type="button" data-dm="prof">Profiles</button><button class="tbtn" type="button" data-dm="ent">Enterprise Profiles</button></div>
+            <span class="dm-price" id="dm_price"></span>
+          </div>
+          <div class="dm-sl">
+            <label class="sl"><span>Unified profiles <b id="o_prof"></b></span><input type="range" id="prof" min="50000" max="3000000" step="50000" value="500000"></label>
+            <label class="sl"><span>Unification runs / mo <b id="o_runs"></b></span><input type="range" id="runs" min="1" max="30" step="1" value="4"></label>
+            <label class="sl"><span>Queries / conversation <b id="o_qpc"></b></span><input type="range" id="qpc" min="1" max="8" step="1" value="3"></label>
+            <label class="sl"><span>Rows scanned / query <b id="o_rpq"></b></span><input type="range" id="rpq" min="500" max="20000" step="500" value="2000"></label>
+          </div>
+          <table class="pc-t">
+            <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"></colgroup>
+            <thead><tr><th>Data 360 usage type</th><th>Unit</th><th class="r">Qty / mo</th><th class="r">Base rate</th><th class="r">Credits / mo</th><th class="r">Cost / mo</th></tr></thead>
+            <tbody id="d360rows"></tbody>
+            <tfoot><tr><td colspan="4" id="d_foot_l">Data 360 total</td><td class="r" id="d_cr_tot"></td><td class="r" id="d_usd_tot"></td></tr></tfoot>
+          </table>
+        </div>
+
+        <!-- AGENTFORCE -->
+        <div class="pc-panel p-af">
+          <div class="af-grid">
+            <div class="card tint compact af-build">
+              <p class="pc-h">Per conversation</p>
+              <div class="tgroup"><span class="tg-l">Pricing</span><button class="tbtn on" type="button" data-model="flex">Per action</button><button class="tbtn" type="button" data-model="res">Per resolution</button></div>
+              <div class="tgroup mt-16"><span class="tg-l">Org</span><button class="tbtn on" type="button" data-env="prod">Production</button><button class="tbtn" type="button" data-env="sbx">Sandbox</button></div>
+              <div class="af-sl">
+                <label class="sl"><span>Standard actions <b id="o_sa"></b></span><input type="range" id="sa" min="0" max="10" step="1" value="3"></label>
+                <label class="sl"><span>Custom actions (case, verification) <b id="o_ca"></b></span><input type="range" id="ca" min="0" max="6" step="1" value="1"></label>
+                <label class="sl"><span>Standard prompts <b id="o_sp"></b></span><input type="range" id="sp" min="0" max="10" step="1" value="3"></label>
+                <label class="sl"><span>Advanced prompts (photo and label reading) <b id="o_ap"></b></span><input type="range" id="ap" min="0" max="4" step="1" value="1"></label>
+              </div>
+            </div>
+            <div class="af-out">
+              <table class="pc-t">
+                <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+                <thead><tr><th>Agentforce usage</th><th class="r">Credits / unit</th><th class="r">Units / conv</th><th class="r">Credits / conv</th></tr></thead>
+                <tbody id="afrows"></tbody>
+                <tfoot><tr><td colspan="3">Per conversation</td><td class="r" id="af_pc"></td></tr></tfoot>
+              </table>
+              <div class="af-kpis">
+                <div><span>Cost per conversation</span><b id="af_cpc"></b></div>
+                <div><span>Conversations / mo</span><b id="af_conv"></b></div>
+                <div><span>Credits / mo</span><b id="af_cr"></b></div>
+                <div class="hl"><span>Agentforce / mo</span><b id="af_usd"></b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMBINED -->
+        <div class="pc-panel p-combined">
+          <div class="card sv-hero solid-net">
+            <span class="k">Net savings every month</span>
+            <b id="c_net"></b>
+            <p><span id="c_net_y"></span> &middot; <span id="cv_sum"></span></p>
+          </div>
+          <div class="card white sv-bars"><div id="wf"></div></div>
+          <div class="sv-tiles">
+            <div class="card white"><span class="k">It costs</span><b id="c_cost"></b><small id="c_cost_split"></small></div>
+            <div class="card white"><span class="k">It saves</span><b id="c_sav"></b><small id="c_sav_n"></small></div>
+            <div class="card white"><span class="k">Per resolved case</span><b id="c_cpr"></b><small id="c_cpr_n"></small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Rates: Flex Credits Rate Card, updated Nov 3, 2026, and the Data 360 pricing page. Volumes are estimates. Data 360 volume tiers applied per usage type. Storage not included.</span><span></span></div>
+  <aside class="notes"><p class="n-key">Start on Combined: one number, one picture. Then open the detail tabs if asked.</p><ul class="n-pts"><li>Deflected cases are the savings. Agentforce and Data 360 credits are the cost.</li><li>Per resolution pricing charges only for conversations the agent resolves.</li></ul></aside>
+</section>
+<script>
+(function(){
+  var s=document.querySelector('section.slide[data-sid="pricing"]');
+  var CR=0.005, st={model:'flex',env:'prod',dm:'flex'};
+  // Data 360 volume tiers (Flex Credits Rate Card, Nov 3 2026): credit bands per usage type per month
+  var BANDS=[300000,1500000,12500000,Infinity];
+  // key, usage type, detail, unit label, base..tier4 multipliers, sandbox, included in profile plans, qty mode
+  var D360=[
+    ['ing','Batch ingestion','Service Cloud, Commerce and loyalty into DLOs','1M rows',[0,0,0,0],'free','in',6],
+    ['prep','Data 360 Prep','DLO to DMO mapping, harmonization and transforms','1M rows',[40,32,16,8],'','in',6],
+    ['uni','Data 360 Unification','Identity resolution into unified profiles across 3 brands','1M rows',[75000,60000,30000,15000],'','in','calc'],
+    ['seg','Data 360 Segmentation','Brand and cross brand audiences','1M rows',[50,40,20,10],'','in',15],
+    ['str','Data 360 Streaming Pipeline','Live case and order updates for the agent','1M rows',[3500,2800,1400,700],'','meter',0.5],
+    ['uns','Data 360 Unstructured Processing','Web content crawler: chunk and index 3 brand sites','MB',[150,120,60,30],'','meter',1500],
+    ['q','Data 360 Queries','Agent grounding and unified profile lookups','1M rows',[3,2.4,1.2,0.6],'','meter','calc']
+  ];
+  var PLAN={prof:{usd:240,inc:1,label:'Profiles: $240 per 1K profiles a year, 1 Flex Credit per profile included'},
+            ent:{usd:420,inc:2,label:'Enterprise Profiles: $420 per 1K profiles a year, 2 Flex Credits per profile included'},
+            flex:{label:'Flex Credits: $500 per 100K credits, pay for what you use'}};
+  var tb=s.querySelector('#d360rows');
+  D360.forEach(function(r){
+    var tr=document.createElement('tr');tr.id='row_'+r[0];
+    var calc=r[7]==='calc';
+    tr.innerHTML='<td><b>'+r[1]+'</b><small>'+r[2]+'</small></td><td>'+r[3]+'</td>'+
+      '<td class="r"><input type="number" min="0" step="any" id="dq_'+r[0]+'" value="'+(calc?0:r[7])+'"'+(calc?' readonly tabindex="-1"':'')+'></td>'+
+      '<td class="r">'+(r[5]==='free'?'Free':r[4][0].toLocaleString('en-US'))+'</td><td class="r" id="dcr_'+r[0]+'"></td><td class="r" id="dusd_'+r[0]+'"></td>';
+    tb.appendChild(tr);
+  });
+  function g(id){return s.querySelector('#'+id);}
+  function v(id){return parseFloat(g(id).value)||0;}
+  function n(x){return Math.round(x).toLocaleString('en-US');}
+  function usd(x,dp){return (x<0?'-':'')+'$'+Math.abs(x).toLocaleString('en-US',{minimumFractionDigits:dp||0,maximumFractionDigits:dp||0});}
+  function k(x){var a=Math.abs(x);return a>=1e6?usd(x/1e6,2)+'M':a>=1e5?usd(x/1e3)+'K':a>=1e4?usd(x/1e3,1)+'K':usd(x);}
+  function t(id,txt){g(id).textContent=txt;}
+  function tiered(units,m){var left=units,cr=0,prev=0;for(var i=0;i<4&&left>0;i++){if(!m[i])return 0;var cap=(BANDS[i]-prev)/m[i],take=Math.min(left,cap);cr+=take*m[i];left-=take;prev=BANDS[i];}return cr;}
+  function calc(){
+    var contacts=v('contacts'),defl=v('defl')/100,human=v('human');
+    t('o_contacts',n(contacts));t('o_defl',Math.round(defl*100)+'%');t('o_human',usd(human,2));
+    var conv=contacts,resolved=conv*defl;
+    // ---- Data 360 ----
+    var prof=v('prof'),runs=v('runs'),qpc=v('qpc'),rpq=v('rpq');
+    t('o_prof',prof>=1e6?(prof/1e6).toFixed(2).replace(/\.?0+$/,'')+'M':n(prof/1e3)+'K');t('o_runs',runs);t('o_qpc',qpc);t('o_rpq',n(rpq));
+    g('dq_uni').value=+(prof/1e6*runs).toFixed(2);
+    g('dq_q').value=+(conv*qpc*rpq/1e6).toFixed(1);
+    var plan=st.dm!=='flex', meterCr=0, allCr=0;
+    D360.forEach(function(r){
+      var q=v('dq_'+r[0]),cr=(st.env==='sbx'&&r[4][0])?q*r[4][1]:tiered(q,r[4]);
+      var incl=plan&&r[6]==='in';
+      if(r[5]==='free'){t('dcr_'+r[0],'0');t('dusd_'+r[0],'Free');}
+      else if(incl){t('dcr_'+r[0],'Included');t('dusd_'+r[0],'$0');}
+      else{t('dcr_'+r[0],n(cr));t('dusd_'+r[0],usd(cr*CR));meterCr+=cr;}
+      allCr+=cr;
+      g('row_'+r[0]).classList.toggle('incl',incl||r[5]==='free');
+    });
+    var dusd,lic=0,incCr=0;
+    if(!plan){dusd=meterCr*CR;t('d_foot_l','Data 360 total');t('d_cr_tot',n(meterCr));}
+    else{lic=prof/1000*PLAN[st.dm].usd/12;incCr=prof*PLAN[st.dm].inc/12;var billCr=Math.max(0,meterCr-incCr);dusd=lic+billCr*CR;
+      t('d_foot_l','License '+usd(lic)+' + metered '+n(meterCr)+' credits, less '+n(incCr)+' included');t('d_cr_tot',n(billCr));}
+    t('d_usd_tot',usd(dusd));t('dm_price',PLAN[st.dm].label);
+    // ---- Agentforce ----
+    var sa=v('sa'),ca=v('ca'),sp=v('sp'),ap=v('ap');t('o_sa',sa);t('o_ca',ca);t('o_sp',sp);t('o_ap',ap);
+    var act=st.env==='prod'?20:16, env=st.env==='prod'?'production':'sandbox', rows, per, afcr;
+    if(st.model==='flex'){
+      rows=[['Standard action ('+env+')',act,sa],['Custom action ('+env+')',act,ca],['Standard prompt',4,sp],['Advanced prompt',16,ap]];
+      per=rows.reduce(function(a,r){return a+r[1]*r[2];},0);afcr=per*conv;
+    }else{
+      var hr=st.env==='prod'?400:0;
+      rows=[['Help Agent Resolution ('+env+'), per resolved conversation',hr,1]];per=hr;afcr=hr*resolved;
+    }
+    g('afrows').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td class="r">'+r[1]+'</td><td class="r">'+r[2]+'</td><td class="r">'+n(r[1]*r[2])+'</td></tr>';}).join('');
+    var afusd=afcr*CR;
+    t('af_pc',n(per)+' credits');
+    t('af_cpc',st.model==='flex'?usd(per*CR,2):usd(per*CR,2)+' / resolution');
+    t('af_conv',n(st.model==='flex'?conv:resolved)+(st.model==='flex'?'':' resolved'));
+    t('af_cr',n(afcr));t('af_usd',usd(afusd));
+    // ---- Combined ----
+    var cost=afusd+dusd,sav=resolved*human,net=sav-cost,today=conv*human,withc=(conv-resolved)*human+cost;
+    t('c_cost',usd(cost));t('c_cost_split','Agentforce '+k(afusd)+' + Data 360 '+k(dusd));
+    t('c_sav',usd(sav));t('c_sav_n',n(resolved)+' cases resolved by the agent');
+    t('c_net',usd(net));t('c_net_y',usd(net*12)+' a year');
+    t('c_cpr',resolved>0?usd(cost/resolved,2):'n/a');t('c_cpr_n','vs '+usd(human,2)+' when a person handles it');
+    s.querySelector('.solid-net').classList.toggle('neg',net<0);
+    drawWF({today:today,sav:sav,af:afusd,dc:dusd,withc:withc,net:net});
+  }
+  function drawWF(o){
+    var mx=Math.max(o.today,o.withc,1),people=o.withc-o.af-o.dc,pct=Math.round(o.net/Math.max(o.today,1)*100);
+    var w=function(x){return Math.max(0,x/mx*100)+'%';};
+    g('wf').innerHTML=
+      '<div class="sv-row"><span class="lb"><b>Today</b>Every case handled by a person</span><div class="tr"><i class="seg hm" style="width:'+w(o.today)+'"></i></div><b class="v">'+usd(o.today)+'</b></div>'+
+      '<div class="sv-row"><span class="lb"><b>With Agentforce</b>The agent resolves '+Math.round(v('defl'))+'% of cases</span><div class="tr"><i class="seg hm" style="width:'+w(people)+'"></i><i class="seg ag" style="width:'+w(o.af+o.dc)+'"></i>'+(o.net>0?'<i class="seg sv" style="width:'+w(o.net)+'"><em>Saved '+usd(o.net)+'</em></i>':'')+'</div><b class="v">'+usd(o.withc)+'</b></div>'+
+      '<div class="sv-leg"><span><i class="hm"></i>People</span><span><i class="ag"></i>Agentforce and Data 360</span><span><i class="sv"></i>Savings</span></div>';
+    g('cv_sum').textContent=o.net>=0?pct+'% lower cost to serve':Math.abs(pct)+'% higher at these settings';
+  }
+  s.addEventListener('input',calc);
+  // keep arrow, delete and letter keys inside the calculator from changing slides
+  s.addEventListener('keydown',function(e){if(e.target.closest('input'))e.stopPropagation();});
+  function pick(attr,b){[].forEach.call(s.querySelectorAll('.tbtn['+attr+']'),function(x){x.classList.toggle('on',x===b);});}
+  s.addEventListener('click',function(e){
+    var b=e.target.closest('.tbtn');if(!b)return;
+    if(b.hasAttribute('data-tab')){s.setAttribute('data-tab',b.getAttribute('data-tab'));pick('data-tab',b);}
+    if(b.hasAttribute('data-model')){st.model=b.getAttribute('data-model');pick('data-model',b);s.classList.toggle('res',st.model==='res');calc();}
+    if(b.hasAttribute('data-env')){st.env=b.getAttribute('data-env');pick('data-env',b);calc();}
+    if(b.hasAttribute('data-dm')){st.dm=b.getAttribute('data-dm');pick('data-dm',b);s.setAttribute('data-dm',st.dm);calc();}
+  });
+  calc();
+})();
+</script>
+
 <section class="slide" data-theme="light" data-world="quiet" data-title="Rate card reference" data-sid="rates" data-chapter="appendix" style="padding-top:72px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Appendix</p>
@@ -1130,3 +1185,21 @@
   <div class="footer"><span>Sources: Flex Credits Rate Card, updated Nov 3, 2026, and salesforce.com/data/pricing.</span><span>Brightcurrent Agentforce capstone</span></div>
 </section>
 
+
+<script>
+(function(){
+  var list=[].slice.call(document.querySelectorAll('section.slide')).filter(function(x){return x.querySelector(':scope > .content > .gl');});
+  function set(sl,v){sl.setAttribute('data-view',v);var b=sl.querySelector(':scope > .gl-btn');if(b)b.innerHTML=v==='glance'?'Show detail <kbd>D</kbd>':'Back to summary <kbd>D</kbd>';}
+  list.forEach(function(sl){
+    var b=document.createElement('button');b.type='button';b.className='gl-btn';b.setAttribute('data-no-advance','');
+    b.addEventListener('click',function(){set(sl,sl.getAttribute('data-view')==='glance'?'detail':'glance');});
+    sl.appendChild(b);set(sl,'glance');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey||(e.key!=='d'&&e.key!=='D'))return;
+    if(e.target.closest&&e.target.closest('input,textarea'))return;
+    var a=document.querySelector('section.slide.is-active');
+    if(a&&list.indexOf(a)>=0)set(a,a.getAttribute('data-view')==='glance'?'detail':'glance');
+  });
+})();
+</script>
