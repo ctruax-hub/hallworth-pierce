@@ -96,12 +96,12 @@
       </div>
     </div>
     <div class="callout glass mt-32 base-callout" data-anim="rise" style="--d:900ms">
-      <div class="stat" data-count>462</div>
+      <div class="stat" data-count>3,850</div>
       <div><p class="lede" style="color:var(--white)">open cases waiting in the support backlog</p><p class="small muted mt-16">And it keeps growing.</p></div>
     </div>
   </div>
   <div class="footer"><span></span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">Fragmented support, siloed by brand, with no memory, no vision and no intelligence.</p><ul class="n-pts"><li>Customers often need help that depends on a photo.</li><li>Email handles that poorly.</li><li>Backlogs grow with no visibility into performance. 462 open cases today.</li></ul></aside>
+  <aside class="notes"><p class="n-key">Fragmented support, siloed by brand, with no memory, no vision and no intelligence.</p><ul class="n-pts"><li>Customers often need help that depends on a photo.</li><li>Email handles that poorly.</li><li>Backlogs grow with no visibility into performance. About 3,850 open cases today: roughly 670 new contacts a day, each open for about 6 days.</li></ul></aside>
 </section>
 
 <section class="slide" data-theme="dark" data-world="finale" data-title="Vision" data-sid="vision" data-chapter="challenge">
@@ -439,7 +439,6 @@
         <label class="sl"><span>Monthly support contacts <b id="o_contacts"></b></span><input type="range" id="contacts" min="5000" max="100000" step="1000" value="20000"></label>
         <label class="sl"><span>Case deflection rate <b id="o_defl"></b></span><input type="range" id="defl" min="5" max="70" step="1" value="30"></label>
         <label class="sl"><span>Cost per human handled case <b id="o_human"></b></span><input type="range" id="human" min="3" max="25" step="0.5" value="8.5"></label>
-        <label class="sl"><span>One time implementation <b id="o_impl"></b></span><input type="range" id="impl" min="0" max="500000" step="10000" value="150000"></label>
         <div class="pc-fx"><b>Flex Credits</b><span>100,000 credits = $500</span><span>1 credit = $0.005</span></div>
       </div>
       <!-- tabbed detail -->
@@ -507,7 +506,7 @@
             <div class="card white compact"><span>Platform cost / mo</span><b id="c_cost"></b><small id="c_cost_split"></small></div>
             <div class="card white compact"><span>Savings from deflection / mo</span><b id="c_sav"></b><small id="c_sav_n"></small></div>
             <div class="card compact solid-net"><span>Net savings / mo</span><b id="c_net"></b><small id="c_net_y"></small></div>
-            <div class="card white compact"><span>Payback</span><b id="c_pay"></b><small id="c_roi"></small></div>
+            <div class="card white compact"><span>Cost per resolved case</span><b id="c_cpr"></b><small id="c_cpr_n"></small></div>
           </div>
           <div class="card white compact cb-bars">
             <p class="pc-h">Monthly cost to serve</p>
@@ -558,8 +557,8 @@
   function t(id,txt){g(id).textContent=txt;}
   function tiered(units,m){var left=units,cr=0,prev=0;for(var i=0;i<4&&left>0;i++){if(!m[i])return 0;var cap=(BANDS[i]-prev)/m[i],take=Math.min(left,cap);cr+=take*m[i];left-=take;prev=BANDS[i];}return cr;}
   function calc(){
-    var contacts=v('contacts'),defl=v('defl')/100,human=v('human'),impl=v('impl');
-    t('o_contacts',n(contacts));t('o_defl',Math.round(defl*100)+'%');t('o_human',usd(human,2));t('o_impl',k(impl));
+    var contacts=v('contacts'),defl=v('defl')/100,human=v('human');
+    t('o_contacts',n(contacts));t('o_defl',Math.round(defl*100)+'%');t('o_human',usd(human,2));
     var conv=contacts,resolved=conv*defl;
     // ---- Data 360 ----
     var prof=v('prof'),runs=v('runs'),qpc=v('qpc'),rpq=v('rpq');
@@ -602,8 +601,7 @@
     t('c_cost',usd(cost));t('c_cost_split','Agentforce '+k(afusd)+' + Data 360 '+k(dusd));
     t('c_sav',usd(sav));t('c_sav_n',n(resolved)+' cases resolved by the agent');
     t('c_net',usd(net));t('c_net_y',usd(net*12)+' per year');
-    t('c_pay',net>0?(impl/net<1?'< 1 month':(impl/net).toFixed(1)+' months'):'No payback');
-    t('c_roi',net>0?'First year ROI '+Math.round((net*12-impl)/Math.max(impl+cost*12,1)*100)+'%':'Raise deflection or lower cost');
+    t('c_cpr',resolved>0?usd(cost/resolved,2):'n/a');t('c_cpr_n','vs '+usd(human,2)+' when a person handles it');
     s.querySelector('.solid-net').classList.toggle('neg',net<0);
     var mx=Math.max(today,withc,1);
     g('b_today').style.width=(today/mx*100)+'%';
