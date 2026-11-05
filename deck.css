@@ -34,3 +34,12 @@ body.deck-open{overflow:hidden}
 .navmenu .nm-item.on{background:rgba(200,162,74,.28)}
 .navmenu .nm-n{flex:0 0 22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;background:rgba(255,255,255,.12);color:#cfe0ff}
 .navmenu .nm-item.on .nm-n{background:var(--accent);color:var(--navy)}
+.demobar .chips{gap:2px}
+.demobar .chip{padding:7px 9px}
+/* 12 chips: tighter so the full outline fits at 1280px */
+.demobar .wrap{gap:10px;padding:0 12px}
+.demobar .chip{padding:6px 7px;font-size:12.5px;letter-spacing:-.005em}
+.demobar .play{padding:7px 13px}
+@media(max-width:1180px){.demobar .play .pl{display:none}}
+.demobar .chip{padding:6px 6px}
+.demobar .chip .caret{width:5px;height:5px}

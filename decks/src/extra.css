@@ -340,3 +340,23 @@
 .pc-t tr.incl td{color:#6b7a99}
 .pc-t tr.incl td:nth-child(5),.pc-t tr.incl td:nth-child(6){font-weight:700;color:var(--teal60)}
 #d_foot_l{font-size:18px}
+/* deployment plan */
+.dp-stages .stg{font-size:40px;padding:20px 26px;gap:18px}
+.dp-stages .stg span{display:flex;flex-direction:column;line-height:1.05}
+.dp-stages .stg small{font:600 19px/1.2 var(--font-body);color:var(--cb80);margin-top:6px}
+.dp-stages .stg.on small{color:var(--cb90)}
+.slide[data-stage="validate"] .sp[data-s="validate"],.slide[data-stage="pilot"] .sp[data-s="pilot"],.slide[data-stage="scale"] .sp[data-s="scale"]{display:grid;animation:rtpop .5s var(--ease)}
+.dp-roll{display:flex;gap:36px;align-items:center;padding:26px 40px}
+.dp-roll .tag{font-size:var(--t-min);letter-spacing:.14em;text-transform:uppercase;color:var(--cb68);font-weight:700;flex:0 0 auto}
+.dp-roll p{font-size:var(--t-small);line-height:1.35;color:var(--white)}
+/* agenda with 10 items */
+.slide .agenda .item{padding:13px 0 12px}
+.slide .agenda .num{font-size:64px}
+.slide .agenda .item .txt b{font-size:36px}
+/* rate card appendix */
+.rc{display:grid;grid-template-columns:600px 1fr;gap:32px;align-items:start}
+.rc .pc-t td{padding:8px 16px;font-size:21px}
+.rc .pc-t th{font-size:19px}
+.rc .pc-t{table-layout:auto}
+.rc .pc-t td:first-child,.rc .pc-t td:nth-child(2){white-space:nowrap}
+.rc{grid-template-columns:560px 1fr}

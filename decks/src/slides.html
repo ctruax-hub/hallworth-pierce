@@ -51,12 +51,13 @@
       <div class="item" data-no-advance data-goto="team"><span class="num">01</span><div class="txt"><b>Introductions</b><span>Who we are and what we built</span></div></div>
       <div class="item" data-no-advance data-goto="test"><span class="num">06</span><div class="txt"><b>Test plan</b><span>How we prove it works</span></div></div>
       <div class="item" data-no-advance data-goto="challenge"><span class="num">02</span><div class="txt"><b>Challenge statement</b><span>What we heard</span></div></div>
-      <div class="item" data-no-advance data-goto="observability"><span class="num">07</span><div class="txt"><b>Observability</b><span>How we measure and improve</span></div></div>
+      <div class="item" data-no-advance data-goto="deploy"><span class="num">07</span><div class="txt"><b>Deployment plan</b><span>How we roll it out safely</span></div></div>
       <div class="item" data-no-advance data-goto="demo1"><span class="num">03</span><div class="txt"><b>Demo</b></div></div>
-      <div class="item" data-no-advance data-goto="demo2"><span class="num">08</span><div class="txt"><b>Demo</b></div></div>
+      <div class="item" data-no-advance data-goto="observability"><span class="num">08</span><div class="txt"><b>Observability</b><span>How we measure and improve</span></div></div>
       <div class="item" data-no-advance data-goto="data-arch"><span class="num">04</span><div class="txt"><b>Architecture</b><span>What we built</span></div></div>
-      <div class="item" data-no-advance data-goto="value"><span class="num">09</span><div class="txt"><b>Business value</b><span>What it is worth</span></div></div>
+      <div class="item" data-no-advance data-goto="demo2"><span class="num">09</span><div class="txt"><b>Demo</b></div></div>
       <div class="item" data-no-advance data-goto="roadmap"><span class="num">05</span><div class="txt"><b>Roadmap</b><span>MVP and what comes next</span></div></div>
+      <div class="item" data-no-advance data-goto="value"><span class="num">10</span><div class="txt"><b>Business value</b><span>What it is worth</span></div></div>
     </div>
   </div>
   <div class="footer"><span>Click any item to jump to it.</span><span>Brightcurrent Agentforce capstone</span></div>
@@ -363,6 +364,41 @@
   <div class="footer"><span>Draft content. Update with the final test plan.</span><span>Brightcurrent Agentforce capstone</span></div>
 </section>
 
+<!-- ============ DEPLOYMENT PLAN ============ -->
+<section class="slide" data-theme="dark" data-world="drift" data-title="Deployment plan" data-sid="deploy" data-chapter="deploy" data-stage="build">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise">Deployment plan</p>
+    <h2 data-anim="rise" style="--d:100ms">From sandbox to every customer, one gate at a time</h2>
+    <div class="stages dp-stages mt-40" data-anim="rise" style="--d:250ms" data-no-advance>
+      <button class="stg on" type="button" data-stage="build"><b>1</b><span>Build<small>Developer sandbox</small></span></button>
+      <button class="stg" type="button" data-stage="validate"><b>2</b><span>Validate<small>Full sandbox UAT</small></span></button>
+      <button class="stg" type="button" data-stage="pilot"><b>3</b><span>Pilot<small>Production, 10%</small></span></button>
+      <button class="stg" type="button" data-stage="scale"><b>4</b><span>Scale<small>Production, 100%</small></span></button>
+    </div>
+    <div class="stage-panels mt-32" data-anim="rise" style="--d:400ms">
+      <div class="sp" data-s="build"><div class="card glass"><h3 class="card-title">What moves</h3><p>The agent, its subagents, actions, prompt templates and flows. Data 360 streams, DLO to DMO mappings and the search index.</p></div><div class="card glass"><h3 class="card-title">Exit criteria</h3><p>Unit tests pass in Testing Center. Every change is peer reviewed and in version control.</p></div><div class="card glass"><h3 class="card-title">Sign off</h3><p>Lead Forward Deployed Engineer.</p></div></div>
+      <div class="sp" data-s="validate"><div class="card glass"><h3 class="card-title">What moves</h3><p>The same release through the DevOps Center pipeline, plus the messaging channel and the embedded chat on a staging site.</p></div><div class="card glass"><h3 class="card-title">Exit criteria</h3><p>The full test plan passes at 95% or better, with zero safety failures. Security review is complete.</p></div><div class="card glass"><h3 class="card-title">Sign off</h3><p>Customer care leadership and IT security.</p></div></div>
+      <div class="sp" data-s="pilot"><div class="card glass"><h3 class="card-title">What moves</h3><p>Live on Brightcurrent for 10% of web visitors, with handoff to a person always on.</p></div><div class="card glass"><h3 class="card-title">Exit criteria</h3><p>Two weeks with 25% or more of cases resolved, satisfaction at or above today, and no safety incidents.</p></div><div class="card glass"><h3 class="card-title">Sign off</h3><p>Executive sponsor, at the go or no go meeting.</p></div></div>
+      <div class="sp" data-s="scale"><div class="card glass"><h3 class="card-title">What moves</h3><p>All Brightcurrent visitors, around the clock. Softly and Fresh Spin follow using the same release path.</p></div><div class="card glass"><h3 class="card-title">Exit criteria</h3><p>Targets held for 30 days, then hypercare closes and the agent moves to business as usual support.</p></div><div class="card glass"><h3 class="card-title">Sign off</h3><p>Project steering committee.</p></div></div>
+    </div>
+    <div class="callout glass dp-roll mt-32" data-anim="rise" style="--d:600ms">
+      <span class="tag">Rollback</span>
+      <p>Every release is versioned. If anything goes wrong, we deactivate the agent version and send chats to the care team in minutes.</p>
+    </div>
+  </div>
+  <div class="footer"><span></span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">Four environments, four gates.</p><ul class="n-pts"><li>Click through each stage.</li><li>Draft plan. Confirm environments, percentages and approvers with the customer.</li></ul></aside>
+</section>
+<script>
+(function(){
+  var s=document.querySelector('section.slide[data-sid="deploy"]');
+  [].forEach.call(s.querySelectorAll('.stg'),function(b){b.addEventListener('click',function(){
+    s.setAttribute('data-stage',b.getAttribute('data-stage'));
+    [].forEach.call(s.querySelectorAll('.stg'),function(x){x.classList.toggle('on',x===b);});
+  });});
+})();
+</script>
+
 <!-- ============ OBSERVABILITY ============ -->
 <section class="slide" data-theme="dark" data-world="horizon" data-title="Observability" data-sid="observability" data-chapter="observability" data-stage="build">
   <div class="content">
@@ -647,6 +683,55 @@
   </div>
 </section>
 
-<section class="slide no-world" data-theme="dark" data-title="Thank you" data-sid="thanks" data-chapter="value" style="padding:0">
+<section class="slide no-world" data-theme="dark" data-title="Thank you" data-sid="thanks" data-chapter="thanks" style="padding:0">
   <div class="bg"><img src="../assets/thank-you.jpg" alt="Thank you"></div>
 </section>
+
+<!-- ============ APPENDIX ============ -->
+<section class="slide" data-theme="bright" data-world="segue" data-title="Appendix" data-sid="appendix" data-chapter="appendix">
+  <div class="content" style="justify-content:center">
+    <h1 data-anim="rise">Appendix</h1>
+    <p class="lede mt-24" data-anim="rise" style="--d:150ms;color:var(--cb90)">Reference material for questions.</p>
+  </div>
+</section>
+
+<section class="slide" data-theme="light" data-world="quiet" data-title="Rate card reference" data-sid="rates" data-chapter="appendix" style="padding-top:72px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Appendix</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:60px">Rate card reference</h2>
+    <p class="small mt-16" data-anim="rise" style="--d:150ms;color:var(--eb30)">Flex Credits: $500 per 100,000 credits, which is $0.005 per credit. Credits move freely between Agentforce and Data 360.</p>
+    <div class="rc mt-32" data-anim="rise" style="--d:250ms">
+      <table class="pc-t">
+        <thead><tr><th>Agentforce</th><th class="r">Production</th><th class="r">Sandbox</th></tr></thead>
+        <tbody>
+          <tr><td>Standard action</td><td class="r">20</td><td class="r">16</td></tr>
+          <tr><td>Custom action</td><td class="r">20</td><td class="r">16</td></tr>
+          <tr><td>Standard voice action</td><td class="r">30</td><td class="r">24</td></tr>
+          <tr><td>Custom voice action</td><td class="r">30</td><td class="r">24</td></tr>
+          <tr><td>Basic prompt</td><td class="r">2</td><td class="r">2</td></tr>
+          <tr><td>Standard prompt</td><td class="r">4</td><td class="r">4</td></tr>
+          <tr><td>Advanced prompt</td><td class="r">16</td><td class="r">16</td></tr>
+          <tr><td>Help Agent Resolution</td><td class="r">400</td><td class="r">0</td></tr>
+        </tbody>
+      </table>
+      <table class="pc-t">
+        <thead><tr><th>Data 360</th><th>Unit</th><th class="r">Base</th><th class="r">Tier 2</th><th class="r">Tier 3</th><th class="r">Tier 4</th></tr></thead>
+        <tbody>
+          <tr><td>Batch ingestion</td><td>Any</td><td class="r">Free</td><td class="r">Free</td><td class="r">Free</td><td class="r">Free</td></tr>
+          <tr><td>Prep</td><td>1M rows</td><td class="r">40</td><td class="r">32</td><td class="r">16</td><td class="r">8</td></tr>
+          <tr><td>Unification</td><td>1M rows</td><td class="r">75,000</td><td class="r">60,000</td><td class="r">30,000</td><td class="r">15,000</td></tr>
+          <tr><td>Segmentation</td><td>1M rows</td><td class="r">50</td><td class="r">40</td><td class="r">20</td><td class="r">10</td></tr>
+          <tr><td>Activation</td><td>1M rows</td><td class="r">60</td><td class="r">48</td><td class="r">24</td><td class="r">12</td></tr>
+          <tr><td>Queries</td><td>1M rows</td><td class="r">3</td><td class="r">2.4</td><td class="r">1.2</td><td class="r">0.6</td></tr>
+          <tr><td>Unstructured Processing</td><td>MB</td><td class="r">150</td><td class="r">120</td><td class="r">60</td><td class="r">30</td></tr>
+          <tr><td>Intelligent Processing</td><td>MB</td><td class="r">600</td><td class="r">480</td><td class="r">240</td><td class="r">120</td></tr>
+          <tr><td>Streaming Pipeline</td><td>1M rows</td><td class="r">3,500</td><td class="r">2,800</td><td class="r">1,400</td><td class="r">700</td></tr>
+          <tr><td>Real-Time Pipeline</td><td>1M events</td><td class="r">250,000</td><td class="r">200,000</td><td class="r">100,000</td><td class="r">50,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small mt-24" data-anim="rise" style="--d:400ms;color:var(--eb30);font-size:22px">Data 360 tiers by monthly credits per usage type: Base up to 300K, Tier 2 to 1.5M, Tier 3 to 12.5M, Tier 4 above. Profile pricing: $240 (Profiles) or $420 (Enterprise Profiles) per 1,000 profiles a year.</p>
+  </div>
+  <div class="footer"><span>Sources: Flex Credits Rate Card, updated Nov 3, 2026, and salesforce.com/data/pricing.</span><span>Brightcurrent Agentforce capstone</span></div>
+</section>
+

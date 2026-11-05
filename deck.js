@@ -7,7 +7,8 @@
   // [label, deck chapters it covers, is a demo step]
   var NAV=[['Introductions',['intro']],['Challenge Statement',['challenge']],['DEMO',['demo1'],1],
            ['Architecture',['data-arch','agent-arch']],['Roadmap',['roadmap']],['Test Plan',['test']],
-           ['Observability',['observability']],['DEMO',['demo2'],1],['Business Value',['value']]];
+           ['Deployment Plan',['deploy']],['Observability',['observability']],['DEMO',['demo2'],1],
+           ['Business Value',['value']],['Thank You',['thanks']],['Appendix',['appendix']]];
   var GROUP={'data-arch':'Data architecture','agent-arch':'Agent architecture'};
   var frame=null,openNow=false,pending=null,curN=0,curCh=null;
 
@@ -16,7 +17,7 @@
   var bar=document.querySelector('.topbar');
   if(bar){
     bar.classList.add('demobar');
-    bar.innerHTML='<div class="wrap"><button class="play" data-open>&#9654; Presentation</button><nav class="chips" aria-label="Presentation outline">'+
+    bar.innerHTML='<div class="wrap"><button class="play" data-open title="Start the presentation">&#9654;<span class="pl"> Presentation</span></button><nav class="chips" aria-label="Presentation outline">'+
       NAV.map(function(n,i){var multi=slidesFor(n[1]).length>1;
         return '<button class="chip'+(n[2]?' demo':'')+(multi?' has-menu':'')+'" data-nav="'+i+'" aria-haspopup="'+(multi?'true':'false')+'">'+n[0]+(multi?'<i class="caret" aria-hidden="true"></i>':'')+'</button>';}).join('')+
       '</nav><button class="agentbtn" data-agent>Agent</button></div>';
