@@ -1252,6 +1252,49 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
 .kc .hero span br{display:none}
 .kc .hero .tg{font-size:16px;font-weight:700;padding:4px 12px;border-radius:20px;background:var(--cb95);color:var(--eb30)}
 .kc.safe .hero .tg{background:var(--teal95);color:var(--teal20)}
+
+/* ===== solution architecture v2 (new pipeline, same look) ===== */
+.slide[data-sid="solution-arch"] .dg.sa2 .lane{height:616px}
+.slide[data-sid="solution-arch"] .dg.sa2 .lane.ka{left:0;width:340px}
+.slide[data-sid="solution-arch"] .dg.sa2 .lane.web{left:380px;width:1130px}
+.slide[data-sid="solution-arch"] .sa2 .nd{font-size:22px;padding:4px 12px}
+.slide[data-sid="solution-arch"] .sa2 .nd .t{font-weight:600}
+.slide[data-sid="solution-arch"] .sa2 .nd .sb{font-size:18px}
+.slide[data-sid="solution-arch"] .sa2 .nd.src.hp{background:linear-gradient(135deg,#0b2545,#13539b);box-shadow:0 0 26px rgba(19,83,155,.55)}
+.slide[data-sid="solution-arch"] .sa2 .nd.src.bc{box-shadow:0 0 40px rgba(6,106,254,.75),0 0 0 3px rgba(4,225,203,.7)}
+.slide[data-sid="solution-arch"] .sa2 .nd .act{display:block;margin-top:3px;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal80)}
+.slide[data-sid="solution-arch"] .sa2 .nd .act.f{color:var(--cb80)}
+.slide[data-sid="solution-arch"] .sa2 .nd.fut{background:transparent;border:2px dashed rgba(144,208,254,.45);box-shadow:none;color:var(--cb80);opacity:.62}
+.slide[data-sid="solution-arch"] .sa2 .nd.er.fut{background:rgba(252,192,3,.08);border-color:rgba(252,192,3,.55);color:var(--yel80)}
+.slide[data-sid="solution-arch"] .sa2 .nd.er.fut .sb{color:var(--yel80)}
+.slide[data-sid="solution-arch"] .sa2 .nd.er .t{font-size:30px}
+.slide[data-sid="solution-arch"] .sa2 .nd.af{background:linear-gradient(135deg,#066AFE,#022AC0);border:2px solid var(--cb68);box-shadow:0 0 40px rgba(0,179,255,.45)}
+.slide[data-sid="solution-arch"] .sa2 .nd.af .t{font-family:var(--font-display);font-weight:normal;font-size:28px}
+.slide[data-sid="solution-arch"] .sa2 .conn .draw.fut,.slide[data-sid="solution-arch"] .sa2 .conn .flow.fut{stroke-dasharray:8 9;opacity:.45}
+.slide[data-sid="solution-arch"] .sa2 .p2{position:absolute;left:1530px;top:56px;width:150px;padding:16px 14px;border-radius:16px;border:2px dashed rgba(144,208,254,.45);color:var(--cb80);display:flex;flex-direction:column;gap:10px;font-size:17px;line-height:1.3}
+.slide[data-sid="solution-arch"] .sa2 .p2 b{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--cb68)}
+.slide[data-sid="solution-arch"][data-trace="web"] .sa2 .p2{opacity:1}
+.slide[data-sid="solution-arch"][data-trace="ka"] .sa2 .nd.af,.slide[data-sid="solution-arch"][data-trace="web"] .sa2 .nd.af{opacity:1}
+/* routing: verification lock */
+.rt-sub{justify-content:space-between;gap:10px}
+.rt-sub .nm{white-space:nowrap}
+.rt-sub .lk{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700;padding:5px 12px 5px 8px;border-radius:20px;transition:background .35s,color .35s,transform .35s}
+.rt-sub .lk svg{width:22px;height:22px}
+.rt-sub .lk em{font-style:normal}
+.rt-sub .lk.locked{background:rgba(255,83,138,.16);color:var(--pink60)}
+.rt-sub .lk.unlocked{background:var(--teal80);color:var(--eb15);animation:lkpop .45s var(--ease)}
+@keyframes lkpop{0%{transform:scale(.7)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+.rt-sub.dim .lk{opacity:1}
+.rt-sub .vf{display:none;align-items:center;gap:8px;font-size:16px;font-weight:700;padding:5px 12px 5px 8px;border-radius:20px;background:var(--teal80);color:var(--eb15)}
+.rt-sub .vf svg{width:20px;height:20px}
+.rt-sub.verified .vf{display:inline-flex;animation:lkpop .45s var(--ease)}
+/* routing: bottom spacing */
+.slide[data-sid="agent-routing"] .rt{margin-top:40px}
+.slide[data-sid="agent-routing"] .rt-steps{margin-top:26px;align-items:stretch}
+.slide[data-sid="agent-routing"] .rt-step{min-height:132px}
+.slide[data-sid="solution-arch"] .sa2 .p2{box-sizing:border-box}
+.rt-sub,.rt-utt button,.rt-parent{box-sizing:border-box}
+.slide[data-sid="agent-routing"] .rt{margin-top:58px}
 </style>
 </head>
 <body>
@@ -1381,6 +1424,92 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
   <aside class="notes"><p class="n-key">Fragmented support, siloed by brand, with no memory, no vision and no intelligence.</p><ul class="n-pts"><li>Customers often need help that depends on a photo.</li><li>Email handles that poorly.</li><li>Backlogs grow with no visibility into performance. About 3,850 open cases today: roughly 670 new contacts a day, each open for about 6 days.</li></ul></aside>
 </section>
 
+<section class="slide" data-theme="dark" data-world="finale" data-title="Provocation and vision" data-sid="vision" data-chapter="challenge">
+  <div class="content spread">
+    <div>
+      <p class="provoke" data-anim="rise" style="--d:150ms;width:1600px;margin-top:40px">Your customers already took a photo of the problem. <span class="hl">Your support still asks them to describe it.</span></p>
+    </div>
+    <div class="callout glass vision" data-anim="rise" style="--d:700ms">
+      <span class="tag">Our vision</span>
+      <p>Support that remembers you, sees your problem, and gets smarter every day, while paying for itself.</p>
+    </div>
+  </div>
+  <aside class="notes"><p class="n-key">Provocative statement, then the vision.</p><ul class="n-pts"><li>Pause after the first line. Let it land.</li><li>Vision: memory, vision, intelligence.</li></ul></aside>
+</section>
+
+<section class="slide cx" data-theme="light" data-world="quiet" data-title="Customer experience, before" data-sid="cx-before" data-chapter="challenge">
+  <div class="content">
+    <div class="split l40" style="gap:96px;align-items:stretch">
+      <div class="phone" data-anim="left" style="margin-top:-30px">
+        <div class="notch"></div>
+        <div class="screen mail">
+          <div class="mail-top"><span class="back">&#8249; Inbox</span><span class="mail-nav">&#8963; &#8964;</span></div>
+          <div class="mail-subject">Red wine spill: can I wash this blouse?</div>
+          <div class="mail-thread">
+            <div class="mmsg">
+              <div class="mhead"><div class="av me">JR</div><div class="mmeta"><b>Jamie Rivera</b><span>to Customer Care</span></div><time>Tue 9:41 PM</time></div>
+              <p>Hi, I spilled red wine on my blouse. Can I wash it? I can't read the care label. Photo attached.</p>
+              <div class="attach"><div class="thumb"><i></i><em></em></div><span>IMG_4821.jpg<small>2.1 MB</small></span></div>
+            </div>
+            <div class="mmsg">
+              <div class="mhead"><div class="av co">BC</div><div class="mmeta"><b>Brightcurrent Care</b><span>to me</span></div><time>Tue 9:41 PM</time></div>
+              <p>Thanks for contacting us. A representative will reply within 3 to 5 business days. Ticket 48213.</p>
+            </div>
+            <div class="gap-tag">3 days later</div>
+            <div class="mmsg">
+              <div class="mhead"><div class="av co">BC</div><div class="mmeta"><b>Brightcurrent Care</b><span>to me</span></div><time>Fri 2:15 PM</time></div>
+              <p>Hi Jamie, the photo did not come through. Could you send it again?</p>
+            </div>
+          </div>
+          <div class="mail-bar"><span>&#8617; Reply</span><span>&#8618; Forward</span></div>
+        </div>
+      </div>
+      <div class="stack" style="justify-content:center">
+        <span class="state-pill before" data-anim="rise">Customer experience &middot; Before</span>
+        <h2 data-anim="rise" style="--d:100ms">A simple question, a long wait</h2>
+        <div class="friction mt-56" data-stagger="rise" data-base="450">
+          <div class="f"><span class="big">4.2 days</span><p>average wait for a first human reply by email</p></div>
+          <div class="f"><span class="big">38%</span><p>of photo emails need a second request because the image cannot be used</p></div>
+          <div class="f"><span class="big">3.4x</span><p>how often customers repeat their story across brands</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p class="n-key">Before: slow, blind and forgetful.</p><ul class="n-pts"><li>Walk the email thread top to bottom.</li><li>Figures are illustrative for this scenario.</li></ul></aside>
+</section>
+
+<section class="slide cx" data-theme="light" data-world="quiet" data-title="Customer experience, after" data-sid="cx-after" data-chapter="challenge">
+  <div class="content">
+    <div class="split l40" style="gap:96px;align-items:stretch">
+      <div class="phone" data-anim="left" style="margin-top:-30px">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="app-bar"><b>Brightcurrent Assistant</b><span>Agentforce</span></div>
+          <div class="chat">
+            <div class="who right">You</div>
+            <div class="msg out"><div class="photo"><i></i><em></em></div>I spilled red wine on my blouse. Can I wash it?</div>
+            <div class="action"><i></i>Read photo: silk blouse, label says dry clean only</div>
+            <div class="who">Assistant</div>
+            <div class="msg in">Good news, it's treatable. Your label says dry clean only, so don't wash it. Blot, don't rub, and see a dry cleaner today.</div>
+            <div class="action"><i></i>Remembered: you also use Softly</div>
+            <div class="msg in">Want a gentle spot treatment for next time?</div>
+          </div>
+        </div>
+      </div>
+      <div class="stack" style="justify-content:center">
+        <span class="state-pill after" data-anim="rise">Customer experience &middot; After</span>
+        <h2 data-anim="rise" style="--d:100ms">The answer arrives with the question</h2>
+        <div class="friction win mt-56" data-stagger="rise" data-base="450">
+          <div class="f"><span class="big">30%</span><p>fewer Severity 1 cases</p></div>
+          <div class="f"><span class="big">1.8 days</span><p>email backlog time, down from 4.2 days over 6 months</p></div>
+          <div class="f"><span class="big">94%</span><p>of photos and care labels read correctly on the first try</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p class="n-key">After: the same moment, solved in one conversation.</p><ul class="n-pts"><li>Same customer, same blouse.</li><li>Figures are illustrative for this scenario.</li></ul></aside>
+</section>
+
 <section class="slide" data-theme="light" data-world="quiet" data-title="Personas" data-sid="personas" data-chapter="challenge" data-ptab="cust" style="padding-top:72px;padding-bottom:64px">
   <div class="content">
     <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Personas</p>
@@ -1483,91 +1612,6 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
 })();
 </script>
 
-<section class="slide" data-theme="dark" data-world="finale" data-title="Provocation and vision" data-sid="vision" data-chapter="challenge">
-  <div class="content spread">
-    <div>
-      <p class="provoke" data-anim="rise" style="--d:150ms;width:1600px;margin-top:40px">Your customers already took a photo of the problem. <span class="hl">Your support still asks them to describe it.</span></p>
-    </div>
-    <div class="callout glass vision" data-anim="rise" style="--d:700ms">
-      <span class="tag">Our vision</span>
-      <p>Support that remembers you, sees your problem, and gets smarter every day, while paying for itself.</p>
-    </div>
-  </div>
-  <aside class="notes"><p class="n-key">Provocative statement, then the vision.</p><ul class="n-pts"><li>Pause after the first line. Let it land.</li><li>Vision: memory, vision, intelligence.</li></ul></aside>
-</section>
-
-<section class="slide cx" data-theme="light" data-world="quiet" data-title="Customer experience, before" data-sid="cx-before" data-chapter="challenge">
-  <div class="content">
-    <div class="split l40" style="gap:96px;align-items:stretch">
-      <div class="phone" data-anim="left" style="margin-top:-30px">
-        <div class="notch"></div>
-        <div class="screen mail">
-          <div class="mail-top"><span class="back">&#8249; Inbox</span><span class="mail-nav">&#8963; &#8964;</span></div>
-          <div class="mail-subject">Red wine spill: can I wash this blouse?</div>
-          <div class="mail-thread">
-            <div class="mmsg">
-              <div class="mhead"><div class="av me">JR</div><div class="mmeta"><b>Jamie Rivera</b><span>to Customer Care</span></div><time>Tue 9:41 PM</time></div>
-              <p>Hi, I spilled red wine on my blouse. Can I wash it? I can't read the care label. Photo attached.</p>
-              <div class="attach"><div class="thumb"><i></i><em></em></div><span>IMG_4821.jpg<small>2.1 MB</small></span></div>
-            </div>
-            <div class="mmsg">
-              <div class="mhead"><div class="av co">BC</div><div class="mmeta"><b>Brightcurrent Care</b><span>to me</span></div><time>Tue 9:41 PM</time></div>
-              <p>Thanks for contacting us. A representative will reply within 3 to 5 business days. Ticket 48213.</p>
-            </div>
-            <div class="gap-tag">3 days later</div>
-            <div class="mmsg">
-              <div class="mhead"><div class="av co">BC</div><div class="mmeta"><b>Brightcurrent Care</b><span>to me</span></div><time>Fri 2:15 PM</time></div>
-              <p>Hi Jamie, the photo did not come through. Could you send it again?</p>
-            </div>
-          </div>
-          <div class="mail-bar"><span>&#8617; Reply</span><span>&#8618; Forward</span></div>
-        </div>
-      </div>
-      <div class="stack" style="justify-content:center">
-        <span class="state-pill before" data-anim="rise">Customer experience &middot; Before</span>
-        <h2 data-anim="rise" style="--d:100ms">A simple question, a long wait</h2>
-        <div class="friction mt-56" data-stagger="rise" data-base="450">
-          <div class="f"><span class="big">4.2 days</span><p>average wait for a first human reply by email</p></div>
-          <div class="f"><span class="big">38%</span><p>of photo emails need a second request because the image cannot be used</p></div>
-          <div class="f"><span class="big">3.4x</span><p>how often customers repeat their story across brands</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <aside class="notes"><p class="n-key">Before: slow, blind and forgetful.</p><ul class="n-pts"><li>Walk the email thread top to bottom.</li><li>Figures are illustrative for this scenario.</li></ul></aside>
-</section>
-
-<section class="slide cx" data-theme="light" data-world="quiet" data-title="Customer experience, after" data-sid="cx-after" data-chapter="challenge">
-  <div class="content">
-    <div class="split l40" style="gap:96px;align-items:stretch">
-      <div class="phone" data-anim="left" style="margin-top:-30px">
-        <div class="notch"></div>
-        <div class="screen">
-          <div class="app-bar"><b>Brightcurrent Assistant</b><span>Agentforce</span></div>
-          <div class="chat">
-            <div class="who right">You</div>
-            <div class="msg out"><div class="photo"><i></i><em></em></div>I spilled red wine on my blouse. Can I wash it?</div>
-            <div class="action"><i></i>Read photo: silk blouse, label says dry clean only</div>
-            <div class="who">Assistant</div>
-            <div class="msg in">Good news, it's treatable. Your label says dry clean only, so don't wash it. Blot, don't rub, and see a dry cleaner today.</div>
-            <div class="action"><i></i>Remembered: you also use Softly</div>
-            <div class="msg in">Want a gentle spot treatment for next time?</div>
-          </div>
-        </div>
-      </div>
-      <div class="stack" style="justify-content:center">
-        <span class="state-pill after" data-anim="rise">Customer experience &middot; After</span>
-        <h2 data-anim="rise" style="--d:100ms">The answer arrives with the question</h2>
-        <div class="friction win mt-56" data-stagger="rise" data-base="450">
-          <div class="f"><span class="big">30%</span><p>fewer Severity 1 cases</p></div>
-          <div class="f"><span class="big">1.8 days</span><p>email backlog time, down from 4.2 days over 6 months</p></div>
-          <div class="f"><span class="big">94%</span><p>of photos and care labels read correctly on the first try</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <aside class="notes"><p class="n-key">After: the same moment, solved in one conversation.</p><ul class="n-pts"><li>Same customer, same blouse.</li><li>Figures are illustrative for this scenario.</li></ul></aside>
-</section>
 
 <!-- ============ DEMO 1 ============ -->
 <section class="slide" data-theme="bright" data-world="segue" data-title="Live demo" data-sid="demo1" data-chapter="demo1">
@@ -1580,80 +1624,113 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
   </div>
 </section>
 
-<section class="slide" data-chapter="data-arch" data-theme="dark" data-world="drift" data-trace="both" data-title="Solution architecture" data-sid="solution-arch" data-section="Knowledge" data-min="2"><div class="sfds-world-print" aria-hidden="true" style="background:#001E5B"></div>
+<section class="slide" data-theme="dark" data-world="drift" data-trace="both" data-title="Solution architecture" data-sid="solution-arch" data-chapter="data-arch">
   <div class="content">
     <p class="eyebrow" data-anim="rise">Solution architecture</p>
-    <h2 data-anim="rise" style="--d:100ms">Two paths, one ensemble retriever</h2>
+    <h2 data-anim="rise" style="--d:100ms">One pipeline, grounded by brand</h2>
     <div class="corner" data-anim="rise" style="--d:200ms" data-no-advance>
       <div class="tgroup"><span class="tg-l">Trace</span><button class="tbtn on" type="button" data-trace="both">Both</button><button class="tbtn" type="button" data-trace="web">Web</button><button class="tbtn" type="button" data-trace="ka">Knowledge Articles</button></div>
     </div>
-    <div class="dg" data-anim="rise" style="--d:300ms">
-      <div class="lane web"><div class="lt">WEB</div></div>
-      <div class="lane ka"><div class="lt">KA (Knowledge Articles)</div></div>
-      <svg class="conn" viewBox="0 0 1680 704" data-anim="draw" style="--d:900ms" aria-hidden="true">
-        <defs><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#90D0FE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-        <path class="draw web" d="M170 114 L170 136" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M170 200 L170 222" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M545 114 L545 136" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M545 200 L545 222" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M920 114 L920 136" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M920 200 L920 222" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M170 286 L170 358 L259 358" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M545 286 L545 324" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M920 286 L920 358 L831 358" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M545 388 L545 410" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M545 474 L545 496" marker-end="url(#ah2)"/>
-        <path class="draw web" d="M545 560 L545 674 L959 674" marker-end="url(#ah2)"/>
-        <path class="draw ka" d="M1410 114 L1410 136" marker-end="url(#ah2)"/>
-        <path class="draw ka" d="M1410 200 L1410 222" marker-end="url(#ah2)"/>
-        <path class="draw ka" d="M1410 286 L1410 324" marker-end="url(#ah2)"/>
-        <path class="draw ka" d="M1410 388 L1410 410" marker-end="url(#ah2)"/>
-        <path class="draw ka" d="M1410 474 L1410 496" marker-end="url(#ah2)"/>
-        <path class="draw ka" d="M1180 542 L1115 542 L1115 636" marker-end="url(#ah2)"/>
-        <path class="flow web" d="M170 114 L170 136"/>
-        <path class="flow web" d="M170 200 L170 222"/>
-        <path class="flow web" d="M545 114 L545 136"/>
-        <path class="flow web" d="M545 200 L545 222"/>
-        <path class="flow web" d="M920 114 L920 136"/>
-        <path class="flow web" d="M920 200 L920 222"/>
-        <path class="flow web" d="M170 286 L170 358 L259 358"/>
-        <path class="flow web" d="M545 286 L545 324"/>
-        <path class="flow web" d="M920 286 L920 358 L831 358"/>
-        <path class="flow web" d="M545 388 L545 410"/>
-        <path class="flow web" d="M545 474 L545 496"/>
-        <path class="flow web" d="M545 560 L545 674 L959 674"/>
-        <path class="flow ka" d="M1410 114 L1410 136"/>
-        <path class="flow ka" d="M1410 200 L1410 222"/>
-        <path class="flow ka" d="M1410 286 L1410 324"/>
-        <path class="flow ka" d="M1410 388 L1410 410"/>
-        <path class="flow ka" d="M1410 474 L1410 496"/>
-        <path class="flow ka" d="M1180 542 L1115 542 L1115 636"/>
-        
+    <div class="dg sa2" data-anim="rise" style="--d:300ms">
+      <div class="lane ka"><div class="lt">Knowledge articles</div></div>
+      <div class="lane web"><div class="lt">Web content, sitemap crawler</div></div>
+      <svg class="conn" viewBox="0 0 1680 704" data-anim="draw" style="--d:900ms" aria-hidden="true"><defs><marker id="sa3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#90D0FE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+      <path class="draw ka" d="M170 112 L170 134" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 188 L170 210" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 260 L170 282" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 340 L170 362" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 416 L170 438" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 112 L560 134" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 188 L560 210" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 416 L560 438" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 112 L950 134" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 188 L950 210" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 416 L950 438" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 260 L560 272 L950 272"/>
+      <path class="draw web" d="M950 260 L950 272"/>
+      <path class="draw web" d="M755 272 L755 282" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M755 340 L755 352 L560 352 L560 362" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M755 352 L950 352 L950 362" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 112 L1340 134" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 188 L1340 210" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 260 L1340 282" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 340 L1340 362" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 416 L1340 438" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M950 504 L950 538" marker-end="url(#sa3)"/>
+      <path class="draw web fut" d="M1340 504 L1340 538" marker-end="url(#sa3)"/>
+      <path class="draw ka" d="M170 504 L170 522 L1300 522"/>
+      <path class="draw ka" d="M900 522 L900 538" marker-end="url(#sa3)"/>
+      <path class="draw ka fut" d="M1300 522 L1300 538" marker-end="url(#sa3)"/>
+      <path class="draw web" d="M560 504 L560 622"/>
+      <path class="draw web" d="M950 604 L950 622"/>
+      <path class="draw web fut" d="M1340 604 L1340 622"/>
+      <path class="draw " d="M560 622 L1340 622"/>
+      <path class="draw " d="M950 622 L950 638" marker-end="url(#sa3)"/>
+      <path class="flow ka" d="M170 112 L170 134"/>
+      <path class="flow ka" d="M170 188 L170 210"/>
+      <path class="flow ka" d="M170 260 L170 282"/>
+      <path class="flow ka" d="M170 340 L170 362"/>
+      <path class="flow ka" d="M170 416 L170 438"/>
+      <path class="flow web" d="M560 112 L560 134"/>
+      <path class="flow web" d="M560 188 L560 210"/>
+      <path class="flow web" d="M560 416 L560 438"/>
+      <path class="flow web" d="M950 112 L950 134"/>
+      <path class="flow web" d="M950 188 L950 210"/>
+      <path class="flow web" d="M950 416 L950 438"/>
+      <path class="flow web" d="M560 260 L560 272 L950 272"/>
+      <path class="flow web" d="M950 260 L950 272"/>
+      <path class="flow web" d="M755 272 L755 282"/>
+      <path class="flow web" d="M755 340 L755 352 L560 352 L560 362"/>
+      <path class="flow web" d="M755 352 L950 352 L950 362"/>
+      <path class="flow web fut" d="M1340 112 L1340 134"/>
+      <path class="flow web fut" d="M1340 188 L1340 210"/>
+      <path class="flow web fut" d="M1340 260 L1340 282"/>
+      <path class="flow web fut" d="M1340 340 L1340 362"/>
+      <path class="flow web fut" d="M1340 416 L1340 438"/>
+      <path class="flow web" d="M950 504 L950 538"/>
+      <path class="flow web fut" d="M1340 504 L1340 538"/>
+      <path class="flow ka" d="M170 504 L170 522 L1300 522"/>
+      <path class="flow ka" d="M900 522 L900 538"/>
+      <path class="flow ka fut" d="M1300 522 L1300 538"/>
+      <path class="flow web" d="M560 504 L560 622"/>
+      <path class="flow web" d="M950 604 L950 622"/>
+      <path class="flow web fut" d="M1340 604 L1340 622"/>
+      <path class="flow " d="M560 622 L1340 622"/>
+      <path class="flow " d="M950 622 L950 638"/>
       </svg>
-      <div class="nd src web" style="left:40px;top:54px;width:260px;height:60px">Brightcurrent site</div>
-      <div class="nd st-conn web" style="left:40px;top:140px;width:260px;height:60px">Sitemap connector</div>
-      <div class="nd st-dlo web" style="left:40px;top:226px;width:260px;height:60px">DLO</div>
-      <div class="nd src web" style="left:415px;top:54px;width:260px;height:60px">Fresh Spin site</div>
-      <div class="nd st-conn web" style="left:415px;top:140px;width:260px;height:60px">Sitemap connector</div>
-      <div class="nd st-dlo web" style="left:415px;top:226px;width:260px;height:60px">DLO</div>
-      <div class="nd src web" style="left:790px;top:54px;width:260px;height:60px">H&amp;P</div>
-      <div class="nd st-conn web" style="left:790px;top:140px;width:260px;height:60px">Sitemap connector</div>
-      <div class="nd st-dlo web" style="left:790px;top:226px;width:260px;height:60px">DLO</div>
-      <div class="nd st-dmo web" style="left:265px;top:328px;width:560px;height:60px">Sitemap DMO</div>
-      <div class="nd st-si web" style="left:265px;top:414px;width:560px;height:60px">Search Index</div>
-      <div class="nd st-ret web" style="left:265px;top:500px;width:560px;height:60px">Retriever</div>
-      <div class="nd src ka" style="left:1180px;top:54px;width:460px;height:60px">H&amp;P Brand: (knowledge articles)</div>
-      <div class="nd st-conn ka" style="left:1180px;top:140px;width:460px;height:60px">Data Library</div>
-      <div class="nd st-dlo ka" style="left:1180px;top:226px;width:460px;height:60px">DLO</div>
-      <div class="nd st-dmo ka" style="left:1180px;top:328px;width:460px;height:60px">KAV DMO</div>
-      <div class="nd st-si ka" style="left:1180px;top:414px;width:460px;height:60px">SI (Search Index)</div>
-      <div class="nd st-ret ka" style="left:1180px;top:500px;width:460px;height:84px"><span class="t">R (Retriever)</span><span class="sb">Filters: Brand=?, Status=0, Public=T</span></div>
-      <div class="nd er" style="left:965px;top:644px;width:300px;height:60px"><span class="t">ER</span><span class="sb">Ensemble retriever</span></div>
+      <div class="nd src ka" style="left:20px;top:56px;width:300px;height:56px">Knowledge Articles</div>
+      <div class="nd st-conn ka" style="left:20px;top:136px;width:300px;height:52px">Data Library</div>
+      <div class="nd st-dlo ka" style="left:20px;top:212px;width:300px;height:48px">DLO</div>
+      <div class="nd st-dmo ka" style="left:20px;top:284px;width:300px;height:56px">DMO</div>
+      <div class="nd st-si ka" style="left:20px;top:364px;width:300px;height:52px">Chunking, search index</div>
+      <div class="nd st-ret ka" style="left:20px;top:440px;width:300px;height:64px"><span class="t">Retriever</span><span class="sb">Brand, Published, Public</span></div>
+      <div class="nd src web hp" style="left:410px;top:56px;width:300px;height:56px">Hallworth &amp; Pierce</div>
+      <div class="nd st-conn web" style="left:410px;top:136px;width:300px;height:52px">Sitemap connector</div>
+      <div class="nd st-dlo web" style="left:410px;top:212px;width:300px;height:48px">DLO</div>
+      <div class="nd st-si web" style="left:410px;top:364px;width:300px;height:52px">Chunking, search index</div>
+      <div class="nd st-ret web" style="left:410px;top:440px;width:300px;height:64px"><span class="t">Retriever</span><span class="sb">No ensemble</span></div>
+      <div class="nd src web bc" style="left:800px;top:56px;width:300px;height:56px">Brightcurrent<span class="act">Active</span></div>
+      <div class="nd st-conn web" style="left:800px;top:136px;width:300px;height:52px">Sitemap connector</div>
+      <div class="nd st-dlo web" style="left:800px;top:212px;width:300px;height:48px">DLO</div>
+      <div class="nd st-si web" style="left:800px;top:364px;width:300px;height:52px">Chunking, search index</div>
+      <div class="nd st-ret web" style="left:800px;top:440px;width:300px;height:64px"><span class="t">Retriever</span><span class="sb">sourceLabel = brightcurrent.com</span></div>
+      <div class="nd er web" style="left:800px;top:540px;width:300px;height:64px"><span class="t">ER</span><span class="sb">Ensemble retriever</span></div>
+      <div class="nd st-dmo web" style="left:410px;top:284px;width:690px;height:56px"><span class="t">Shared DMO</span><span class="sb">sourceLabel = brand URL</span></div>
+      <div class="nd src web fut" style="left:1190px;top:56px;width:300px;height:56px">Future brand<span class="act f">Phase 2+</span></div>
+      <div class="nd st-conn web fut" style="left:1190px;top:136px;width:300px;height:52px">Sitemap connector</div>
+      <div class="nd st-dlo web fut" style="left:1190px;top:212px;width:300px;height:48px">DLO</div>
+      <div class="nd st-dmo web fut" style="left:1190px;top:284px;width:300px;height:56px"><span class="t">DMO</span><span class="sb">sourceLabel = brand URL</span></div>
+      <div class="nd st-si web fut" style="left:1190px;top:364px;width:300px;height:52px">Chunking, search index</div>
+      <div class="nd st-ret web fut" style="left:1190px;top:440px;width:300px;height:64px">Retriever</div>
+      <div class="nd er web fut" style="left:1190px;top:540px;width:300px;height:64px"><span class="t">ER</span><span class="sb">Ensemble retriever</span></div>
+      <div class="nd af" style="left:380px;top:640px;width:1130px;height:64px"><span class="t">Agentforce: prompt template and agent action</span><span class="sb">Product Q&amp;A, troubleshooting and case management subagents</span></div>
+      <div class="p2"><b>Phase 2+</b><span>Softly and Fresh Spin use the same structure as Brightcurrent.</span><span>The agent and shared ensemble retriever stay unchanged.</span></div>
     </div>
   </div>
-  <div class="footer"><span>DLO: Data Lake Object. DMO: Data Model Object. SI: Search Index. ER: ensemble retriever.</span><span>Brightcurrent Agentforce capstone</span></div>
-  <aside class="notes"><p class="n-key">Two content paths, one ensemble retriever.</p><ul class="n-pts"><li>Web: each brand site (Brightcurrent, Fresh Spin, H&amp;P) goes through its own sitemap connector into its own DLO. All three feed one Sitemap DMO, then a search index and a retriever.</li><li>Knowledge Articles: H&amp;P brand articles flow from a data library to a DLO, a KAV DMO and a search index. The retriever filters on Brand, Status=0 and Public=T.</li><li>Both retrievers feed the ER at the bottom. Use the Trace buttons to follow one path at a time.</li></ul></aside>
+  <div class="footer"><span>DLO: Data Lake Object. DMO: Data Model Object. ER: Ensemble Retriever. H&amp;P uses a retriever only. Active brands add an ER that also searches Knowledge.</span><span>Brightcurrent Agentforce capstone</span></div>
+  <aside class="notes"><p class="n-key">One pipeline, grounded by brand.</p><ul class="n-pts"><li>Web: each brand site has its own sitemap connector and DLO. H&amp;P and Brightcurrent share one DMO, tagged by brand URL.</li><li>Knowledge Articles come in through a Data Library and their own retriever, filtered to Published and Public.</li><li>Brightcurrent's ensemble retriever combines its web retriever with Knowledge. Future brands copy that structure.</li></ul></aside>
 </section>
+
 <!-- ============ AGENT ARCHITECTURE: routing ============ -->
 <section class="slide" data-theme="dark" data-world="drift" data-title="How the agent decides" data-sid="agent-routing" data-chapter="agent-arch">
   <div class="content">
@@ -1670,6 +1747,7 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
     </div>
     <div class="rt-steps" id="rtSteps"></div>
   </div>
+  <div class="footer"><span>Case Management stays locked until the customer verifies a one time code sent to their email.</span><span>Brightcurrent Agentforce capstone</span></div>
   <aside class="notes"><p class="n-key">Click an utterance. The green path is what the agent does.</p><ul class="n-pts"><li>The parent agent reads intent and routes to one subagent.</li><li>Opening a case goes through Customer Verification first, then Case Management.</li></ul></aside>
 </section>
 <script>
@@ -1681,7 +1759,7 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
     {q:'I want to open a case. My email is jamie@example.com.',path:['cv','cm'],steps:[
       ['Router','Intent is to open a case, which needs a verified customer first.'],
       ['Customer Verification','Sends a one time code to jamie@example.com and checks it.'],
-      ['Case Management','Verified, so it creates the case with the details given.'],
+      ['Case Management','Unlocked by verification, it creates the case with the details given.'],
       ['Reply','Shares the case number and what happens next.']]},
     {q:'What is your return policy?',path:['faq'],steps:[
       ['Router','A policy question, not a product question or a case.'],
@@ -1710,10 +1788,13 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
   ];
   var utt=slide.querySelector('#rtUtt'),subs=slide.querySelector('#rtSubs'),conn=slide.querySelector('#rtConn'),steps=slide.querySelector('#rtSteps'),parent=slide.querySelector('#rtParent');
   CASES.forEach(function(c,i){var b=document.createElement('button');b.type='button';b.setAttribute('data-i',i);b.innerHTML='<i></i><span>“'+c.q+'”</span>';utt.appendChild(b);});
-  SUBS.forEach(function(s){var d=document.createElement('div');d.className='rt-sub';d.setAttribute('data-id',s[0]);d.textContent=s[1];subs.appendChild(d);});
+  SUBS.forEach(function(s){var d=document.createElement('div');d.className='rt-sub';d.setAttribute('data-id',s[0]);d.innerHTML='<span class="nm">'+s[1]+'</span>'+(s[0]==='cv'?'<span class="vf"><svg><use href="#i-mail"/></svg>Code verified</span>':'')+(s[0]==='cm'?'<span class="lk locked"><svg><use href="#i-lock"/></svg><em>Locked</em></span>':'');subs.appendChild(d);});
+  var lockT=[];
+  function setLock(state){var lk=subs.querySelector('[data-id="cm"] .lk');lk.className='lk '+state;lk.querySelector('use').setAttribute('href',state==='locked'?'#i-lock':'#i-unlock');lk.querySelector('em').textContent=state==='locked'?'Verify first':'Unlocked';subs.querySelector('[data-id="cm"]').classList.toggle('opened',state!=='locked');}
   function cy(id){return IDX[id]*65+27;}
   function render(i){
     var c=CASES[i];
+    lockT.forEach(clearTimeout);lockT=[];setLock('locked');var cvTile=subs.querySelector('[data-id="cv"]');cvTile.classList.remove('verified');
     [].forEach.call(utt.children,function(b,k){b.classList.toggle('on',k===i);});
     [].forEach.call(subs.children,function(d){var on=c.path.indexOf(d.getAttribute('data-id'))>=0;d.classList.toggle('on',on);d.classList.toggle('dim',!on);});
     parent.classList.add('on');
@@ -1724,6 +1805,7 @@ button.ur-later:hover{border-color:var(--eb50);background:#e3eefd}
     svg+='<path class="on" style="animation-delay:.45s" d="M920 255 C1030 255 1070 '+y1+' 1180 '+y1+'" marker-end="url(#rtAh)"/>';
     if(c.path.length>1){var y2=cy(c.path[1]);svg+='<path class="on" style="animation-delay:1s" d="M1680 '+y1+' C1740 '+y1+' 1740 '+y2+' 1682 '+y2+'" marker-end="url(#rtAh)"/>';}
     conn.innerHTML=svg;
+    if(c.path.indexOf('cm')>=0){lockT.push(setTimeout(function(){cvTile.classList.add('verified');},750));lockT.push(setTimeout(function(){setLock('unlocked');},1150));}
     steps.innerHTML='';
     c.steps.forEach(function(st,k){var d=document.createElement('div');d.className='rt-step';d.style.animationDelay=(.3+k*.45)+'s';d.innerHTML='<span class="n">'+(k+1)+'</span><em>'+st[0]+'</em><p>'+st[1]+'</p>';steps.appendChild(d);});
   }
