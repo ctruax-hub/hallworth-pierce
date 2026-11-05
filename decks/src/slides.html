@@ -428,6 +428,170 @@
   <div class="footer"><span>ROI projected from UAT testing.</span><span>Brightcurrent Agentforce capstone</span></div>
 </section>
 
+<section class="slide" data-theme="light" data-world="quiet" data-title="Pricing and savings calculator" data-sid="pricing" data-chapter="value" data-tab="combined" style="padding-top:64px;padding-bottom:56px">
+  <div class="content">
+    <p class="eyebrow" data-anim="rise" style="margin-bottom:14px">Business value</p>
+    <h2 data-anim="rise" style="--d:100ms;font-size:58px">What it costs, and what it saves</h2>
+    <div class="pc" data-anim="rise" style="--d:250ms" data-no-advance>
+      <!-- shared drivers -->
+      <div class="pc-rail card white">
+        <p class="pc-h">Drivers</p>
+        <label class="sl"><span>Monthly support contacts <b id="o_contacts"></b></span><input type="range" id="contacts" min="5000" max="100000" step="1000" value="20000"></label>
+        <label class="sl"><span>Case deflection rate <b id="o_defl"></b></span><input type="range" id="defl" min="5" max="70" step="1" value="30"></label>
+        <label class="sl"><span>Cost per human handled case <b id="o_human"></b></span><input type="range" id="human" min="3" max="25" step="0.5" value="8.5"></label>
+        <label class="sl"><span>One time implementation <b id="o_impl"></b></span><input type="range" id="impl" min="0" max="500000" step="10000" value="150000"></label>
+        <div class="pc-fx"><b>Flex Credits</b><span>100,000 credits = $500</span><span>1 credit = $0.005</span></div>
+      </div>
+      <!-- tabbed detail -->
+      <div class="pc-main">
+        <div class="pc-tabs">
+          <button class="tbtn" type="button" data-tab="d360">Data 360</button>
+          <button class="tbtn" type="button" data-tab="af">Agentforce</button>
+          <button class="tbtn on" type="button" data-tab="combined">Combined view</button>
+        </div>
+
+        <!-- DATA 360 -->
+        <div class="pc-panel p-d360">
+          <div class="pc-sub"><label class="sl inline"><span>Grounding queries per conversation <b id="o_qpc"></b></span><input type="range" id="qpc" min="1" max="8" step="1" value="3"></label><span class="pc-note">Retriever and unified profile lookups</span></div>
+          <table class="pc-t">
+            <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"></colgroup>
+            <thead><tr><th>Data 360 capability</th><th>Unit</th><th class="r">Qty / mo</th><th class="r">Credits / unit</th><th class="r">Credits / mo</th><th class="r">Cost / mo</th></tr></thead>
+            <tbody id="d360rows"></tbody>
+            <tfoot><tr><td colspan="4">Data 360 total</td><td class="r" id="d_cr_tot"></td><td class="r" id="d_usd_tot"></td></tr></tfoot>
+          </table>
+        </div>
+
+        <!-- AGENTFORCE -->
+        <div class="pc-panel p-af">
+          <div class="af-grid">
+            <div class="card tint compact af-build">
+              <p class="pc-h">Per conversation</p>
+              <div class="tgroup"><span class="tg-l">Pricing</span><button class="tbtn on" type="button" data-model="flex">Per action</button><button class="tbtn" type="button" data-model="res">Per resolution</button></div>
+              <div class="tgroup mt-16"><span class="tg-l">Org</span><button class="tbtn on" type="button" data-env="prod">Production</button><button class="tbtn" type="button" data-env="sbx">Sandbox</button></div>
+              <div class="af-sl">
+                <label class="sl"><span>Standard actions <b id="o_sa"></b></span><input type="range" id="sa" min="0" max="10" step="1" value="3"></label>
+                <label class="sl"><span>Custom actions (case, verification) <b id="o_ca"></b></span><input type="range" id="ca" min="0" max="6" step="1" value="1"></label>
+                <label class="sl"><span>Standard prompts <b id="o_sp"></b></span><input type="range" id="sp" min="0" max="10" step="1" value="3"></label>
+                <label class="sl"><span>Advanced prompts (photo and label reading) <b id="o_ap"></b></span><input type="range" id="ap" min="0" max="4" step="1" value="1"></label>
+              </div>
+            </div>
+            <div class="af-out">
+              <table class="pc-t">
+                <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+                <thead><tr><th>Agentforce usage</th><th class="r">Credits / unit</th><th class="r">Units / conv</th><th class="r">Credits / conv</th></tr></thead>
+                <tbody id="afrows"></tbody>
+                <tfoot><tr><td colspan="3">Per conversation</td><td class="r" id="af_pc"></td></tr></tfoot>
+              </table>
+              <div class="af-kpis">
+                <div><span>Cost per conversation</span><b id="af_cpc"></b></div>
+                <div><span>Conversations / mo</span><b id="af_conv"></b></div>
+                <div><span>Credits / mo</span><b id="af_cr"></b></div>
+                <div class="hl"><span>Agentforce / mo</span><b id="af_usd"></b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMBINED -->
+        <div class="pc-panel p-combined">
+          <div class="cb-kpis">
+            <div class="card white compact"><span>Platform cost / mo</span><b id="c_cost"></b><small id="c_cost_split"></small></div>
+            <div class="card white compact"><span>Savings from deflection / mo</span><b id="c_sav"></b><small id="c_sav_n"></small></div>
+            <div class="card compact solid-net"><span>Net savings / mo</span><b id="c_net"></b><small id="c_net_y"></small></div>
+            <div class="card white compact"><span>Payback</span><b id="c_pay"></b><small id="c_roi"></small></div>
+          </div>
+          <div class="card white compact cb-bars">
+            <p class="pc-h">Monthly cost to serve</p>
+            <div class="bar2"><span class="bl">Today: every case handled by a person</span><div class="trk"><i class="seg human" id="b_today"></i></div><b id="b_today_v"></b></div>
+            <div class="bar2"><span class="bl">With Agentforce and Data 360</span><div class="trk"><i class="seg human" id="b_h"></i><i class="seg af" id="b_af"></i><i class="seg dc" id="b_dc"></i></div><b id="b_with_v"></b></div>
+            <div class="lg2"><span><i class="human"></i>Cases still handled by people</span><span><i class="af"></i>Agentforce</span><span><i class="dc"></i>Data 360</span><span class="cpc" id="c_cpc"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Agentforce rates from the rate card effective June 17, 2026. Rows marked Assumed are placeholders to confirm with your Salesforce account team. Storage and licenses not included.</span><span></span></div>
+  <aside class="notes"><p class="n-key">Move the sliders live. Start on Combined, then show the detail tabs.</p><ul class="n-pts"><li>Deflected cases are the savings. Agentforce and Data 360 credits are the cost.</li><li>Per resolution pricing charges only for conversations the agent resolves.</li></ul></aside>
+</section>
+<script>
+(function(){
+  var s=document.querySelector('section.slide[data-sid="pricing"]');
+  var CR=0.005, st={model:'flex',env:'prod'};
+  // [key, capability, detail, unit, qty, credits/unit, source]  source: c = your rate card, a = assumed
+  var D360=[
+    ['ing','Batch data ingestion','Service Cloud, Commerce and loyalty records into DLOs','1M rows',3,2000,'a'],
+    ['xf','Data transforms and mapping','DLO to DMO mapping and batch transforms','1M rows',3,400,'a'],
+    ['web','Web content crawler','Sitemap crawl of 3 brand sites, chunked and indexed','MB processed',1500,60,'a'],
+    ['idr','Identity resolution','Unified profiles across Brightcurrent, Softly and Fresh Spin','1M rows',1,100000,'a'],
+    ['ci','Calculated insights','Customer value and contact history','1M rows',1,15,'a'],
+    ['q','Data 360 queries','Agent grounding and profile lookups','query',0,3,'c'],
+    ['seg','Segmentation','Brand and cross brand audiences','run',30,50,'c']
+  ];
+  var tb=s.querySelector('#d360rows');
+  D360.forEach(function(r){
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td><b>'+r[1]+'</b><span class="src '+(r[6]==='c'?'c':'a')+'">'+(r[6]==='c'?'Rate card':'Assumed')+'</span><small>'+r[2]+'</small></td><td>'+r[3]+'</td>'+
+      '<td class="r"><input type="number" min="0" id="dq_'+r[0]+'" value="'+r[4]+'"'+(r[0]==='q'?' readonly tabindex="-1"':'')+'></td>'+
+      '<td class="r"><input type="number" min="0" id="dc_'+r[0]+'" value="'+r[5]+'"></td><td class="r" id="dcr_'+r[0]+'"></td><td class="r" id="dusd_'+r[0]+'"></td>';
+    tb.appendChild(tr);
+  });
+  function g(id){return s.querySelector('#'+id);}
+  function v(id){return parseFloat(g(id).value)||0;}
+  function n(x){return Math.round(x).toLocaleString('en-US');}
+  function usd(x,dp){return (x<0?'-':'')+'$'+Math.abs(x).toLocaleString('en-US',{minimumFractionDigits:dp||0,maximumFractionDigits:dp||0});}
+  function k(x){var a=Math.abs(x);return a>=1e6?usd(x/1e6,2)+'M':a>=1e5?usd(x/1e3)+'K':a>=1e4?usd(x/1e3,1)+'K':usd(x);}
+  function t(id,txt){g(id).textContent=txt;}
+  function calc(){
+    var contacts=v('contacts'),defl=v('defl')/100,human=v('human'),impl=v('impl');
+    t('o_contacts',n(contacts));t('o_defl',Math.round(defl*100)+'%');t('o_human',usd(human,2));t('o_impl',k(impl));
+    var conv=contacts,resolved=conv*defl;
+    // Data 360
+    var qpc=v('qpc');t('o_qpc',qpc);g('dq_q').value=Math.round(conv*qpc);
+    var dcr=0;D360.forEach(function(r){var c=v('dq_'+r[0])*v('dc_'+r[0]);dcr+=c;t('dcr_'+r[0],n(c));t('dusd_'+r[0],usd(c*CR));});
+    var dusd=dcr*CR;t('d_cr_tot',n(dcr));t('d_usd_tot',usd(dusd));
+    // Agentforce
+    var sa=v('sa'),ca=v('ca'),sp=v('sp'),ap=v('ap');t('o_sa',sa);t('o_ca',ca);t('o_sp',sp);t('o_ap',ap);
+    var saR=st.env==='prod'?20:16, rows, per, afcr;
+    if(st.model==='flex'){
+      rows=[['Standard action ('+(st.env==='prod'?'production':'sandbox')+')',saR,sa],['Custom action (production)',20,ca],['Standard prompt',6,sp],['Advanced prompt',16,ap]];
+      per=rows.reduce(function(a,r){return a+r[1]*r[2];},0);afcr=per*conv;
+    }else{
+      rows=[['Help agent resolution, per resolved conversation',400,1]];
+      per=400;afcr=400*resolved;
+    }
+    g('afrows').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td class="r">'+r[1]+'</td><td class="r">'+r[2]+'</td><td class="r">'+n(r[1]*r[2])+'</td></tr>';}).join('');
+    var afusd=afcr*CR;
+    t('af_pc',n(per)+' credits');
+    t('af_cpc',st.model==='flex'?usd(per*CR,2):usd(2,2)+' / resolution');
+    t('af_conv',n(st.model==='flex'?conv:resolved)+(st.model==='flex'?'':' resolved'));
+    t('af_cr',n(afcr));t('af_usd',usd(afusd));
+    // Combined
+    var cost=afusd+dusd,sav=resolved*human,net=sav-cost,today=conv*human,withc=(conv-resolved)*human+cost;
+    t('c_cost',usd(cost));t('c_cost_split','Agentforce '+k(afusd)+' + Data 360 '+k(dusd));
+    t('c_sav',usd(sav));t('c_sav_n',n(resolved)+' cases resolved by the agent');
+    t('c_net',usd(net));t('c_net_y',usd(net*12)+' per year');
+    t('c_pay',net>0?(impl/net<1?'< 1 month':(impl/net).toFixed(1)+' months'):'No payback');
+    t('c_roi',net>0?'First year ROI '+Math.round((net*12-impl)/Math.max(impl+cost*12,1)*100)+'%':'Raise deflection or lower cost');
+    s.querySelector('.solid-net').classList.toggle('neg',net<0);
+    var mx=Math.max(today,withc);
+    g('b_today').style.width=(today/mx*100)+'%';
+    g('b_h').style.width=((conv-resolved)*human/mx*100)+'%';g('b_af').style.width=(afusd/mx*100)+'%';g('b_dc').style.width=(dusd/mx*100)+'%';
+    t('b_today_v',usd(today));t('b_with_v',usd(withc));
+    t('c_cpc','Agent '+usd(cost/Math.max(conv,1),2)+' per conversation vs '+usd(human,2)+' per human case');
+  }
+  s.addEventListener('input',calc);
+  // keep arrow, delete and letter keys inside the calculator from changing slides
+  s.addEventListener('keydown',function(e){if(e.target.closest('input'))e.stopPropagation();});
+  s.addEventListener('click',function(e){
+    var b=e.target.closest('.tbtn');if(!b)return;
+    if(b.hasAttribute('data-tab')){s.setAttribute('data-tab',b.getAttribute('data-tab'));[].forEach.call(s.querySelectorAll('.tbtn[data-tab]'),function(x){x.classList.toggle('on',x===b);});}
+    if(b.hasAttribute('data-model')){st.model=b.getAttribute('data-model');[].forEach.call(s.querySelectorAll('.tbtn[data-model]'),function(x){x.classList.toggle('on',x===b);});s.classList.toggle('res',st.model==='res');calc();}
+    if(b.hasAttribute('data-env')){st.env=b.getAttribute('data-env');[].forEach.call(s.querySelectorAll('.tbtn[data-env]'),function(x){x.classList.toggle('on',x===b);});calc();}
+  });
+  calc();
+})();
+</script>
+
 <section class="slide" data-theme="light" data-world="quiet" data-title="Don't forget your KPIs" data-sid="kpis" data-chapter="value" style="padding-top:64px;padding-bottom:40px">
   <img class="logo logo-slot tr" src="../assets/logo-salesforce.png" alt="Salesforce" style="height:96px;top:36px">
   <div class="content">
